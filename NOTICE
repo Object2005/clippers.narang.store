@@ -1,0 +1,11 @@
+GTAClipper
+Copyright (C) 2026 Vaibhav Hedaoo
+
+GTAClipper is free software licensed under the GNU Affero General Public
+License v3.0 (see LICENSE).
+
+It is built on open-source code Copyright (C) 2025 Sami Hindi, also licensed
+under the GNU AGPL v3.0. That code was modified for GTAClipper in November 2026:
+renamed and rebranded, Hindi/Hinglish caption support and a new caption style
+added, Razorpay subscriptions and rupee pricing added, an optional free monthly
+allowance added, and configurable operator details.

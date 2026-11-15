@@ -1,0 +1,19 @@
+{
+  "metaTitle": "Novidades do GTAClipper",
+  "metaDescription": "Novos recursos, melhorias e correções do GTAClipper, do recorte na Twitch e na Kick aos preços e ao editor.",
+  "ogTitle": "Novidades do GTAClipper",
+  "ogDescription": "O que mudou no GTAClipper para quem usa o produto. As atualizações mais recentes vêm primeiro.",
+  "eyebrow": "Atualizações",
+  "title": "Novidades",
+  "intro": "O que mudou para quem usa o GTAClipper. As atualizações mais recentes vêm primeiro.",
+  "hostedApp": "App hospedado",
+  "startClipping": "Comece a criar clipes",
+  "relatedChange": "Alteração relacionada {label}",
+  "viewOnGitHub": "Ver o changelog no GitHub",
+  "categories": {
+    "new": "Novo",
+    "improved": "Melhorado",
+    "fixed": "Corrigido",
+    "underTheHood": "Nos bastidores"
+  }
+}
