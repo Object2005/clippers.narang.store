@@ -6,7 +6,7 @@ export const COMPANY_REGISTERED_ADDRESS = process.env.NEXT_PUBLIC_COMPANY_ADDRES
 export const DEFAULT_SITE_URL = "https://www.gtaclipper.com";
 export const HOSTED_APP_URL = DEFAULT_SITE_URL;
 /** Public GitHub repository for this project. */
-export const DEFAULT_SOURCE_CODE_URL = "https://github.com/V413havai/gtaclipper";
+export const DEFAULT_SOURCE_CODE_URL = "https://github.com/V413havai/GTAClipper";
 /**
  * Where users can get this deployment's source code. AGPL-3.0 section 13 requires
  * offering the source to people who use the app over a network. If you deploy a

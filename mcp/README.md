@@ -129,7 +129,7 @@ download are saved on your machine (`GTACLIPPER_DOWNLOAD_DIR`).
 
 ```bash
 claude mcp add gtaclipper -e GTACLIPPER_API_KEY=sk_... \
-  -- uvx --from "git+https://github.com/V413havai/gtaclipper#subdirectory=mcp" gtaclipper-mcp
+  -- uvx --from "git+https://github.com/V413havai/GTAClipper#subdirectory=mcp" gtaclipper-mcp
 ```
 
 Or in a client's JSON config:
@@ -139,7 +139,7 @@ Or in a client's JSON config:
   "mcpServers": {
     "gtaclipper": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/V413havai/gtaclipper#subdirectory=mcp", "gtaclipper-mcp"],
+      "args": ["--from", "git+https://github.com/V413havai/GTAClipper#subdirectory=mcp", "gtaclipper-mcp"],
       "env": {
         "GTACLIPPER_API_KEY": "sk_..."
       }

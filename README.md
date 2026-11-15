@@ -48,8 +48,8 @@ No watermarks. No monthly limits. Your videos stay on your computer.
 The short version, if you already use Docker:
 
 ```bash
-git clone https://github.com/V413havai/gtaclipper.git
-cd gtaclipper
+git clone https://github.com/V413havai/GTAClipper.git
+cd GTAClipper
 cp .env.example .env      # then add ASSEMBLY_AI_API_KEY and GOOGLE_API_KEY
 ./start.sh                # or: docker compose up -d --build
 ```
@@ -70,7 +70,7 @@ Typical cost: **under ₹50 per hour of video**. You can also use a free local m
 ## Need help?
 
 - Something not working? See [Troubleshooting](INSTALL.md#troubleshooting) in the install guide.
-- Found a bug or have an idea? [Open an issue](https://github.com/V413havai/gtaclipper/issues).
+- Found a bug or have an idea? [Open an issue](https://github.com/V413havai/GTAClipper/issues).
 
 ## License
 

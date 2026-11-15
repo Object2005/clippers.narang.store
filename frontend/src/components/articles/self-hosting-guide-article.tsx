@@ -77,7 +77,7 @@ export async function SelfHostingGuideArticle({ post }: { post: BlogPost }) {
       <h2 id="install">{t(`${slug}.install.heading`)}</h2>
       <h3>{t(`${slug}.install.clone`)}</h3>
       <CodeBlock label={t(`${slug}.install.labelTerminal`)}>{`
-git clone https://github.com/V413havai/gtaclipper.git
+git clone https://github.com/V413havai/GTAClipper.git
 cd gtaclipper
 cp .env.example .env
 `}</CodeBlock>

@@ -172,7 +172,7 @@ class AuthHelp:
     def upgrade_url(self) -> str:
         return f"{self.app_url}/settings#plan"
 
-    docs_url = "https://github.com/V413havai/gtaclipper/blob/main/mcp/README.md"
+    docs_url = "https://github.com/V413havai/GTAClipper/blob/main/mcp/README.md"
 
     def setup(self) -> dict[str, Any]:
         setup: dict[str, Any] = {

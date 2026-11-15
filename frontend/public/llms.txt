@@ -7,7 +7,7 @@ GTAClipper can be used as a hosted web application, as a native iOS app, or self
 ## Canonical website
 
 - [GTAClipper](https://www.gtaclipper.com/): Product overview, features, pricing, and hosted application access.
-- [GitHub repository](https://github.com/V413havai/gtaclipper): Source code, setup instructions, architecture, license, and contribution history.
+- [GitHub repository](https://github.com/V413havai/GTAClipper): Source code, setup instructions, architecture, license, and contribution history.
 
 ## Product pages
 
@@ -48,6 +48,6 @@ GTAClipper can be used as a hosted web application, as a native iOS app, or self
 
 - Name: GTAClipper Team
 - Website: https://www.gtaclipper.com/
-- Source: https://github.com/V413havai/gtaclipper
+- Source: https://github.com/V413havai/GTAClipper
 - Contact: support@gtaclipper.com
 - Last reviewed: 2026-10-05

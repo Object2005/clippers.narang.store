@@ -51,11 +51,12 @@ Install Docker Engine and the Compose plugin by following [docs.docker.com/engin
 
 **Easiest way (no Git needed):**
 1. At the top of this GitHub page, click the green **Code** button → **Download ZIP**.
-2. Unzip it. Rename the folder to `gtaclipper` and move it somewhere easy, like your **Documents** folder.
+2. Unzip it. Rename the folder to `GTAClipper` (GitHub names it `GTAClipper-main`) and move it somewhere easy, like your **Documents** folder.
 
 **If you use Git:**
 ```bash
-git clone https://github.com/V413havai/gtaclipper.git
+git clone https://github.com/V413havai/GTAClipper.git
+cd GTAClipper
 ```
 
 ---
@@ -81,8 +82,8 @@ GTAClipper uses two AI services. Each needs a free account and a key (a long pas
 GTAClipper reads its settings from a file called `.env`. You'll make it from the example file that comes with it.
 
 **1. Open a terminal in the GTAClipper folder**
-- **Mac:** open **Terminal** (press `Cmd + Space`, type *Terminal*, press Enter), then type `cd ` (with a space), drag the `gtaclipper` folder into the window and press Enter.
-- **Windows:** open the `gtaclipper` folder in File Explorer, click the address bar, type `powershell` and press Enter.
+- **Mac:** open **Terminal** (press `Cmd + Space`, type *Terminal*, press Enter), then type `cd ` (with a space), drag the `GTAClipper` folder into the window and press Enter.
+- **Windows:** open the `GTAClipper` folder in File Explorer, click the address bar, type `powershell` and press Enter.
 - **Linux:** open a terminal and `cd` into the folder.
 
 **2. Copy the example settings file**
@@ -176,7 +177,7 @@ When it's done, open **[http://localhost:3107](http://localhost:3107)** in your 
 | See what it's doing | `docker compose logs -f worker` | `docker compose logs -f worker` |
 | Update to the newest version | `git pull` then `docker compose up -d --build` | Download the new ZIP (keep your `.env`), then `docker compose up -d --build` |
 
-Run these from inside the `gtaclipper` folder. Your clips and account are kept between restarts.
+Run these from inside the `GTAClipper` folder. Your clips and account are kept between restarts.
 
 ---
 
@@ -205,7 +206,7 @@ Give Docker more memory (Settings → Resources), close other heavy apps, and tr
 **I changed `.env` but nothing changed**
 Restart so it reloads: `docker compose up -d --build`.
 
-Still stuck? [Open an issue](https://github.com/V413havai/gtaclipper/issues) and paste the error text (never your API keys).
+Still stuck? [Open an issue](https://github.com/V413havai/GTAClipper/issues) and paste the error text (never your API keys).
 
 ---
 
