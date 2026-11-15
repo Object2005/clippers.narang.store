@@ -6,6 +6,7 @@ Add a line here when a change is something a user can see. Use **New**, **Improv
 
 ## 2026-11-15
 
+- **Fixed:** New installs can sign up. The database setup now includes the account columns the website expects, and the leftover "YouTube imports degraded" notice no longer appears on fresh installs. ([Install guide](https://github.com/V413havai/GTAClipper/blob/main/INSTALL.md))
 - **New:** GTAClipper 1.0. Paste a YouTube, Twitch or Kick link, or upload a video, and get vertical clips with face-tracked framing, word-synced captions and hook titles. ([Install guide](https://github.com/V413havai/GTAClipper/blob/main/INSTALL.md))
 - **New:** Hindi and Hinglish captions. When a caption font can't draw Devanagari, GTAClipper switches to a bundled font that can, so Hindi words never show as empty boxes. ([Captions](https://github.com/V413havai/GTAClipper#whats-inside))
 - **New:** The GTAClipper caption style: bold capitals with a yellow highlight on the word being spoken. Works for English, Hindi and Hinglish. ([Captions](https://github.com/V413havai/GTAClipper#whats-inside))
