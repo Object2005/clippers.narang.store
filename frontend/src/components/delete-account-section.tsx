@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
-import { AlertCircle, Loader2, TriangleAlert } from "lucide-react";
+import { AlertCircle, Eye, EyeOff, Loader2, TriangleAlert } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
 import { track } from "@/lib/datafast";
 import { resetAnalytics } from "@/lib/posthog";
@@ -34,6 +34,7 @@ export function DeleteAccountSection({ email, hasAppStoreSubscription = false }:
   const [open, setOpen] = useState(false);
   const [confirmation, setConfirmation] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
@@ -132,14 +133,26 @@ export function DeleteAccountSection({ email, hasAppStoreSubscription = false }:
 
               <div className="space-y-2">
                 <Label htmlFor="delete-account-password" className="text-sm font-normal">{t("deleteAccount.password")}</Label>
-                <Input
-                  id="delete-account-password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  autoComplete="current-password"
-                  disabled={isDeleting}
-                />
+                <div className="relative">
+                  <Input
+                    id="delete-account-password"
+                    className="pr-10"
+                    type={showPassword ? "text" : "password"}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    autoComplete="current-password"
+                    disabled={isDeleting}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground focus:outline-none"
+                    tabIndex={-1}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                  >
+                    {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
+                  </button>
+                </div>
               </div>
 
               {error && (

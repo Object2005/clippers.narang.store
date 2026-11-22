@@ -35,11 +35,11 @@ a{{color:#625d56}}button:focus-visible,a:focus-visible{{outline:3px solid #a3532
 
 
 def _invalid() -> HTMLResponse:
-    return _page("This link isn’t valid", "<p>Open the unsubscribe link in your latest GTAClipper product email, or contact support@gtaclipper.com for help.</p>", 400)
+    return _page("This link isn’t valid", "<p>Open the unsubscribe link in your latest Clippers product email, or contact nbms@narang.store for help.</p>", 400)
 
 
 def _unavailable() -> HTMLResponse:
-    return _page("We couldn’t update your preference", "<p>Please try again later, or contact support@gtaclipper.com.</p>", 503)
+    return _page("We couldn’t update your preference", "<p>Please try again later, or contact nbms@narang.store.</p>", 503)
 
 
 @router.get(UNSUBSCRIBE_PATH, response_class=HTMLResponse)

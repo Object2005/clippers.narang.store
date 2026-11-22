@@ -1379,7 +1379,7 @@ class VideoService:
 
             if source_type == "youtube":
                 job_budget = ByteBudget(
-                    getattr(runtime_config, "youtube_download_max_bytes", 2_000_000_000)
+                    getattr(runtime_config, "youtube_download_max_bytes", 25_000_000_000)
                 )
                 metadata_error = None
                 try:

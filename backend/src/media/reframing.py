@@ -1358,7 +1358,7 @@ def build_full_frame_filter(
     """
     background = (
         "[bgsrc]scale=540:960:force_original_aspect_ratio=increase,crop=540:960,"
-        f"gblur=sigma={blur_sigma}:steps=2,scale=1080:1920:flags=bilinear,setsar=1[bg];"
+        "boxblur=12:2,scale=1080:1920:flags=bilinear,setsar=1[bg];"
     )
     if not fit_windows:
         return (
@@ -1404,7 +1404,7 @@ def build_vertical_compositor_filter(
     # 2x with bilinear so there's no lanczos ringing/blockiness — a creamy blur.
     head = (
         "[bgsrc]scale=540:960:force_original_aspect_ratio=increase,crop=540:960,"
-        f"gblur=sigma={blur_sigma}:steps=2,scale=1080:1920:flags=bilinear,setsar=1[bg];"
+        "boxblur=12:2,scale=1080:1920:flags=bilinear,setsar=1[bg];"
         f"[crsrc]{crop_chain}[face];"
     )
     if not fit_windows:

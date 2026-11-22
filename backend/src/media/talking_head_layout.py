@@ -128,7 +128,7 @@ def _blur_base(splits: int, *labels: str) -> str:
     return (
         f"[0:v]split={splits}{sources};"
         "[bgsrc]scale=540:960:force_original_aspect_ratio=increase,crop=540:960,"
-        "gblur=sigma=18:steps=2,scale=1080:1920:flags=bilinear,setsar=1[bg];"
+        "boxblur=12:2,scale=1080:1920:flags=bilinear,setsar=1[bg];"
     )
 
 

@@ -1,7 +1,7 @@
 import type { Workflow } from "@/lib/workflows";
 
 /**
- * Short tours that introduce a new feature to people who already use GTAClipper.
+ * Short tours that introduce a new feature to people who already use Clippers.
  * Adding one: write an entry here and its text in messages/<locale>/tours.json,
  * and put `data-tour="<target>"` on what each step points at. See docs/feature-tours.md.
  */

@@ -86,7 +86,8 @@ function appleInterval(event: RevenueCatEvent): "month" | "year" | null {
   if (/(monthly|month)$/.test(productId)) return "month";
   const start = toDate(event.purchased_at_ms)?.getTime();
   const end = toDate(event.expiration_at_ms)?.getTime();
-  return intervalFromPeriod(start === undefined ? null : start / 1000, end === undefined ? null : end / 1000);
+  const interval = intervalFromPeriod(start === undefined ? null : start / 1000, end === undefined ? null : end / 1000);
+  return interval === "year" ? "year" : interval === "month" ? "month" : null;
 }
 
 /** RevenueCat's own enum (UNSUBSCRIBE, BILLING_ERROR, ...); anything else is dropped. */

@@ -10,9 +10,11 @@ import prisma from "@/lib/prisma";
 import { monetizationEnabled } from "@/lib/monetization";
 import { razorpayBillingEnabled } from "@/lib/billing-provider";
 import { razorpayCheckout } from "@/server/razorpay-checkout";
+import { sendSubscriptionEmail } from "@/server/razorpay";
 import { getStripeClient } from "@/lib/stripe";
 import { getServerBillingPlan } from "@/server/billing-plans";
-import { isBillingInterval, type BillingInterval } from "@/lib/billing-plans";
+import { isBillingInterval, intervalMonths, type BillingInterval } from "@/lib/billing-plans";
+import { getPromoCoupon } from "@/lib/coupons";
 import { findCreatorOffer, INVALID_CREATOR_CODE, type CreatorOffer } from "@/server/affiliates";
 import { captureServerEvent, type ServerEventProperties } from "@/server/analytics";
 import {
@@ -39,6 +41,7 @@ export async function POST(request: Request) {
   let requestedPlan = "pro";
   let interval: BillingInterval = "month";
   let enteredCode: string | null = null;
+  let currency: "INR" | "USD" = "INR";
   try {
     const body = await request.json();
     if (typeof body?.plan === "string") {
@@ -50,6 +53,9 @@ export async function POST(request: Request) {
       }
       interval = body.interval;
     }
+    if (body?.currency === "INR" || body?.currency === "USD") {
+      currency = body.currency;
+    }
     if (typeof body?.code === "string" && body.code.trim()) {
       enteredCode = body.code.trim();
     }
@@ -57,11 +63,16 @@ export async function POST(request: Request) {
     requestedPlan = "pro";
   }
 
-  if (razorpayBillingEnabled()) {
+  // Indian users (or users requesting INR) get Razorpay (UPI, GPay, Paytm, RuPay, Netbanking).
+  // International users (or users requesting USD) get Stripe (Credit/Debit cards, Apple Pay, Google Pay).
+  const useRazorpay = razorpayBillingEnabled() || currency === "INR";
+
+  if (useRazorpay) {
     return razorpayCheckout(
       { id: session.user.id, email: session.user.email, name: session.user.name },
       requestedPlan,
       interval,
+      enteredCode,
     );
   }
 
@@ -119,9 +130,9 @@ export async function POST(request: Request) {
       if (!fallbackUrl) {
         return NextResponse.json(
           {
-            error: `Stripe ${interval}ly price is not configured for ${billingPlan.id}`,
+            error: "Payment gateway is being initialized. Please use Razorpay or contact nbms@narang.store",
           },
-          { status: 500 },
+          { status: 503 },
         );
       }
       trackCheckout("payment_link");

@@ -26,6 +26,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PaymentFailedBanner } from "@/components/payment-failed-banner";
 import { SubscriptionCancelBanner } from "@/components/subscription-cancel-banner";
 import { UpgradeDialog, UpgradeNudge, getUpgradeState, upgradeReasonForError, useBillingPlanText, type UpgradeReason } from "@/components/billing/upgrade-prompt";
+import { HomeMembershipBanner } from "@/components/home-membership-banner";
 import { getPublicBillingPlans } from "@/lib/billing-plans";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -1384,6 +1385,8 @@ export default function HomeApp() {
           <p id="source-limits" className="sr-only">
             {t("uploadLimits", { size: formatUploadLimit(uploadLimitBytes) })}{limitNote ? ` ${limitNote}` : ""}
           </p>
+
+          <HomeMembershipBanner currentPlan={billingSummary?.plan} onUpgradeSuccess={() => updateBillingSummary({})} />
         </div>
 
         <section className="mt-16 md:mt-24" aria-labelledby="recent-heading">

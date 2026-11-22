@@ -1,10 +1,10 @@
 {
   "metadata": {
     "title": "Status do serviço",
-    "description": "Status atual do serviço e atualizações de incidentes do GTAClipper."
+    "description": "Status atual do serviço e atualizações de incidentes do Clippers."
   },
   "title": "Status do serviço",
-  "intro": "Atualizações do serviço hospedado do GTAClipper.",
+  "intro": "Atualizações do serviço hospedado do Clippers.",
   "unavailable": "O status do serviço está temporariamente indisponível. Volte mais tarde.",
   "states": {
     "operational": "Operacional",
@@ -15,5 +15,5 @@
   },
   "lastUpdated": "Última atualização:",
   "timezone": "(Zurique)",
-  "back": "Voltar para o GTAClipper"
+  "back": "Voltar para o Clippers"
 }

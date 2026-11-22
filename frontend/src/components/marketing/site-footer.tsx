@@ -46,22 +46,26 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
         <div>
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="GTAClipper" width={24} height={24} className="rounded-md dark:invert" />
+            <Image src="/logo.png" alt="Clippers" width={24} height={24} className="rounded-md " />
             <span className="text-sm font-semibold" style={{ fontFamily: "var(--font-syne), system-ui" }}>
-              GTAClipper
+              Clippers
             </span>
           </Link>
           <p className="mt-3 max-w-xs text-xs leading-6 text-muted-foreground">
             {t("footer.tagline")}
           </p>
           <p className="mt-2 text-xs leading-6 text-muted-foreground">
-            {t("footer.operator", { company: COMPANY_NAME })}
+            {COMPANY_NAME} • Owned & Operated by Aashray Narang
           </p>
-          <div className="mt-4 flex gap-4 text-xs text-muted-foreground">
-            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className={linkClassName}>{t("footer.github")}</a>
-            <span>&copy; {new Date().getFullYear()} {COMPANY_NAME}</span>
+          <div className="mt-3 flex flex-col gap-1.5 text-xs text-muted-foreground">
+            <a href="mailto:nbms@narang.store" className="text-primary hover:underline font-medium">
+              Support: nbms@narang.store
+            </a>
+            <span>&copy; {new Date().getFullYear()} Clippers. All rights reserved.</span>
           </div>
-          <p className="mt-2 text-xs leading-6 text-muted-foreground">Open source under AGPL-3.0</p>
+          <p className="mt-2 text-[11px] leading-5 text-emerald-600 dark:text-emerald-400 font-medium">
+            ✨ 7-Day Free Trial included with all memberships
+          </p>
         </div>
         {columns.map((column) => (
           <nav key={column.id} aria-label={t("footer.columnLinks", { heading: column.heading })}>

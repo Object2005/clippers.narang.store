@@ -57,9 +57,27 @@ describe("razorpayCheckout", () => {
     expect(global.fetch).not.toHaveBeenCalled();
   });
 
-  it("explains when a plan id is missing", async () => {
+  it("refuses checkout when razorpay is not configured (no free sandbox bypass)", async () => {
+    delete process.env.RAZORPAY_KEY_ID;
+    delete process.env.RAZORPAY_KEY_SECRET;
+    const response = await razorpayCheckout(buyer, "pro", "month");
+    expect(response.status).toBe(503);
+    expect(user.update).not.toHaveBeenCalled();
+  });
+
+  it("creates a direct order for Google Pay, PhonePe, Snapmint when subscription plan id is omitted", async () => {
+    global.fetch = vi.fn().mockResolvedValue(
+      new Response(JSON.stringify({ id: "order_123", amount: 349900, currency: "INR", status: "created" }), { status: 200 }),
+    ) as typeof fetch;
     const response = await razorpayCheckout(buyer, "scale", "month");
-    expect(response.status).toBe(400);
-    expect(global.fetch).not.toHaveBeenCalled();
+    expect(response.status).toBe(200);
+    const body = await response.json();
+    expect(body.razorpay).toMatchObject({
+      key: "rzp_test_key",
+      order_id: "order_123",
+      amount: 349900,
+      currency: "INR",
+      prefill: { email: "a@example.com" },
+    });
   });
 });

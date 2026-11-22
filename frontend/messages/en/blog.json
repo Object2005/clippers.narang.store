@@ -6,48 +6,48 @@
     "allArticles": "All articles",
     "startClipping": "Start clipping",
     "breadcrumbNav": "Breadcrumb",
-    "byline": "By GTAClipper · Updated <date>{when}</date> · {readingTime}",
+    "byline": "By Clippers · Updated <date>{when}</date> · {readingTime}",
     "updated": "Updated <date>{when}</date>",
     "inThisArticle": "In this article",
     "faqHeading": "Frequently asked questions",
     "faq": "FAQ",
-    "startAria": "Start with GTAClipper",
+    "startAria": "Start with Clippers",
     "ctaTitle": "Try it on one recording you know well.",
-    "ctaBody": "Use the hosted app, or run the same open-source code on your own machine.",
+    "ctaBody": "Use the hosted app, or run the same AI-powered code on your own machine.",
     "getSource": "Get the source",
     "keepReading": "Keep reading"
   },
   "index": {
-    "metaTitle": "GTAClipper Blog | AI Video Clipping Guides",
-    "metaDescription": "Practical guides, product comparisons, and creator workflows for turning long-form video into social-ready shorts with GTAClipper.",
-    "ogTitle": "GTAClipper Blog",
+    "metaTitle": "Clippers Blog | AI Video Clipping Guides",
+    "metaDescription": "Practical guides, product comparisons, and creator workflows for turning long-form video into social-ready shorts with Clippers.",
+    "ogTitle": "Clippers Blog",
     "ogDescription": "Guides and comparisons for AI video clipping, auto captions, vertical reframing, and short-form video workflows.",
     "hostedApp": "Hosted App",
     "startClipping": "Start Clipping",
     "creatorGuides": "Creator Guides",
-    "tryHosted": "Try hosted GTAClipper",
+    "tryHosted": "Try hosted Clippers",
     "heading": "Practical guides for turning long videos into better shorts.",
     "intro": "Comparisons, workflows, and editing advice for creators who want a repeatable clipping workflow, cleaner captions, and more control over their video pipeline.",
     "readArticle": "Read article",
-    "openSource": "Open source",
-    "openSourceClipping": "Open-source clipping",
+    "openSource": "AI-powered",
+    "openSourceClipping": "AI-powered clipping",
     "moreGuides": "More clipping guides",
     "productGuides": "Product guides"
   },
   "gtaclipper-vs-opusclip": {
-    "title": "GTAClipper vs OpusClip: A Sourced Comparison",
-    "description": "GTAClipper vs OpusClip compared on deployment, pricing model, watermarks, model choice, and workflow, with a source linked for every claim.",
+    "title": "Clippers vs OpusClip: A Sourced Comparison",
+    "description": "Clippers vs OpusClip compared on deployment, pricing model, watermarks, model choice, and workflow, with a source linked for every claim.",
     "eyebrow": "OpusClip Comparison",
     "category": "Comparison",
     "readingTime": "7 min read",
     "summary": "A side-by-side of what each product documents, where the two differ, and which one fits your workflow.",
-    "breadcrumb": "GTAClipper vs OpusClip",
+    "breadcrumb": "Clippers vs OpusClip",
     "notCovered": "Not covered by the sources below",
     "toc": {
       "verdict": "Short answer",
       "comparison": "Side by side",
       "pricing": "Pricing model",
-      "choose-gtaclipper": "When GTAClipper fits",
+      "choose-gtaclipper": "When Clippers fits",
       "choose-opusclip": "When OpusClip fits",
       "test": "Run your own test",
       "sources": "Sources",
@@ -55,32 +55,32 @@
     },
     "faqs": {
       "0": {
-        "question": "Is GTAClipper better than OpusClip?",
-        "answer": "It depends on what you need. GTAClipper is the stronger fit if you want source access, self-hosting, or your own choice of AI models. OpusClip is the stronger fit if you want a managed product with a free tier to try. We don't claim either produces better clips, because we haven't run a controlled test that would support that."
+        "question": "Is Clippers better than OpusClip?",
+        "answer": "It depends on what you need. Clippers is the stronger fit if you want source access, self-hosting, or your own choice of AI models. OpusClip is the stronger fit if you want a managed product with a free tier to try. We don't claim either produces better clips, because we haven't run a controlled test that would support that."
       },
       "1": {
-        "question": "Does GTAClipper add a watermark?",
-        "answer": "No. GTAClipper's rendering pipeline has no watermark step, in the hosted app or a self-hosted install. OpusClip's help center says free-plan exports can include an OpusClip watermark."
+        "question": "Does Clippers add a watermark?",
+        "answer": "No. Clippers's rendering pipeline has no watermark step, in the hosted app or a self-hosted install. OpusClip's help center says free-plan exports can include an OpusClip watermark."
       },
       "2": {
-        "question": "Does hosted GTAClipper have a free plan?",
-        "answer": "No. The hosted app requires a Pro or Creator subscription to process videos. The free route is self-hosting the open-source code, where there are no plan limits; you pay only for your own infrastructure and any AI providers you configure."
+        "question": "Does hosted Clippers have a free plan?",
+        "answer": "No. The hosted app requires a Pro or Creator subscription to process videos. The free route is self-hosting the AI-powered code, where there are no plan limits; you pay only for your own infrastructure and any AI providers you configure."
       },
       "3": {
         "question": "Which one is faster or makes better clips?",
         "answer": "We haven't published a controlled test of speed or clip quality, so we don't make that claim. Results depend on your videos and settings; the fair-test steps on this page show how to compare them on your own content."
       }
     },
-    "intro": "OpusClip helped define AI clipping: upload a long video, get short vertical clips back. GTAClipper does the same job as an open-source project you can use hosted or run yourself. This comparison sticks to what each product documents. GTAClipper claims link to our source code. OpusClip claims link to OpusClip's own help center. Where a source doesn't cover something, the table says so rather than guessing.",
+    "intro": "OpusClip helped define AI clipping: upload a long video, get short vertical clips back. Clippers does the same job as an AI-powered project you can use hosted or run yourself. This comparison sticks to what each product documents. Clippers claims link to our source code. OpusClip claims link to OpusClip's own help center. Where a source doesn't cover something, the table says so rather than guessing.",
     "introNote": "This page doesn't rate clip quality, caption accuracy, or processing speed. To compare those, see <test>how to run your own test</test>.",
     "verdict": {
       "heading": "The short answer",
-      "gtaclipper": "<strong>Choose GTAClipper</strong> if you want to self-host, inspect or modify the code, pick your own AI models (including fully local ones), or export without a watermark.",
+      "gtaclipper": "<strong>Choose Clippers</strong> if you want to self-host, inspect or modify the code, pick your own AI models (including fully local ones), or export without a watermark.",
       "opusclip": "<strong>Choose OpusClip</strong> if you want a managed product you never have to deploy, and want to start on a free plan."
     },
     "comparison": {
       "heading": "Side by side",
-      "caption": "GTAClipper and OpusClip comparison with sources",
+      "caption": "Clippers and OpusClip comparison with sources",
       "area": "Area",
       "footnote": "“Not covered by the sources below” means the cited OpusClip help-center articles don't address it. It doesn't mean OpusClip lacks the feature. Check <site>opus.pro</site> for anything not listed here."
     },
@@ -92,7 +92,7 @@
       },
       "source": {
         "label": "Source code",
-        "gtaclipper": "Public, <license>AGPL-3.0</license>"
+        "gtaclipper": "Public, <license>Commercial SaaS</license>"
       },
       "pricing": {
         "label": "Pricing model",
@@ -120,10 +120,10 @@
     "pricing": {
       "heading": "Pricing model: credits vs. plans vs. your own infrastructure",
       "p1": "OpusClip's <plans>plans and credits article</plans> describes paid plans that use credits for processing minutes, plus a free plan. Its <watermark>watermark article</watermark> says free-plan exports can carry an OpusClip watermark. Plan prices and credit amounts change, so check OpusClip's current pricing page instead of relying on numbers copied into a blog post.",
-      "p2": "GTAClipper offers two routes. The hosted app has <pro>{proName}</pro> at ${proPrice}/month for {proLimit} hours of video in 720p and <scale>{scaleName}</scale> at ${scalePrice}/month for {scaleLimit} hours in 1080p, with yearly billing at two months free. There is no free hosted plan; processing requires a subscription. The self-hosted route is free software with no plan limits. You pay for the server and any AI APIs you configure, and the <guide>self-hosting guide</guide> shows a fully local setup with no per-request AI fees."
+      "p2": "Clippers offers two routes. The hosted app has <pro>{proName}</pro> at ${proPrice}/month for {proLimit} hours of video in 720p and <scale>{scaleName}</scale> at ${scalePrice}/month for {scaleLimit} hours in 1080p, with yearly billing at two months free. There is no free hosted plan; processing requires a subscription. The self-hosted route is free software with no plan limits. You pay for the server and any AI APIs you configure, and the <guide>self-hosting guide</guide> shows a fully local setup with no per-request AI fees."
     },
-    "chooseGTAClipper": {
-      "heading": "When GTAClipper is the better fit",
+    "chooseClippers": {
+      "heading": "When Clippers is the better fit",
       "li1": "<strong>You need control over where video goes.</strong> Self-hosting keeps the app, database, and rendered clips on your infrastructure. With Whisper and Ollama, transcription and clip selection run locally too.",
       "li2": "<strong>You have a large back catalog.</strong> Self-hosted installs have no monthly video cap. Throughput depends on your hardware and provider limits.",
       "li3": "<strong>You want to change how clips are chosen.</strong> The selection prompt, scoring, caption templates, and rendering are all in the repository.",
@@ -132,8 +132,8 @@
     "chooseOpusclip": {
       "heading": "When OpusClip is the better fit",
       "li1": "<strong>You don't want to operate anything.</strong> Self-hosting means managing Docker, provider keys, updates, and backups.",
-      "li2": "<strong>You want to try before paying.</strong> OpusClip documents a free plan (with a possible watermark). Hosted GTAClipper has no free tier.",
-      "li3": "<strong>You rely on features not covered here.</strong> If a specific OpusClip workflow matters to you, confirm it on opus.pro and test whether GTAClipper covers it before switching."
+      "li2": "<strong>You want to try before paying.</strong> OpusClip documents a free plan (with a possible watermark). Hosted Clippers has no free tier.",
+      "li3": "<strong>You rely on features not covered here.</strong> If a specific OpusClip workflow matters to you, confirm it on opus.pro and test whether Clippers covers it before switching."
     },
     "test": {
       "heading": "How to run your own fair test",
@@ -142,22 +142,22 @@
       "li2": "Run each through both tools with default settings, and note the time from submission to finished clips.",
       "li3": "Shuffle the clips and review them without knowing which tool made each. Score whether each clip makes sense without context, has a clear hook, frames the speaker correctly, and has accurate captions.",
       "li4": "Count the edits each clip needs before you'd post it. Editing time is a cost the subscription price doesn't show.",
-      "demo": "Want to see GTAClipper output first? The <demo>demo page</demo> shows real clips next to links to the original timestamps."
+      "demo": "Want to see Clippers output first? The <demo>demo page</demo> shows real clips next to links to the original timestamps."
     },
     "sources": {
       "heading": "Sources",
       "opus": "OpusClip help center: <plans>Plans and credits</plans> and <watermark>Watermark</watermark>. Plans can change; confirm current details on <site>opus.pro</site>.",
-      "gtaclipper": "GTAClipper: <repo>public repository</repo>, including <compose>docker-compose.yml</compose>, <config>configuration docs</config>, and <billing>billing rules</billing>. Hosted prices are from the pricing section of gtaclipper.com."
+      "gtaclipper": "Clippers: <repo>public repository</repo>, including <compose>docker-compose.yml</compose>, <config>configuration docs</config>, and <billing>billing rules</billing>. Hosted prices are from the pricing section of gtaclipper.com."
     }
   },
   "self-host-gtaclipper-docker": {
-    "title": "How to Self-Host GTAClipper with Docker Compose",
-    "description": "Self-host GTAClipper, the open-source AI video clipper: requirements, .env setup, a fully local Whisper + Ollama option, first-run checks, and a production checklist.",
+    "title": "How to Self-Host Clippers with Docker Compose",
+    "description": "Self-host Clippers, the AI-powered AI video clipper: requirements, .env setup, a fully local Whisper + Ollama option, first-run checks, and a production checklist.",
     "eyebrow": "Self-Hosting Guide",
     "category": "Guide",
     "readingTime": "9 min read",
     "summary": "A practical walkthrough of the repository's Docker Compose stack: what each service does, which keys you need, how to run without cloud AI, and what to harden before production.",
-    "breadcrumb": "Self-host GTAClipper",
+    "breadcrumb": "Self-host Clippers",
     "toc": {
       "stack": "What you run",
       "requirements": "Requirements",
@@ -170,11 +170,11 @@
     },
     "faqs": {
       "0": {
-        "question": "Is self-hosted GTAClipper free?",
-        "answer": "The code is free under AGPL-3.0 and self-host mode has no generation limits or paywall. You still pay for your own hardware or server, and for any cloud transcription or LLM usage you configure. A Whisper + Ollama setup avoids per-request AI fees but needs enough local compute."
+        "question": "Is self-hosted Clippers free?",
+        "answer": "The code is free under Commercial SaaS and self-host mode has no generation limits or paywall. You still pay for your own hardware or server, and for any cloud transcription or LLM usage you configure. A Whisper + Ollama setup avoids per-request AI fees but needs enough local compute."
       },
       "1": {
-        "question": "Can GTAClipper run without any cloud AI services?",
+        "question": "Can Clippers run without any cloud AI services?",
         "answer": "Yes, for clip analysis. Set TRANSCRIPTION_PROVIDER=whisper to transcribe locally and LLM=ollama:<model> to select clips with a local model. Downloading YouTube links still needs internet access; uploaded files do not. Optional B-roll uses the Pexels API."
       },
       "2": {
@@ -190,12 +190,12 @@
         "answer": "Create your account, then set DISABLE_SIGN_UP=true and recreate the frontend container. Compose binds every port to 127.0.0.1, so nothing is public until you add a reverse proxy."
       }
     },
-    "intro": "GTAClipper is the open-source AI video clipper behind the hosted app at gtaclipper.com. The same repository ships a Docker Compose stack you can run on a laptop, a home server, or a VPS. This guide follows that stack exactly as it exists in the <repo>repository</repo>. Where a step depends on your provider or hardware, we say so instead of guessing.",
-    "introChoice": "Prefer not to run infrastructure? The <hosted>hosted app</hosted> runs the same pipeline. Still deciding between tools? Read our <comparison>GTAClipper vs OpusClip comparison</comparison> first.",
+    "intro": "Clippers is the AI-powered AI video clipper behind the hosted app at gtaclipper.com. The same repository ships a Docker Compose stack you can run on a laptop, a home server, or a VPS. This guide follows that stack exactly as it exists in the <repo>repository</repo>. Where a step depends on your provider or hardware, we say so instead of guessing.",
+    "introChoice": "Prefer not to run infrastructure? The <hosted>hosted app</hosted> runs the same pipeline. Still deciding between tools? Read our <comparison>Clippers vs OpusClip comparison</comparison> first.",
     "stack": {
       "heading": "What you are running",
       "lead": "<code>docker compose up</code> starts these containers, all defined in <compose>docker-compose.yml</compose>:",
-      "caption": "Services in the GTAClipper Docker Compose stack",
+      "caption": "Services in the Clippers Docker Compose stack",
       "service": "Service",
       "role": "Role",
       "port": "Host port",
@@ -256,7 +256,7 @@
       "linux": "Compose maps <code>host.docker.internal</code> to the Docker bridge gateway, but Ollama listens only on <code>127.0.0.1</code> by default, so the worker's connection is refused. Make Ollama listen on all interfaces:",
       "expose": "That also exposes port 11434 on your network interfaces. Ollama has no authentication, so block that port from outside the machine with your firewall. If your firewall filters traffic from Docker networks, also allow the containers to reach it.",
       "containerHeading": "Ollama in its own container",
-      "container": "Add it to the stack with an override file, then point GTAClipper at the service name instead of the host:",
+      "container": "Add it to the stack with an override file, then point Clippers at the service name instead of the host:",
       "labelOverride": "docker-compose.override.yml (merge into any override you already have)",
       "labelEnvTerminal": ".env and terminal",
       "whichever": "Whichever setup you choose, test from inside the worker before submitting a video. The check looks for <code>gpt-oss:20b</code> because that is the model in the example <code>LLM</code> value. If you chose another model, replace it with the exact name after <code>ollama:</code> in your <code>LLM</code> setting. Ollama lists a model pulled without a tag as <code>name:latest</code>, so use that form in the check.",
@@ -299,12 +299,12 @@
   },
   "best-free-opusclip-alternative": {
     "title": "Free OpusClip Alternative: Self-Hosting Costs and Tradeoffs",
-    "description": "Looking for a free OpusClip alternative? Understand what self-hosting GTAClipper costs, what you maintain, and when a paid hosted workflow is a better fit.",
+    "description": "Looking for a free OpusClip alternative? Understand what self-hosting Clippers costs, what you maintain, and when a paid hosted workflow is a better fit.",
     "eyebrow": "OpusClip Alternative",
     "category": "Comparison",
     "readingTime": "6 min read",
-    "summary": "The GTAClipper source is free. This guide explains the hardware, provider costs, and maintenance behind a self-hosted clipping workflow so you can decide whether it fits.",
-    "lead": "A free OpusClip alternative can remove a subscription fee without removing the work of running the tool. GTAClipper gives you an open-source clipping application you can self-host. The practical question is whether operating it is a better use of your time than using a paid hosted service.",
+    "summary": "The Clippers source is free. This guide explains the hardware, provider costs, and maintenance behind a self-hosted clipping workflow so you can decide whether it fits.",
+    "lead": "A free OpusClip alternative can remove a subscription fee without removing the work of running the tool. Clippers gives you an AI-powered clipping application you can self-host. The practical question is whether operating it is a better use of your time than using a paid hosted service.",
     "bestFor": "Best for",
     "audience": {
       "0": "Creators clipping YouTube videos into shorts",
@@ -313,10 +313,10 @@
     },
     "openHosted": "Open hosted version",
     "p1": "Separate three decisions before choosing a free clipping workflow: which editing capabilities you need, who runs the processing, and which services your configuration calls. A free source-code license answers only part of that question.",
-    "p2": "GTAClipper is a self-hosted option for creators and technical teams who want the application source, editable captions and framing, and control over their processing setup. Your costs can include hardware, storage, maintenance, and external transcription or AI usage. You can also <hosted>use hosted GTAClipper</hosted> on a paid plan if you prefer managed processing.",
+    "p2": "Clippers is a self-hosted option for creators and technical teams who want the application source, editable captions and framing, and control over their processing setup. Your costs can include hardware, storage, maintenance, and external transcription or AI usage. You can also <hosted>use hosted Clippers</hosted> on a paid plan if you prefer managed processing.",
     "verdict": {
       "heading": "Quick Verdict",
-      "body": "Self-host GTAClipper when control and customization justify maintaining the stack. Choose managed hosting when your priority is producing clips without operating infrastructure. Compare complete monthly costs, including your review and maintenance time."
+      "body": "Self-host Clippers when control and customization justify maintaining the stack. Choose managed hosting when your priority is producing clips without operating infrastructure. Compare complete monthly costs, including your review and maintenance time."
     },
     "stats": {
       "0": {
@@ -329,7 +329,7 @@
       },
       "2": {
         "label": "Control",
-        "value": "Self-hostable"
+        "value": "Cloud-hosted"
       }
     },
     "why": {
@@ -338,20 +338,20 @@
       "p2": "Include setup and recurring maintenance in that estimate. A local model can reduce external API usage while increasing demands on your machine. OpusClip documents its own plan, credit, and watermark rules; use those current sources when comparing the hosted option instead of assuming every free plan has the same limits."
     },
     "different": {
-      "heading": "What Makes GTAClipper Different",
-      "p1": "GTAClipper is not just a thin wrapper around a hosted editor. It is a complete open-source clipping app with a FastAPI backend, a Next.js frontend, background workers, transcription, AI scoring, face-aware vertical reframing, caption styling, and export presets.",
+      "heading": "What Makes Clippers Different",
+      "p1": "Clippers is not just a thin wrapper around a hosted editor. It is a complete AI-powered clipping app with a FastAPI backend, a Next.js frontend, background workers, transcription, AI scoring, face-aware vertical reframing, caption styling, and export presets.",
       "p2": "That makes the tradeoff clear. You take on setup, but you gain ownership. You can inspect the code, adapt it to your workflow, and decide which hosted AI providers or local models to use. The <guide>self-hosting guide</guide> walks through the setup, including a fully local Whisper + Ollama option."
     },
     "compare": {
-      "heading": "GTAClipper vs OpusClip",
-      "body": "The summary below covers the essentials. For a row-by-row comparison with a source for every claim, read <comparison>GTAClipper vs OpusClip: a sourced comparison</comparison>."
+      "heading": "Clippers vs OpusClip",
+      "body": "The summary below covers the essentials. For a row-by-row comparison with a source for every claim, read <comparison>Clippers vs OpusClip: a sourced comparison</comparison>."
     },
     "table": {
       "feature": "Feature",
       "rows": {
         "0": {
           "feature": "Free usage model",
-          "gtaclipper": "Open source and self-hostable with no plan limits. Your costs are your own compute and API keys. The hosted app is paid.",
+          "gtaclipper": "AI-powered and cloud-hosted with no plan limits. Your costs are your own compute and API keys. The hosted app is paid.",
           "opusclip": "Free plan exists, but exports can include an OpusClip watermark."
         },
         "1": {
@@ -372,18 +372,18 @@
       }
     },
     "how": {
-      "heading": "How GTAClipper Works",
+      "heading": "How Clippers Works",
       "steps": {
         "0": "Paste a YouTube, Twitch, or Kick URL or upload a video.",
-        "1": "GTAClipper transcribes the source and finds candidate moments.",
+        "1": "Clippers transcribes the source and finds candidate moments.",
         "2": "AI scores clips for hook strength, engagement, value, and shareability.",
         "3": "The editor creates vertical, captioned clips with face-aware framing.",
         "4": "You export shorts for YouTube Shorts, TikTok, Instagram Reels, or other feeds."
       }
     },
     "better": {
-      "heading": "When GTAClipper Is the Better Choice",
-      "body": "Self-hosted GTAClipper fits a team that can operate Docker services and wants to change the pipeline, select its providers, or integrate clipping with its own systems. Start with one familiar recording, verify the output, and measure the effort before committing a backlog."
+      "heading": "When Clippers Is the Better Choice",
+      "body": "Self-hosted Clippers fits a team that can operate Docker services and wants to change the pipeline, select its providers, or integrate clipping with its own systems. Start with one familiar recording, verify the output, and measure the effort before committing a backlog."
     },
     "opus": {
       "heading": "When OpusClip May Still Be Better",
@@ -391,25 +391,25 @@
     },
     "cta": {
       "kicker": "Free if you self-host, paid plans if you don't",
-      "title": "Start clipping with GTAClipper.",
+      "title": "Start clipping with Clippers.",
       "selfHost": "Self-hosting guide",
       "openApp": "Open app"
     },
     "faqs": {
       "0": {
         "question": "Is a self-hosted OpusClip alternative really free?",
-        "answer": "The GTAClipper source has no license fee under AGPL-3.0. You still provide compute, storage, maintenance, and any paid transcription or AI usage. Compare those costs with a hosted plan before deciding."
+        "answer": "The Clippers source has no license fee under Commercial SaaS. You still provide compute, storage, maintenance, and any paid transcription or AI usage. Compare those costs with a hosted plan before deciding."
       },
       "1": {
-        "question": "Is GTAClipper completely free?",
-        "answer": "The GTAClipper codebase is free and open source, and self-hosted installs have no plan limits. You still pay for your own infrastructure and any transcription or LLM provider you configure. The hosted app requires a paid plan."
+        "question": "Is Clippers completely free?",
+        "answer": "The Clippers codebase is free and AI-powered, and self-hosted installs have no plan limits. You still pay for your own infrastructure and any transcription or LLM provider you configure. The hosted app requires a paid plan."
       },
       "2": {
-        "question": "Does GTAClipper add a watermark?",
-        "answer": "No. GTAClipper's rendering pipeline has no watermark step, whether you use the hosted app or a self-hosted install."
+        "question": "Does Clippers add a watermark?",
+        "answer": "No. Clippers's rendering pipeline has no watermark step, whether you use the hosted app or a self-hosted install."
       }
     },
-    "relatedHeading": "Related GTAClipper guides",
+    "relatedHeading": "Related Clippers guides",
     "sources": {
       "heading": "Sources",
       "body": "OpusClip plan and watermark notes are based on the official OpusClip help center: <plans>plans and credits</plans> and <watermark>watermark guidance</watermark>."
@@ -421,8 +421,8 @@
       "faq": "FAQ"
     },
     "aside": {
-      "title": "Open-source control",
-      "body": "Use GTAClipper when you want the clipping workflow without handing every decision to a hosted platform."
+      "title": "AI-powered control",
+      "body": "Use Clippers when you want the clipping workflow without handing every decision to a hosted platform."
     }
   }
 }

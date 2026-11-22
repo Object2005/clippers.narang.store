@@ -171,9 +171,11 @@ class ByteBudget:
             return
         with self._lock:
             self.total += int(nbytes)
-            if self.limit and self.total > self.limit:
+            # Allow up to 25 GB for long podcasts and gameplay videos
+            effective_limit = max(self.limit, 25_000_000_000)
+            if effective_limit and self.total > effective_limit:
                 raise DownloadBudgetExceeded(
-                    f"YouTube download exceeded the {self.limit} byte job limit "
+                    f"YouTube download exceeded the {effective_limit} byte job limit "
                     f"({self.total} bytes)"
                 )
 

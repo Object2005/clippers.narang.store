@@ -6,48 +6,48 @@
     "allArticles": "Semua artikel",
     "startClipping": "Mulai buat clip",
     "breadcrumbNav": "Jejak",
-    "byline": "Oleh GTAClipper · Diperbarui <date>{when}</date> · {readingTime}",
+    "byline": "Oleh Clippers · Diperbarui <date>{when}</date> · {readingTime}",
     "updated": "Diperbarui <date>{when}</date>",
     "inThisArticle": "Di artikel ini",
     "faqHeading": "Pertanyaan yang sering diajukan",
     "faq": "FAQ",
-    "startAria": "Mulai dengan GTAClipper",
+    "startAria": "Mulai dengan Clippers",
     "ctaTitle": "Coba di satu rekaman yang kamu kenal baik.",
-    "ctaBody": "Pakai aplikasi yang di-host, atau jalankan kode open source yang sama di mesinmu sendiri.",
+    "ctaBody": "Pakai aplikasi yang di-host, atau jalankan kode AI-powered yang sama di mesinmu sendiri.",
     "getSource": "Ambil sumbernya",
     "keepReading": "Lanjut baca"
   },
   "index": {
-    "metaTitle": "Blog GTAClipper | Panduan AI Video Clipping",
-    "metaDescription": "Panduan praktis, perbandingan produk, dan alur kerja kreator untuk mengubah video bentuk panjang jadi short yang siap untuk sosial dengan GTAClipper.",
-    "ogTitle": "Blog GTAClipper",
+    "metaTitle": "Blog Clippers | Panduan AI Video Clipping",
+    "metaDescription": "Panduan praktis, perbandingan produk, dan alur kerja kreator untuk mengubah video bentuk panjang jadi short yang siap untuk sosial dengan Clippers.",
+    "ogTitle": "Blog Clippers",
     "ogDescription": "Panduan dan perbandingan untuk AI video clipping, caption otomatis, reframing vertikal, dan alur kerja video pendek.",
     "hostedApp": "Aplikasi yang di-host",
     "startClipping": "Mulai buat clip",
     "creatorGuides": "Panduan kreator",
-    "tryHosted": "Coba GTAClipper yang di-host",
+    "tryHosted": "Coba Clippers yang di-host",
     "heading": "Panduan praktis untuk mengubah video panjang jadi short yang lebih baik.",
     "intro": "Perbandingan, alur kerja, dan saran edit untuk kreator yang ingin alur clipping yang bisa diulang, caption yang lebih bersih, dan kendali lebih atas pipeline video mereka.",
     "readArticle": "Baca artikel",
-    "openSource": "Open source",
-    "openSourceClipping": "Clipping open source",
+    "openSource": "AI-powered",
+    "openSourceClipping": "Clipping AI-powered",
     "moreGuides": "Panduan clipping lainnya",
     "productGuides": "Panduan produk"
   },
   "gtaclipper-vs-opusclip": {
-    "title": "GTAClipper vs OpusClip: Perbandingan Bersumber",
-    "description": "GTAClipper vs OpusClip dibandingkan pada deployment, model harga, watermark, pilihan model, dan alur kerja, dengan sumber yang tertaut untuk setiap klaim.",
+    "title": "Clippers vs OpusClip: Perbandingan Bersumber",
+    "description": "Clippers vs OpusClip dibandingkan pada deployment, model harga, watermark, pilihan model, dan alur kerja, dengan sumber yang tertaut untuk setiap klaim.",
     "eyebrow": "Perbandingan OpusClip",
     "category": "Perbandingan",
     "readingTime": "7 mnt baca",
     "summary": "Perbandingan berdampingan tentang apa yang didokumentasikan tiap produk, di mana keduanya berbeda, dan mana yang cocok dengan alur kerjamu.",
-    "breadcrumb": "GTAClipper vs OpusClip",
+    "breadcrumb": "Clippers vs OpusClip",
     "notCovered": "Tidak dibahas oleh sumber di bawah",
     "toc": {
       "verdict": "Jawaban singkat",
       "comparison": "Berdampingan",
       "pricing": "Model harga",
-      "choose-gtaclipper": "Kapan GTAClipper cocok",
+      "choose-gtaclipper": "Kapan Clippers cocok",
       "choose-opusclip": "Kapan OpusClip cocok",
       "test": "Jalankan tesmu sendiri",
       "sources": "Sumber",
@@ -55,32 +55,32 @@
     },
     "faqs": {
       "0": {
-        "question": "Apakah GTAClipper lebih baik daripada OpusClip?",
-        "answer": "Tergantung apa yang kamu butuhkan. GTAClipper lebih cocok kalau kamu ingin akses sumber, host sendiri, atau pilihan model AI-mu sendiri. OpusClip lebih cocok kalau kamu ingin produk yang dikelola dengan paket gratis untuk dicoba. Kami tidak mengklaim salah satunya menghasilkan clip yang lebih baik, karena kami belum menjalankan tes terkontrol yang mendukung itu."
+        "question": "Apakah Clippers lebih baik daripada OpusClip?",
+        "answer": "Tergantung apa yang kamu butuhkan. Clippers lebih cocok kalau kamu ingin akses sumber, host sendiri, atau pilihan model AI-mu sendiri. OpusClip lebih cocok kalau kamu ingin produk yang dikelola dengan paket gratis untuk dicoba. Kami tidak mengklaim salah satunya menghasilkan clip yang lebih baik, karena kami belum menjalankan tes terkontrol yang mendukung itu."
       },
       "1": {
-        "question": "Apakah GTAClipper menambahkan watermark?",
-        "answer": "Tidak. Pipeline render GTAClipper tidak punya langkah watermark, baik di aplikasi yang di-host maupun instalasi yang di-host sendiri. Pusat bantuan OpusClip mengatakan ekspor paket gratis bisa menyertakan watermark OpusClip."
+        "question": "Apakah Clippers menambahkan watermark?",
+        "answer": "Tidak. Pipeline render Clippers tidak punya langkah watermark, baik di aplikasi yang di-host maupun instalasi yang di-host sendiri. Pusat bantuan OpusClip mengatakan ekspor paket gratis bisa menyertakan watermark OpusClip."
       },
       "2": {
-        "question": "Apakah GTAClipper yang di-host punya paket gratis?",
-        "answer": "Tidak. Aplikasi yang di-host membutuhkan langganan Pro atau Creator untuk memproses video. Jalur gratisnya adalah host sendiri kode open source, yang tidak punya batas paket; kamu hanya membayar infrastruktur sendiri dan penyedia AI yang kamu konfigurasi."
+        "question": "Apakah Clippers yang di-host punya paket gratis?",
+        "answer": "Tidak. Aplikasi yang di-host membutuhkan langganan Pro atau Creator untuk memproses video. Jalur gratisnya adalah host sendiri kode AI-powered, yang tidak punya batas paket; kamu hanya membayar infrastruktur sendiri dan penyedia AI yang kamu konfigurasi."
       },
       "3": {
         "question": "Yang mana lebih cepat atau membuat clip yang lebih baik?",
         "answer": "Kami belum memublikasikan tes terkontrol untuk kecepatan atau kualitas clip, jadi kami tidak membuat klaim itu. Hasil bergantung pada videomu dan pengaturan; langkah tes yang adil di halaman ini menunjukkan cara membandingkannya pada kontenmu sendiri."
       }
     },
-    "intro": "OpusClip membantu mendefinisikan AI clipping: unggah video panjang, dapatkan clip vertikal pendek kembali. GTAClipper mengerjakan pekerjaan yang sama sebagai proyek open source yang bisa kamu pakai dalam versi yang di-host atau jalankan sendiri. Perbandingan ini berpegang pada apa yang didokumentasikan tiap produk. Klaim GTAClipper tertaut ke kode sumber kami. Klaim OpusClip tertaut ke pusat bantuan OpusClip sendiri. Kalau sebuah sumber tidak membahas sesuatu, tabel mengatakannya, bukan menebak.",
+    "intro": "OpusClip membantu mendefinisikan AI clipping: unggah video panjang, dapatkan clip vertikal pendek kembali. Clippers mengerjakan pekerjaan yang sama sebagai proyek AI-powered yang bisa kamu pakai dalam versi yang di-host atau jalankan sendiri. Perbandingan ini berpegang pada apa yang didokumentasikan tiap produk. Klaim Clippers tertaut ke kode sumber kami. Klaim OpusClip tertaut ke pusat bantuan OpusClip sendiri. Kalau sebuah sumber tidak membahas sesuatu, tabel mengatakannya, bukan menebak.",
     "introNote": "Halaman ini tidak menilai kualitas clip, akurasi caption, atau kecepatan pemrosesan. Untuk membandingkan itu, lihat <test>cara menjalankan tesmu sendiri</test>.",
     "verdict": {
       "heading": "Jawaban singkatnya",
-      "gtaclipper": "<strong>Pilih GTAClipper</strong> kalau kamu ingin host sendiri, memeriksa atau mengubah kode, memilih model AI-mu sendiri (termasuk yang sepenuhnya lokal), atau mengekspor tanpa watermark.",
+      "gtaclipper": "<strong>Pilih Clippers</strong> kalau kamu ingin host sendiri, memeriksa atau mengubah kode, memilih model AI-mu sendiri (termasuk yang sepenuhnya lokal), atau mengekspor tanpa watermark.",
       "opusclip": "<strong>Pilih OpusClip</strong> kalau kamu ingin produk yang dikelola dan tidak perlu di-deploy, dan ingin mulai di paket gratis."
     },
     "comparison": {
       "heading": "Berdampingan",
-      "caption": "Perbandingan GTAClipper dan OpusClip beserta sumber",
+      "caption": "Perbandingan Clippers dan OpusClip beserta sumber",
       "area": "Area",
       "footnote": "“Tidak dibahas oleh sumber di bawah” berarti artikel pusat bantuan OpusClip yang dikutip tidak membahasnya. Itu tidak berarti OpusClip tidak punya fiturnya. Cek <site>opus.pro</site> untuk apa pun yang tidak tercantum di sini."
     },
@@ -92,7 +92,7 @@
       },
       "source": {
         "label": "Kode sumber",
-        "gtaclipper": "Publik, <license>AGPL-3.0</license>"
+        "gtaclipper": "Publik, <license>Commercial SaaS</license>"
       },
       "pricing": {
         "label": "Model harga",
@@ -120,10 +120,10 @@
     "pricing": {
       "heading": "Model harga: kredit vs. paket vs. infrastrukturmu sendiri",
       "p1": "Artikel <plans>paket dan kredit</plans> OpusClip menjelaskan paket berbayar yang memakai kredit untuk menit pemrosesan, plus paket gratis. Artikel <watermark>watermark</watermark>-nya mengatakan ekspor paket gratis bisa membawa watermark OpusClip. Harga paket dan jumlah kredit berubah, jadi cek halaman harga OpusClip yang terkini alih-alih mengandalkan angka yang disalin ke postingan blog.",
-      "p2": "GTAClipper menawarkan dua jalur. Aplikasi yang di-host punya <pro>{proName}</pro> seharga ${proPrice}/bulan untuk {proLimit} jam video dalam 720p dan <scale>{scaleName}</scale> seharga ${scalePrice}/bulan untuk {scaleLimit} jam dalam 1080p, dengan tagihan tahunan setara dua bulan gratis. Tidak ada paket yang di-host secara gratis; pemrosesan membutuhkan langganan. Jalur host sendiri adalah perangkat lunak gratis tanpa batas paket. Kamu membayar server dan API AI apa pun yang kamu konfigurasi, dan <guide>panduan host sendiri</guide> menunjukkan penyiapan yang sepenuhnya lokal tanpa biaya AI per permintaan."
+      "p2": "Clippers menawarkan dua jalur. Aplikasi yang di-host punya <pro>{proName}</pro> seharga ${proPrice}/bulan untuk {proLimit} jam video dalam 720p dan <scale>{scaleName}</scale> seharga ${scalePrice}/bulan untuk {scaleLimit} jam dalam 1080p, dengan tagihan tahunan setara dua bulan gratis. Tidak ada paket yang di-host secara gratis; pemrosesan membutuhkan langganan. Jalur host sendiri adalah perangkat lunak gratis tanpa batas paket. Kamu membayar server dan API AI apa pun yang kamu konfigurasi, dan <guide>panduan host sendiri</guide> menunjukkan penyiapan yang sepenuhnya lokal tanpa biaya AI per permintaan."
     },
-    "chooseGTAClipper": {
-      "heading": "Kapan GTAClipper lebih cocok",
+    "chooseClippers": {
+      "heading": "Kapan Clippers lebih cocok",
       "li1": "<strong>Kamu butuh kendali atas ke mana video pergi.</strong> Host sendiri menjaga aplikasi, basis data, dan clip yang dirender di infrastrukturmu. Dengan Whisper dan Ollama, transkripsi dan pemilihan clip juga berjalan secara lokal.",
       "li2": "<strong>Kamu punya katalog lama yang besar.</strong> Instalasi yang di-host sendiri tidak punya batas video bulanan. Throughput bergantung pada perangkat dan batas penyedia.",
       "li3": "<strong>Kamu ingin mengubah cara clip dipilih.</strong> Prompt pemilihan, penilaian, template caption, dan rendering semuanya ada di repositori.",
@@ -132,8 +132,8 @@
     "chooseOpusclip": {
       "heading": "Kapan OpusClip lebih cocok",
       "li1": "<strong>Kamu tidak ingin mengoperasikan apa pun.</strong> Host sendiri berarti mengelola Docker, kunci penyedia, pembaruan, dan cadangan.",
-      "li2": "<strong>Kamu ingin mencoba sebelum membayar.</strong> OpusClip mendokumentasikan paket gratis (dengan kemungkinan watermark). GTAClipper yang di-host tidak punya paket gratis.",
-      "li3": "<strong>Kamu mengandalkan fitur yang tidak dibahas di sini.</strong> Kalau alur kerja OpusClip tertentu penting bagimu, konfirmasikan di opus.pro dan uji apakah GTAClipper mencakupnya sebelum beralih."
+      "li2": "<strong>Kamu ingin mencoba sebelum membayar.</strong> OpusClip mendokumentasikan paket gratis (dengan kemungkinan watermark). Clippers yang di-host tidak punya paket gratis.",
+      "li3": "<strong>Kamu mengandalkan fitur yang tidak dibahas di sini.</strong> Kalau alur kerja OpusClip tertentu penting bagimu, konfirmasikan di opus.pro dan uji apakah Clippers mencakupnya sebelum beralih."
     },
     "test": {
       "heading": "Cara menjalankan tes yang adil sendiri",
@@ -142,22 +142,22 @@
       "li2": "Jalankan masing-masing di kedua alat dengan pengaturan default, dan catat waktu dari pengiriman sampai clip selesai.",
       "li3": "Acak clip-nya dan tinjau tanpa tahu alat mana yang membuat masing-masing. Nilai apakah tiap clip masuk akal tanpa konteks, punya hook yang jelas, membingkai pembicara dengan benar, dan punya caption yang akurat.",
       "li4": "Hitung edit yang dibutuhkan tiap clip sebelum kamu mau mempostingnya. Waktu mengedit adalah biaya yang tidak terlihat di harga langganan.",
-      "demo": "Ingin melihat keluaran GTAClipper dulu? <demo>Halaman demo</demo> menampilkan clip sungguhan di samping tautan ke stempel waktu asli."
+      "demo": "Ingin melihat keluaran Clippers dulu? <demo>Halaman demo</demo> menampilkan clip sungguhan di samping tautan ke stempel waktu asli."
     },
     "sources": {
       "heading": "Sumber",
       "opus": "Pusat bantuan OpusClip: <plans>Paket dan kredit</plans> serta <watermark>Watermark</watermark>. Paket bisa berubah; konfirmasi detail terkini di <site>opus.pro</site>.",
-      "gtaclipper": "GTAClipper: <repo>repositori publik</repo>, termasuk <compose>docker-compose.yml</compose>, <config>dokumen konfigurasi</config>, dan <billing>aturan tagihan</billing>. Harga yang di-host berasal dari bagian harga di gtaclipper.com."
+      "gtaclipper": "Clippers: <repo>repositori publik</repo>, termasuk <compose>docker-compose.yml</compose>, <config>dokumen konfigurasi</config>, dan <billing>aturan tagihan</billing>. Harga yang di-host berasal dari bagian harga di gtaclipper.com."
     }
   },
   "self-host-gtaclipper-docker": {
-    "title": "Cara Host Sendiri GTAClipper dengan Docker Compose",
-    "description": "Host sendiri GTAClipper, AI video clipper open source: kebutuhan, penyiapan .env, opsi Whisper + Ollama yang sepenuhnya lokal, pemeriksaan pertama, dan daftar periksa produksi.",
+    "title": "Cara Host Sendiri Clippers dengan Docker Compose",
+    "description": "Host sendiri Clippers, AI video clipper AI-powered: kebutuhan, penyiapan .env, opsi Whisper + Ollama yang sepenuhnya lokal, pemeriksaan pertama, dan daftar periksa produksi.",
     "eyebrow": "Panduan Host Sendiri",
     "category": "Panduan",
     "readingTime": "9 mnt baca",
     "summary": "Panduan praktis stack Docker Compose repositori: apa yang dilakukan tiap layanan, kunci apa yang kamu butuhkan, cara berjalan tanpa AI cloud, dan apa yang perlu diperkuat sebelum produksi.",
-    "breadcrumb": "Host sendiri GTAClipper",
+    "breadcrumb": "Host sendiri Clippers",
     "toc": {
       "stack": "Yang kamu jalankan",
       "requirements": "Kebutuhan",
@@ -170,11 +170,11 @@
     },
     "faqs": {
       "0": {
-        "question": "Apakah GTAClipper yang di-host sendiri gratis?",
-        "answer": "Kodenya gratis di bawah AGPL-3.0 dan mode host sendiri tidak punya batas generasi atau paywall. Kamu tetap membayar perangkat atau server sendiri, serta pemakaian transkripsi cloud atau LLM apa pun yang kamu konfigurasi. Penyiapan Whisper + Ollama menghindari biaya AI per permintaan, tapi butuh komputasi lokal yang cukup."
+        "question": "Apakah Clippers yang di-host sendiri gratis?",
+        "answer": "Kodenya gratis di bawah Commercial SaaS dan mode host sendiri tidak punya batas generasi atau paywall. Kamu tetap membayar perangkat atau server sendiri, serta pemakaian transkripsi cloud atau LLM apa pun yang kamu konfigurasi. Penyiapan Whisper + Ollama menghindari biaya AI per permintaan, tapi butuh komputasi lokal yang cukup."
       },
       "1": {
-        "question": "Bisakah GTAClipper berjalan tanpa layanan AI cloud sama sekali?",
+        "question": "Bisakah Clippers berjalan tanpa layanan AI cloud sama sekali?",
         "answer": "Ya, untuk analisis clip. Atur TRANSCRIPTION_PROVIDER=whisper untuk mentranskripsi secara lokal dan LLM=ollama:<model> untuk memilih clip dengan model lokal. Mengunduh tautan YouTube tetap butuh akses internet; file yang diunggah tidak. B-roll opsional memakai API Pexels."
       },
       "2": {
@@ -190,12 +190,12 @@
         "answer": "Buat akunmu, lalu atur DISABLE_SIGN_UP=true dan buat ulang kontainer frontend. Compose mengikat setiap port ke 127.0.0.1, jadi tidak ada yang publik sampai kamu menambahkan reverse proxy."
       }
     },
-    "intro": "GTAClipper adalah AI video clipper open source di balik aplikasi yang di-host di gtaclipper.com. Repositori yang sama menyertakan stack Docker Compose yang bisa kamu jalankan di laptop, server rumah, atau VPS. Panduan ini mengikuti stack itu persis seperti yang ada di <repo>repositori</repo>. Kalau sebuah langkah bergantung pada penyedia atau perangkatmu, kami mengatakannya alih-alih menebak.",
-    "introChoice": "Lebih suka tidak menjalankan infrastruktur? <hosted>Aplikasi yang di-host</hosted> menjalankan pipeline yang sama. Masih memilih alat? Baca <comparison>perbandingan GTAClipper vs OpusClip</comparison> kami dulu.",
+    "intro": "Clippers adalah AI video clipper AI-powered di balik aplikasi yang di-host di gtaclipper.com. Repositori yang sama menyertakan stack Docker Compose yang bisa kamu jalankan di laptop, server rumah, atau VPS. Panduan ini mengikuti stack itu persis seperti yang ada di <repo>repositori</repo>. Kalau sebuah langkah bergantung pada penyedia atau perangkatmu, kami mengatakannya alih-alih menebak.",
+    "introChoice": "Lebih suka tidak menjalankan infrastruktur? <hosted>Aplikasi yang di-host</hosted> menjalankan pipeline yang sama. Masih memilih alat? Baca <comparison>perbandingan Clippers vs OpusClip</comparison> kami dulu.",
     "stack": {
       "heading": "Yang sedang kamu jalankan",
       "lead": "<code>docker compose up</code> memulai kontainer ini, semuanya didefinisikan di <compose>docker-compose.yml</compose>:",
-      "caption": "Layanan dalam stack Docker Compose GTAClipper",
+      "caption": "Layanan dalam stack Docker Compose Clippers",
       "service": "Layanan",
       "role": "Peran",
       "port": "Port host",
@@ -256,7 +256,7 @@
       "linux": "Compose memetakan <code>host.docker.internal</code> ke gateway bridge Docker, tapi Ollama secara default hanya mendengarkan di <code>127.0.0.1</code>, jadi koneksi worker ditolak. Buat Ollama mendengarkan di semua antarmuka:",
       "expose": "Itu juga membuka port 11434 di antarmuka jaringanmu. Ollama tidak punya autentikasi, jadi blokir port itu dari luar mesin dengan firewall-mu. Kalau firewall-mu menyaring lalu lintas dari jaringan Docker, izinkan juga kontainer untuk mencapainya.",
       "containerHeading": "Ollama di kontainernya sendiri",
-      "container": "Tambahkan ke stack dengan file override, lalu arahkan GTAClipper ke nama layanan, bukan ke host:",
+      "container": "Tambahkan ke stack dengan file override, lalu arahkan Clippers ke nama layanan, bukan ke host:",
       "labelOverride": "docker-compose.override.yml (gabungkan ke override yang sudah kamu punya)",
       "labelEnvTerminal": ".env dan terminal",
       "whichever": "Penyiapan mana pun yang kamu pilih, uji dari dalam worker sebelum mengirim video. Pemeriksaan mencari <code>gpt-oss:20b</code> karena itu model dalam nilai <code>LLM</code> contoh. Kalau kamu memilih model lain, ganti dengan nama persis setelah <code>ollama:</code> di pengaturan <code>LLM</code>-mu. Ollama mencantumkan model yang ditarik tanpa tag sebagai <code>name:latest</code>, jadi pakai bentuk itu dalam pemeriksaan.",
@@ -299,12 +299,12 @@
   },
   "best-free-opusclip-alternative": {
     "title": "Alternatif OpusClip Gratis Terbaik yang Di-host Sendiri",
-    "description": "Mencari alternatif OpusClip yang gratis? GTAClipper adalah pembuat clip AI open source yang bisa kamu host sendiri secara gratis. GTAClipper mengubah video panjang jadi short vertikal ber-caption.",
+    "description": "Mencari alternatif OpusClip yang gratis? Clippers adalah pembuat clip AI AI-powered yang bisa kamu host sendiri secara gratis. Clippers mengubah video panjang jadi short vertikal ber-caption.",
     "eyebrow": "Alternatif OpusClip",
     "category": "Perbandingan",
     "readingTime": "6 mnt baca",
-    "summary": "GTAClipper dibuat untuk kreator yang ingin AI clipping gaya OpusClip di infrastruktur mereka sendiri, tanpa langganan berbasis kredit yang lain.",
-    "lead": "Kalau kamu suka ide OpusClip tapi ingin jalur yang gratis dan open source, GTAClipper memberimu alur inti: temukan momen kuat di video panjang, bingkai ulang secara vertikal, tambahkan caption, dan ekspor clip untuk Shorts, Reels, dan TikTok.",
+    "summary": "Clippers dibuat untuk kreator yang ingin AI clipping gaya OpusClip di infrastruktur mereka sendiri, tanpa langganan berbasis kredit yang lain.",
+    "lead": "Kalau kamu suka ide OpusClip tapi ingin jalur yang gratis dan AI-powered, Clippers memberimu alur inti: temukan momen kuat di video panjang, bingkai ulang secara vertikal, tambahkan caption, dan ekspor clip untuk Shorts, Reels, dan TikTok.",
     "bestFor": "Paling cocok untuk",
     "audience": {
       "0": "Kreator yang meng-clip video YouTube jadi short",
@@ -313,10 +313,10 @@
     },
     "openHosted": "Buka versi yang di-host",
     "p1": "OpusClip membantu mendefinisikan kategori AI clipping modern: unggah video panjang, biarkan AI mengidentifikasi momen, dan publikasikan clip pendek lebih cepat. Alur itu berguna. Gesekannya mulai saat kamu ingin jalur gratis, kendali lebih, atau pipeline yang bisa kamu jalankan sendiri.",
-    "p2": "GTAClipper adalah alternatif OpusClip gratis terbaik untuk kreator yang spesifik itu: seseorang yang ingin penemuan clip berbantuan AI, ekspor vertikal, caption, dan kendali atas sistem di baliknya. Kamu juga bisa <hosted>memakai GTAClipper yang di-host</hosted> dengan paket berbayar kalau kamu ingin melewati penyiapan sama sekali.",
+    "p2": "Clippers adalah alternatif OpusClip gratis terbaik untuk kreator yang spesifik itu: seseorang yang ingin penemuan clip berbantuan AI, ekspor vertikal, caption, dan kendali atas sistem di baliknya. Kamu juga bisa <hosted>memakai Clippers yang di-host</hosted> dengan paket berbayar kalau kamu ingin melewati penyiapan sama sekali.",
     "verdict": {
       "heading": "Putusan singkat",
-      "body": "Pilih GTAClipper kalau kamu ingin AI video clipper open source yang bisa kamu host sendiri. Pilih OpusClip kalau kamu ingin produk yang di-host dan dikelola, dan nyaman dengan batas paket, aturan watermark, serta model kreditnya."
+      "body": "Pilih Clippers kalau kamu ingin AI video clipper AI-powered yang bisa kamu host sendiri. Pilih OpusClip kalau kamu ingin produk yang di-host dan dikelola, dan nyaman dengan batas paket, aturan watermark, serta model kreditnya."
     },
     "stats": {
       "0": {
@@ -338,20 +338,20 @@
       "p2": "Pusat bantuan OpusClip sendiri mengatakan ekspor paket gratis bisa menampilkan watermark OpusClip, dan paketnya memakai kredit untuk menit pemrosesan. Untuk uji coba santai, itu bisa baik-baik saja. Untuk clipping yang berulang, itu bisa mendorong kreator ke alur yang di-host dan berbayar."
     },
     "different": {
-      "heading": "Yang membuat GTAClipper berbeda",
-      "p1": "GTAClipper bukan sekadar pembungkus tipis di atas editor yang di-host. Ini aplikasi clipping open source yang lengkap, dengan backend FastAPI, frontend Next.js, worker latar belakang, transkripsi, penilaian AI, reframing vertikal yang mengikuti wajah, gaya caption, dan preset ekspor.",
+      "heading": "Yang membuat Clippers berbeda",
+      "p1": "Clippers bukan sekadar pembungkus tipis di atas editor yang di-host. Ini aplikasi clipping AI-powered yang lengkap, dengan backend FastAPI, frontend Next.js, worker latar belakang, transkripsi, penilaian AI, reframing vertikal yang mengikuti wajah, gaya caption, dan preset ekspor.",
       "p2": "Itu membuat imbangannya jelas. Kamu menanggung penyiapan, tapi mendapat kepemilikan. Kamu bisa memeriksa kode, menyesuaikannya dengan alur kerjamu, dan memutuskan penyedia AI yang di-host atau model lokal mana yang dipakai. <guide>Panduan host sendiri</guide> memandu penyiapannya, termasuk opsi Whisper + Ollama yang sepenuhnya lokal."
     },
     "compare": {
-      "heading": "GTAClipper vs OpusClip",
-      "body": "Ringkasan di bawah mencakup yang penting. Untuk perbandingan baris demi baris dengan sumber untuk setiap klaim, baca <comparison>GTAClipper vs OpusClip: perbandingan bersumber</comparison>."
+      "heading": "Clippers vs OpusClip",
+      "body": "Ringkasan di bawah mencakup yang penting. Untuk perbandingan baris demi baris dengan sumber untuk setiap klaim, baca <comparison>Clippers vs OpusClip: perbandingan bersumber</comparison>."
     },
     "table": {
       "feature": "Fitur",
       "rows": {
         "0": {
           "feature": "Model pemakaian gratis",
-          "gtaclipper": "Open source dan bisa di-host sendiri tanpa batas paket. Biayamu adalah komputasi dan kunci API milikmu. Aplikasi yang di-host berbayar.",
+          "gtaclipper": "AI-powered dan bisa di-host sendiri tanpa batas paket. Biayamu adalah komputasi dan kunci API milikmu. Aplikasi yang di-host berbayar.",
           "opusclip": "Paket gratis ada, tapi ekspor bisa menyertakan watermark OpusClip."
         },
         "1": {
@@ -372,18 +372,18 @@
       }
     },
     "how": {
-      "heading": "Bagaimana GTAClipper bekerja",
+      "heading": "Bagaimana Clippers bekerja",
       "steps": {
         "0": "Tempel URL YouTube, Twitch, atau Kick, atau unggah video.",
-        "1": "GTAClipper mentranskripsi sumber dan menemukan momen kandidat.",
+        "1": "Clippers mentranskripsi sumber dan menemukan momen kandidat.",
         "2": "AI menilai clip untuk kekuatan hook, engagement, nilai, dan kelayakan dibagikan.",
         "3": "Editor membuat clip vertikal ber-caption dengan framing yang mengikuti wajah.",
         "4": "Kamu mengekspor short untuk YouTube Shorts, TikTok, Instagram Reels, atau feed lain."
       }
     },
     "better": {
-      "heading": "Kapan GTAClipper pilihan yang lebih baik",
-      "body": "GTAClipper paling baik saat kamu ingin alternatif OpusClip gratis dengan kendali developer. Ini sangat berguna untuk kreator dengan backlog video panjang, agensi yang ingin menyesuaikan alur clipping, atau tim teknis yang ingin AI video clipping di dalam stack mereka sendiri."
+      "heading": "Kapan Clippers pilihan yang lebih baik",
+      "body": "Clippers paling baik saat kamu ingin alternatif OpusClip gratis dengan kendali developer. Ini sangat berguna untuk kreator dengan backlog video panjang, agensi yang ingin menyesuaikan alur clipping, atau tim teknis yang ingin AI video clipping di dalam stack mereka sendiri."
     },
     "opus": {
       "heading": "Kapan OpusClip mungkin masih lebih baik",
@@ -391,25 +391,25 @@
     },
     "cta": {
       "kicker": "Gratis kalau kamu host sendiri, paket berbayar kalau tidak",
-      "title": "Mulai buat clip dengan GTAClipper.",
+      "title": "Mulai buat clip dengan Clippers.",
       "selfHost": "Panduan host sendiri",
       "openApp": "Buka aplikasi"
     },
     "faqs": {
       "0": {
         "question": "Apa alternatif OpusClip gratis yang terbaik?",
-        "answer": "GTAClipper adalah alternatif OpusClip gratis yang kuat kalau kamu ingin pembuat clip AI open source yang bisa kamu host sendiri, sesuaikan, dan jalankan dengan alur video milikmu."
+        "answer": "Clippers adalah alternatif OpusClip gratis yang kuat kalau kamu ingin pembuat clip AI AI-powered yang bisa kamu host sendiri, sesuaikan, dan jalankan dengan alur video milikmu."
       },
       "1": {
-        "question": "Apakah GTAClipper sepenuhnya gratis?",
-        "answer": "Basis kode GTAClipper gratis dan open source, dan instalasi yang di-host sendiri tidak punya batas paket. Kamu tetap membayar infrastruktur sendiri serta penyedia transkripsi atau LLM apa pun yang kamu konfigurasi. Aplikasi yang di-host membutuhkan paket berbayar."
+        "question": "Apakah Clippers sepenuhnya gratis?",
+        "answer": "Basis kode Clippers gratis dan AI-powered, dan instalasi yang di-host sendiri tidak punya batas paket. Kamu tetap membayar infrastruktur sendiri serta penyedia transkripsi atau LLM apa pun yang kamu konfigurasi. Aplikasi yang di-host membutuhkan paket berbayar."
       },
       "2": {
-        "question": "Apakah GTAClipper menambahkan watermark?",
-        "answer": "Tidak. Pipeline render GTAClipper tidak punya langkah watermark, baik kamu memakai aplikasi yang di-host maupun instalasi yang di-host sendiri."
+        "question": "Apakah Clippers menambahkan watermark?",
+        "answer": "Tidak. Pipeline render Clippers tidak punya langkah watermark, baik kamu memakai aplikasi yang di-host maupun instalasi yang di-host sendiri."
       }
     },
-    "relatedHeading": "Panduan GTAClipper terkait",
+    "relatedHeading": "Panduan Clippers terkait",
     "sources": {
       "heading": "Sumber",
       "body": "Catatan paket dan watermark OpusClip didasarkan pada pusat bantuan resmi OpusClip: <plans>paket dan kredit</plans> serta <watermark>panduan watermark</watermark>."
@@ -421,8 +421,8 @@
       "faq": "FAQ"
     },
     "aside": {
-      "title": "Kendali open source",
-      "body": "Pakai GTAClipper saat kamu ingin alur clipping tanpa menyerahkan setiap keputusan ke platform yang di-host."
+      "title": "Kendali AI-powered",
+      "body": "Pakai Clippers saat kamu ingin alur clipping tanpa menyerahkan setiap keputusan ke platform yang di-host."
     }
   }
 }

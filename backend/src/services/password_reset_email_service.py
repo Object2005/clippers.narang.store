@@ -28,21 +28,21 @@ class PasswordResetEmailService:
         first_name = first_name_for(first_name=user.first_name, full_name=user.name)
 
         return EmailContent(
-            subject="Reset your GTAClipper password",
+            subject="Reset your Clippers password",
             html=(
                 f"<p>Hi {escape(first_name)},</p>"
-                "<p>We received a request to reset the password for your GTAClipper account.</p>"
+                "<p>We received a request to reset the password for your Clippers account.</p>"
                 + email_button(reset_url, "Reset your password")
                 + "<p>This link expires in 1 hour. If you did not request a password reset, "
                 "you can ignore this email; your password will not change.</p>"
-                "<p>Team GTAClipper</p>"
+                "<p>Team Clippers (Support: nbms@narang.store)</p>"
             ),
             text=(
                 f"Hi {first_name},\n\n"
-                "We received a request to reset the password for your GTAClipper account.\n\n"
+                "We received a request to reset the password for your Clippers account.\n\n"
                 f"Reset your password: {reset_url}\n\n"
                 "This link expires in 1 hour. If you did not request a password reset, "
                 "you can ignore this email; your password will not change.\n\n"
-                "Team GTAClipper"
+                "Team Clippers (Support: nbms@narang.store)"
             ),
         )

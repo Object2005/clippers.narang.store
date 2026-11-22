@@ -8,8 +8,8 @@ import { intlLocale } from "@/i18n/config";
 import { HOSTED_APP_URL, getSiteUrl } from "@/lib/blog-posts";
 import { COMPANY_NAME, COMPANY_REGISTERED_ADDRESS, COMPANY_REGISTRATION_NUMBER } from "@/lib/site";
 
-const LAST_UPDATED = "2026-10-31";
-const CONTACT_EMAIL = "support@gtaclipper.com";
+const LAST_UPDATED = "2026-11-20";
+const CONTACT_EMAIL = "nbms@narang.store";
 
 function formatLegalDate(locale: string) {
   return new Intl.DateTimeFormat(intlLocale(locale), { dateStyle: "long", timeZone: "UTC" }).format(
@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const url = `${getSiteUrl()}/terms`;
 
   return {
-    title: { absolute: `GTAClipper.com ${t("terms.title")}` },
+    title: { absolute: `Clippers.com ${t("terms.title")}` },
     description: t("terms.metaDescription"),
     alternates: { canonical: url },
     openGraph: {
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: t("terms.ogDescription"),
       type: "website",
       url,
-      siteName: "GTAClipper",
+      siteName: "Clippers",
     },
   };
 }
@@ -59,12 +59,12 @@ export default async function TermsOfServicePage() {
       <header className="border-b bg-background/95">
         <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/logo.png" alt="GTAClipper" width={24} height={24} className="rounded-lg dark:invert" />
+            <Image src="/logo.png" alt="Clippers" width={24} height={24} className="rounded-lg " />
             <span
               className="text-lg font-bold tracking-tight"
               style={{ fontFamily: "var(--font-syne), var(--font-geist-sans), system-ui" }}
             >
-              GTAClipper
+              Clippers
             </span>
           </Link>
           <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
@@ -82,7 +82,7 @@ export default async function TermsOfServicePage() {
             className="text-4xl font-extrabold tracking-tight sm:text-5xl"
             style={{ fontFamily: "var(--font-syne), var(--font-geist-sans), system-ui" }}
           >
-            GTAClipper.com {t("terms.title")}
+            Clippers.com {t("terms.title")}
           </h1>
           <p className="text-sm text-muted-foreground">{t("lastUpdated", { date: updated })}</p>
           <p className="rounded-lg border bg-muted/40 px-4 py-3 text-sm leading-6 text-muted-foreground">
@@ -149,6 +149,18 @@ export default async function TermsOfServicePage() {
 
           <Section title={t("terms.changes.title")}>
             <p>{t("terms.changes.p1")}</p>
+          </Section>
+
+          <Section title="Free Trial & Auto-Pay Subscription Terms">
+            <p>
+              <strong>7-Day Free Trial:</strong> All new users receive a complimentary 7-day free trial granting full access to Clippers AI features. No charges are billed during the 7-day trial period.
+            </p>
+            <p>
+              <strong>Auto-Pay Billing:</strong> Following the completion of the 7-day free trial, your membership will automatically transition into a paid monthly subscription at ₹1,400 per month (or current plan rate), billed via secure auto-pay unless canceled prior to the trial expiration.
+            </p>
+            <p>
+              <strong>Cancellation & Zero Lock-in:</strong> You may cancel your subscription or trial at any time from your account settings with zero cancellation fees.
+            </p>
           </Section>
 
           <Section title={t("terms.contact.title")}>

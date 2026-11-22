@@ -1,5 +1,5 @@
 {
-  "brand": "GTAClipper",
+  "brand": "Clippers",
   "makeYourOwn": "Make your own",
   "unavailableTitle": "This link isn't available",
   "unavailable": "This share link is unavailable",
@@ -8,8 +8,8 @@
   "summary": "{count, plural, one {# clip} other {# clips}} · {duration} of highlights",
   "topVirality": "top virality score",
   "ctaTitle": "Turn your long videos into clips like these.",
-  "ctaBody": "GTAClipper finds the best moments, frames the speaker and writes the captions. Open source and free to self-host.",
-  "try": "Try GTAClipper",
+  "ctaBody": "Clippers finds the best moments, frames the speaker and writes the captions. AI-powered and 7-day free trial.",
+  "try": "Try Clippers",
   "workflowBadge": {
     "series": "Series · {count, plural, one {# part} other {# parts}}",
     "topic": "Topic: {topic}",

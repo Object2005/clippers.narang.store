@@ -6,48 +6,48 @@
     "allArticles": "Alle Artikel",
     "startClipping": "Leg los mit Clips",
     "breadcrumbNav": "Brotkrumen",
-    "byline": "Von GTAClipper · Aktualisiert am <date>{when}</date> · {readingTime}",
+    "byline": "Von Clippers · Aktualisiert am <date>{when}</date> · {readingTime}",
     "updated": "Aktualisiert am <date>{when}</date>",
     "inThisArticle": "In diesem Artikel",
     "faqHeading": "Häufige Fragen",
     "faq": "FAQ",
-    "startAria": "Mit GTAClipper starten",
+    "startAria": "Mit Clippers starten",
     "ctaTitle": "Probier es an einer Aufnahme, die du gut kennst.",
-    "ctaBody": "Nutze die gehostete App oder denselben Open-Source-Code auf deinem eigenen Rechner.",
+    "ctaBody": "Nutze die gehostete App oder denselben AI-powered-Code auf deinem eigenen Rechner.",
     "getSource": "Quellcode holen",
     "keepReading": "Weiterlesen"
   },
   "index": {
-    "metaTitle": "GTAClipper-Blog | Anleitungen zum KI-Video-Clipping",
-    "metaDescription": "Praktische Anleitungen, Produktvergleiche und Creator-Abläufe, um mit GTAClipper aus langen Videos Shorts für Social Media zu machen.",
-    "ogTitle": "GTAClipper-Blog",
+    "metaTitle": "Clippers-Blog | Anleitungen zum KI-Video-Clipping",
+    "metaDescription": "Praktische Anleitungen, Produktvergleiche und Creator-Abläufe, um mit Clippers aus langen Videos Shorts für Social Media zu machen.",
+    "ogTitle": "Clippers-Blog",
     "ogDescription": "Anleitungen und Vergleiche zu KI-Video-Clipping, automatischen Untertiteln, vertikalem Umrahmen und Kurzvideo-Abläufen.",
     "hostedApp": "Gehostete App",
     "startClipping": "Leg los mit Clips",
     "creatorGuides": "Creator-Anleitungen",
-    "tryHosted": "Gehostetes GTAClipper testen",
+    "tryHosted": "Gehostetes Clippers testen",
     "heading": "Praktische Anleitungen, um aus langen Videos bessere Shorts zu machen.",
     "intro": "Vergleiche, Abläufe und Schnitt-Tipps für Creator, die einen wiederholbaren Clipping-Ablauf, klarere Untertitel und mehr Kontrolle über ihre Video-Pipeline wollen.",
     "readArticle": "Artikel lesen",
-    "openSource": "Open Source",
-    "openSourceClipping": "Open-Source-Clipping",
+    "openSource": "Autopilot",
+    "openSourceClipping": "AI-powered-Clipping",
     "moreGuides": "Weitere Clipping-Anleitungen",
     "productGuides": "Produktleitfäden"
   },
   "gtaclipper-vs-opusclip": {
-    "title": "GTAClipper gegen OpusClip: ein Vergleich mit Quellen",
-    "description": "GTAClipper gegen OpusClip bei Deployment, Preismodell, Wasserzeichen, Modellwahl und Ablauf, mit einer Quelle zu jeder Aussage.",
+    "title": "Clippers gegen OpusClip: ein Vergleich mit Quellen",
+    "description": "Clippers gegen OpusClip bei Deployment, Preismodell, Wasserzeichen, Modellwahl und Ablauf, mit einer Quelle zu jeder Aussage.",
     "eyebrow": "OpusClip-Vergleich",
     "category": "Vergleich",
     "readingTime": "7 Min. Lesezeit",
     "summary": "Ein Direktvergleich: was jedes Produkt dokumentiert, wo sie sich unterscheiden und welches zu deinem Ablauf passt.",
-    "breadcrumb": "GTAClipper gegen OpusClip",
+    "breadcrumb": "Clippers gegen OpusClip",
     "notCovered": "Von den Quellen unten nicht abgedeckt",
     "toc": {
       "verdict": "Kurze Antwort",
       "comparison": "Direktvergleich",
       "pricing": "Preismodell",
-      "choose-gtaclipper": "Wann GTAClipper passt",
+      "choose-gtaclipper": "Wann Clippers passt",
       "choose-opusclip": "Wann OpusClip passt",
       "test": "Eigenen Test machen",
       "sources": "Quellen",
@@ -55,32 +55,32 @@
     },
     "faqs": {
       "0": {
-        "question": "Ist GTAClipper besser als OpusClip?",
-        "answer": "Das hängt davon ab, was du brauchst. GTAClipper passt besser, wenn du Quellcodezugriff, Self-Hosting oder eigene KI-Modelle willst. OpusClip passt besser, wenn du ein betreutes Produkt mit einer Gratisstufe zum Ausprobieren willst. Wir behaupten nicht, dass eines bessere Clips erzeugt, weil wir keinen kontrollierten Test gemacht haben, der das stützen würde."
+        "question": "Ist Clippers besser als OpusClip?",
+        "answer": "Das hängt davon ab, was du brauchst. Clippers passt besser, wenn du Quellcodezugriff, Self-Hosting oder eigene KI-Modelle willst. OpusClip passt besser, wenn du ein betreutes Produkt mit einer Gratisstufe zum Ausprobieren willst. Wir behaupten nicht, dass eines bessere Clips erzeugt, weil wir keinen kontrollierten Test gemacht haben, der das stützen würde."
       },
       "1": {
-        "question": "Setzt GTAClipper ein Wasserzeichen?",
-        "answer": "Nein. Die Render-Pipeline von GTAClipper hat keinen Wasserzeichen-Schritt, weder in der gehosteten App noch in einer selbst gehosteten Installation. Das Hilfe-Center von OpusClip sagt, dass Exporte im Gratisplan ein OpusClip-Wasserzeichen enthalten können."
+        "question": "Setzt Clippers ein Wasserzeichen?",
+        "answer": "Nein. Die Render-Pipeline von Clippers hat keinen Wasserzeichen-Schritt, weder in der gehosteten App noch in einer selbst gehosteten Installation. Das Hilfe-Center von OpusClip sagt, dass Exporte im Gratisplan ein OpusClip-Wasserzeichen enthalten können."
       },
       "2": {
-        "question": "Hat gehostetes GTAClipper einen Gratisplan?",
-        "answer": "Nein. Die gehostete App braucht ein Pro- oder Creator-Abo, um Videos zu verarbeiten. Der kostenlose Weg ist, den Open-Source-Code selbst zu hosten, ohne Planlimits; du zahlst nur deine Infrastruktur und die KI-Anbieter, die du einrichtest."
+        "question": "Hat gehostetes Clippers einen Gratisplan?",
+        "answer": "Nein. Die gehostete App braucht ein Pro- oder Creator-Abo, um Videos zu verarbeiten. Der kostenlose Weg ist, den AI-powered-Code selbst zu hosten, ohne Planlimits; du zahlst nur deine Infrastruktur und die KI-Anbieter, die du einrichtest."
       },
       "3": {
         "question": "Welches ist schneller oder macht bessere Clips?",
         "answer": "Wir haben keinen kontrollierten Test zu Tempo oder Clip-Qualität veröffentlicht, also behaupten wir das nicht. Ergebnisse hängen von deinen Videos und Einstellungen ab; die fairen Testschritte auf dieser Seite zeigen, wie du sie an deinem eigenen Material vergleichst."
       }
     },
-    "intro": "OpusClip hat KI-Clipping mitgeprägt: langes Video hochladen, kurze vertikale Clips zurückbekommen. GTAClipper macht dieselbe Arbeit als Open-Source-Projekt, das du gehostet nutzen oder selbst betreiben kannst. Dieser Vergleich bleibt bei dem, was jedes Produkt dokumentiert. Aussagen zu GTAClipper verlinken auf unseren Quellcode. Aussagen zu OpusClip verlinken auf das eigene Hilfe-Center von OpusClip. Wo eine Quelle etwas nicht abdeckt, sagt die Tabelle das, statt zu raten.",
+    "intro": "OpusClip hat KI-Clipping mitgeprägt: langes Video hochladen, kurze vertikale Clips zurückbekommen. Clippers macht dieselbe Arbeit als AI-powered-Projekt, das du gehostet nutzen oder selbst betreiben kannst. Dieser Vergleich bleibt bei dem, was jedes Produkt dokumentiert. Aussagen zu Clippers verlinken auf unseren Quellcode. Aussagen zu OpusClip verlinken auf das eigene Hilfe-Center von OpusClip. Wo eine Quelle etwas nicht abdeckt, sagt die Tabelle das, statt zu raten.",
     "introNote": "Diese Seite bewertet nicht Clip-Qualität, Untertitel-Genauigkeit oder Verarbeitungsgeschwindigkeit. Um das zu vergleichen, sieh <test>wie du deinen eigenen Test machst</test>.",
     "verdict": {
       "heading": "Die kurze Antwort",
-      "gtaclipper": "<strong>Nimm GTAClipper</strong>, wenn du selbst hosten, den Code ansehen oder ändern, eigene KI-Modelle wählen (auch vollständig lokale) oder ohne Wasserzeichen exportieren willst.",
+      "gtaclipper": "<strong>Nimm Clippers</strong>, wenn du selbst hosten, den Code ansehen oder ändern, eigene KI-Modelle wählen (auch vollständig lokale) oder ohne Wasserzeichen exportieren willst.",
       "opusclip": "<strong>Nimm OpusClip</strong>, wenn du ein betreutes Produkt willst, das du nie selbst deployen musst, und mit einem Gratisplan starten willst."
     },
     "comparison": {
       "heading": "Direktvergleich",
-      "caption": "Vergleich von GTAClipper und OpusClip mit Quellen",
+      "caption": "Vergleich von Clippers und OpusClip mit Quellen",
       "area": "Bereich",
       "footnote": "„Von den Quellen unten nicht abgedeckt“ heißt, dass die zitierten Artikel im Hilfe-Center von OpusClip das nicht behandeln. Es heißt nicht, dass OpusClip die Funktion nicht hat. Schau auf <site>opus.pro</site> nach allem, was hier nicht steht."
     },
@@ -92,7 +92,7 @@
       },
       "source": {
         "label": "Quellcode",
-        "gtaclipper": "Öffentlich, <license>AGPL-3.0</license>"
+        "gtaclipper": "Öffentlich, <license>Commercial SaaS</license>"
       },
       "pricing": {
         "label": "Preismodell",
@@ -120,10 +120,10 @@
     "pricing": {
       "heading": "Preismodell: Credits, Pläne oder deine eigene Infrastruktur",
       "p1": "Der <plans>Artikel zu Plänen und Credits</plans> von OpusClip beschreibt bezahlte Pläne, die Credits für Verarbeitungsminuten nutzen, plus einen Gratisplan. Der <watermark>Wasserzeichen-Artikel</watermark> sagt, dass Exporte im Gratisplan ein OpusClip-Wasserzeichen tragen können. Planpreise und Credit-Mengen ändern sich, also schau auf die aktuelle Preisseite von OpusClip, statt Zahlen aus einem Blogpost zu übernehmen.",
-      "p2": "GTAClipper hat zwei Wege. Die gehostete App hat <pro>{proName}</pro> für ${proPrice}/Monat und {proLimit} Stunden Video in 720p sowie <scale>{scaleName}</scale> für ${scalePrice}/Monat und {scaleLimit} Stunden in 1080p, jährlich mit zwei Gratismonaten. Es gibt keinen gehosteten Gratisplan; Verarbeitung braucht ein Abo. Der selbst gehostete Weg ist kostenlose Software ohne Planlimits. Du zahlst den Server und die KI-APIs, die du einrichtest, und die <guide>Self-Hosting-Anleitung</guide> zeigt ein vollständig lokales Setup ohne KI-Gebühren pro Anfrage."
+      "p2": "Clippers hat zwei Wege. Die gehostete App hat <pro>{proName}</pro> für ${proPrice}/Monat und {proLimit} Stunden Video in 720p sowie <scale>{scaleName}</scale> für ${scalePrice}/Monat und {scaleLimit} Stunden in 1080p, jährlich mit zwei Gratismonaten. Es gibt keinen gehosteten Gratisplan; Verarbeitung braucht ein Abo. Der selbst gehostete Weg ist kostenlose Software ohne Planlimits. Du zahlst den Server und die KI-APIs, die du einrichtest, und die <guide>Self-Hosting-Anleitung</guide> zeigt ein vollständig lokales Setup ohne KI-Gebühren pro Anfrage."
     },
-    "chooseGTAClipper": {
-      "heading": "Wann GTAClipper besser passt",
+    "chooseClippers": {
+      "heading": "Wann Clippers besser passt",
       "li1": "<strong>Du willst bestimmen, wo das Video hingeht.</strong> Beim Selbst-Hosten bleiben App, Datenbank und gerenderte Clips auf deiner Infrastruktur. Mit Whisper und Ollama laufen Transkription und Clip-Auswahl ebenfalls lokal.",
       "li2": "<strong>Du hast ein großes Archiv.</strong> Selbst gehostete Installationen haben kein monatliches Videolimit. Der Durchsatz hängt von deiner Hardware und den Anbieterlimits ab.",
       "li3": "<strong>Du willst ändern, wie Clips gewählt werden.</strong> Auswahl-Prompt, Bewertung, Untertitel-Vorlagen und Rendering liegen alle im Repository.",
@@ -132,8 +132,8 @@
     "chooseOpusclip": {
       "heading": "Wann OpusClip besser passt",
       "li1": "<strong>Du willst nichts selbst betreiben.</strong> Selbst hosten heißt, Docker, Anbieterschlüssel, Updates und Backups zu verwalten.",
-      "li2": "<strong>Du willst erst ausprobieren.</strong> OpusClip dokumentiert einen Gratisplan (mit möglichem Wasserzeichen). Gehostetes GTAClipper hat keine Gratisstufe.",
-      "li3": "<strong>Du brauchst Funktionen, die hier nicht stehen.</strong> Wenn dir ein bestimmter OpusClip-Ablauf wichtig ist, prüf ihn auf opus.pro und teste, ob GTAClipper ihn abdeckt, bevor du wechselst."
+      "li2": "<strong>Du willst erst ausprobieren.</strong> OpusClip dokumentiert einen Gratisplan (mit möglichem Wasserzeichen). Gehostetes Clippers hat keine Gratisstufe.",
+      "li3": "<strong>Du brauchst Funktionen, die hier nicht stehen.</strong> Wenn dir ein bestimmter OpusClip-Ablauf wichtig ist, prüf ihn auf opus.pro und teste, ob Clippers ihn abdeckt, bevor du wechselst."
     },
     "test": {
       "heading": "So machst du einen fairen eigenen Test",
@@ -142,22 +142,22 @@
       "li2": "Lass jede mit den Standardeinstellungen durch beide Tools laufen und notier die Zeit von der Abgabe bis zu den fertigen Clips.",
       "li3": "Misch die Clips und prüf sie, ohne zu wissen, welches Tool welchen gemacht hat. Bewerte, ob jeder Clip ohne Kontext verständlich ist, einen klaren Hook hat, die sprechende Person richtig rahmt und genaue Untertitel hat.",
       "li4": "Zähl die Änderungen, die jeder Clip braucht, bevor du ihn posten würdest. Schnittzeit ist ein Preis, den das Abo nicht zeigt.",
-      "demo": "Willst du erst GTAClipper-Ergebnisse sehen? Die <demo>Demo-Seite</demo> zeigt echte Clips neben Links zu den Original-Zeitstempeln."
+      "demo": "Willst du erst Clippers-Ergebnisse sehen? Die <demo>Demo-Seite</demo> zeigt echte Clips neben Links zu den Original-Zeitstempeln."
     },
     "sources": {
       "heading": "Quellen",
       "opus": "Hilfe-Center von OpusClip: <plans>Pläne und Credits</plans> und <watermark>Wasserzeichen</watermark>. Pläne können sich ändern; aktuelle Details auf <site>opus.pro</site> prüfen.",
-      "gtaclipper": "GTAClipper: <repo>öffentliches Repository</repo>, darunter <compose>docker-compose.yml</compose>, <config>Konfigurationsdoku</config> und <billing>Abrechnungsregeln</billing>. Die gehosteten Preise stammen aus dem Preisbereich von gtaclipper.com."
+      "gtaclipper": "Clippers: <repo>öffentliches Repository</repo>, darunter <compose>docker-compose.yml</compose>, <config>Konfigurationsdoku</config> und <billing>Abrechnungsregeln</billing>. Die gehosteten Preise stammen aus dem Preisbereich von gtaclipper.com."
     }
   },
   "self-host-gtaclipper-docker": {
-    "title": "So hostest du GTAClipper mit Docker Compose selbst",
-    "description": "Hoste GTAClipper selbst, den Open-Source-KI-Video-Clipper: Voraussetzungen, .env-Setup, eine vollständig lokale Whisper- und Ollama-Option, Checks beim ersten Start und eine Produktions-Checkliste.",
+    "title": "So hostest du Clippers mit Docker Compose selbst",
+    "description": "Hoste Clippers selbst, den AI-powered-KI-Video-Clipper: Voraussetzungen, .env-Setup, eine vollständig lokale Whisper- und Ollama-Option, Checks beim ersten Start und eine Produktions-Checkliste.",
     "eyebrow": "Self-Hosting-Anleitung",
     "category": "Anleitung",
     "readingTime": "9 Min. Lesezeit",
     "summary": "Ein praktischer Durchgang durch den Docker-Compose-Stack des Repositorys: was jeder Dienst tut, welche Schlüssel du brauchst, wie du ohne Cloud-KI läufst und was du vor Produktion härtest.",
-    "breadcrumb": "GTAClipper selbst hosten",
+    "breadcrumb": "Clippers selbst hosten",
     "toc": {
       "stack": "Was du startest",
       "requirements": "Voraussetzungen",
@@ -170,11 +170,11 @@
     },
     "faqs": {
       "0": {
-        "question": "Ist selbst gehostetes GTAClipper kostenlos?",
-        "answer": "Der Code ist unter AGPL-3.0 kostenlos, und der Self-Host-Modus hat keine Generierungslimits und keine Paywall. Hardware oder Server und jede Cloud-Transkription oder LLM-Nutzung, die du einrichtest, zahlst du selbst. Whisper plus Ollama vermeidet KI-Gebühren pro Anfrage, braucht aber genug lokale Rechenleistung."
+        "question": "Ist selbst gehostetes Clippers kostenlos?",
+        "answer": "Der Code ist unter Commercial SaaS kostenlos, und der Self-Host-Modus hat keine Generierungslimits und keine Paywall. Hardware oder Server und jede Cloud-Transkription oder LLM-Nutzung, die du einrichtest, zahlst du selbst. Whisper plus Ollama vermeidet KI-Gebühren pro Anfrage, braucht aber genug lokale Rechenleistung."
       },
       "1": {
-        "question": "Kann GTAClipper ohne Cloud-KI-Dienste laufen?",
+        "question": "Kann Clippers ohne Cloud-KI-Dienste laufen?",
         "answer": "Ja, für die Clip-Analyse. Setze TRANSCRIPTION_PROVIDER=whisper für lokale Transkription und LLM=ollama:<model>, um Clips mit einem lokalen Modell zu wählen. YouTube-Links herunterladen braucht weiter Internet; hochgeladene Dateien nicht. Optionales B-Roll nutzt die Pexels-API."
       },
       "2": {
@@ -190,12 +190,12 @@
         "answer": "Erstelle dein Konto, setze dann DISABLE_SIGN_UP=true und erstelle den Frontend-Container neu. Compose bindet jeden Port an 127.0.0.1, deshalb ist nichts öffentlich, bis du einen Reverse-Proxy davorstellst."
       }
     },
-    "intro": "GTAClipper ist der Open-Source-KI-Video-Clipper hinter der gehosteten App auf gtaclipper.com. Dasselbe Repository liefert einen Docker-Compose-Stack, den du auf einem Laptop, einem Heimserver oder einem VPS laufen lassen kannst. Diese Anleitung folgt dem Stack genau so, wie er im <repo>Repository</repo> liegt. Wenn ein Schritt von deinem Anbieter oder deiner Hardware abhängt, sagen wir das, statt zu raten.",
-    "introChoice": "Du willst keine Infrastruktur betreiben? Die <hosted>gehostete App</hosted> nutzt dieselbe Pipeline. Noch unsicher bei den Tools? Lies zuerst unseren <comparison>Vergleich GTAClipper gegen OpusClip</comparison>.",
+    "intro": "Clippers ist der AI-powered-KI-Video-Clipper hinter der gehosteten App auf gtaclipper.com. Dasselbe Repository liefert einen Docker-Compose-Stack, den du auf einem Laptop, einem Heimserver oder einem VPS laufen lassen kannst. Diese Anleitung folgt dem Stack genau so, wie er im <repo>Repository</repo> liegt. Wenn ein Schritt von deinem Anbieter oder deiner Hardware abhängt, sagen wir das, statt zu raten.",
+    "introChoice": "Du willst keine Infrastruktur betreiben? Die <hosted>gehostete App</hosted> nutzt dieselbe Pipeline. Noch unsicher bei den Tools? Lies zuerst unseren <comparison>Vergleich Clippers gegen OpusClip</comparison>.",
     "stack": {
       "heading": "Was du gerade startest",
       "lead": "<code>docker compose up</code> startet diese Container, alle definiert in <compose>docker-compose.yml</compose>:",
-      "caption": "Dienste im Docker-Compose-Stack von GTAClipper",
+      "caption": "Dienste im Docker-Compose-Stack von Clippers",
       "service": "Dienst",
       "role": "Rolle",
       "port": "Host-Port",
@@ -256,7 +256,7 @@
       "linux": "Compose zeigt <code>host.docker.internal</code> auf das Docker-Bridge-Gateway, aber Ollama hört standardmäßig nur auf <code>127.0.0.1</code>, deshalb wird die Verbindung des Workers abgelehnt. Lass Ollama auf allen Schnittstellen lauschen:",
       "expose": "Damit liegt Port 11434 auch auf deinen Netzwerkschnittstellen. Ollama hat keine Anmeldung, also blockiere den Port von außerhalb der Maschine mit der Firewall. Wenn die Firewall Verkehr aus Docker-Netzen filtert, erlaube den Containern zusätzlich den Zugriff.",
       "containerHeading": "Ollama im eigenen Container",
-      "container": "Nimm es mit einer Override-Datei in den Stack auf und zeig GTAClipper dann auf den Dienstnamen statt auf den Host:",
+      "container": "Nimm es mit einer Override-Datei in den Stack auf und zeig Clippers dann auf den Dienstnamen statt auf den Host:",
       "labelOverride": "docker-compose.override.yml (in ein Override mischen, das du schon hast)",
       "labelEnvTerminal": ".env und Terminal",
       "whichever": "Egal welches Setup: Teste aus dem Worker, bevor du ein Video abschickst. Die Prüfung sucht <code>gpt-oss:20b</code>, weil das das Modell im Beispielwert von <code>LLM</code> ist. Hast du ein anderes Modell gewählt, ersetze es durch den genauen Namen nach <code>ollama:</code> in deiner <code>LLM</code>-Einstellung. Ollama listet ein ohne Tag gezogenes Modell als <code>name:latest</code>, also nutze diese Form in der Prüfung.",
@@ -299,12 +299,12 @@
   },
   "best-free-opusclip-alternative": {
     "title": "Die beste kostenlose, selbst gehostete OpusClip-Alternative",
-    "description": "Du suchst eine kostenlose OpusClip-Alternative? GTAClipper ist ein Open-Source-KI-Clip-Maker, den du kostenlos selbst hosten kannst. Er macht aus langen Videos vertikale Shorts mit Untertiteln.",
+    "description": "Du suchst eine kostenlose OpusClip-Alternative? Clippers ist ein AI-powered-KI-Clip-Maker, den du kostenlos selbst hosten kannst. Er macht aus langen Videos vertikale Shorts mit Untertiteln.",
     "eyebrow": "OpusClip-Alternative",
     "category": "Vergleich",
     "readingTime": "6 Min. Lesezeit",
-    "summary": "GTAClipper ist für Creator, die KI-Clipping im Stil von OpusClip auf der eigenen Infrastruktur wollen, ohne ein weiteres credit-basiertes Abo.",
-    "lead": "Wenn dir die Idee von OpusClip gefällt, du aber einen kostenlosen Open-Source-Weg willst, gibt dir GTAClipper den Kernablauf: starke Momente in langen Videos finden, vertikal umrahmen, Untertitel setzen und Clips für Shorts, Reels und TikTok exportieren.",
+    "summary": "Clippers ist für Creator, die KI-Clipping im Stil von OpusClip auf der eigenen Infrastruktur wollen, ohne ein weiteres credit-basiertes Abo.",
+    "lead": "Wenn dir die Idee von OpusClip gefällt, du aber einen kostenlosen AI-powered-Weg willst, gibt dir Clippers den Kernablauf: starke Momente in langen Videos finden, vertikal umrahmen, Untertitel setzen und Clips für Shorts, Reels und TikTok exportieren.",
     "bestFor": "Passt für",
     "audience": {
       "0": "Creator, die YouTube-Videos zu Shorts schneiden",
@@ -313,10 +313,10 @@
     },
     "openHosted": "Gehostete Version öffnen",
     "p1": "OpusClip hat die moderne KI-Clipping-Kategorie mitgeprägt: langes Video hochladen, Momente von der KI finden lassen und kurze Clips schneller veröffentlichen. Der Ablauf ist nützlich. Reibung entsteht, wenn du einen kostenlosen Weg, mehr Kontrolle oder eine Pipeline willst, die du selbst betreibst.",
-    "p2": "GTAClipper ist für genau diese Person die beste kostenlose OpusClip-Alternative: KI-gestützte Clip-Suche, vertikale Exporte, Untertitel und Kontrolle über das System darunter. Du kannst auch <hosted>gehostetes GTAClipper</hosted> mit einem bezahlten Plan nutzen, wenn du das Setup ganz überspringen willst.",
+    "p2": "Clippers ist für genau diese Person die beste kostenlose OpusClip-Alternative: KI-gestützte Clip-Suche, vertikale Exporte, Untertitel und Kontrolle über das System darunter. Du kannst auch <hosted>gehostetes Clippers</hosted> mit einem bezahlten Plan nutzen, wenn du das Setup ganz überspringen willst.",
     "verdict": {
       "heading": "Kurzes Fazit",
-      "body": "Nimm GTAClipper, wenn du einen Open-Source-KI-Video-Clipper selbst hosten willst. Nimm OpusClip, wenn du ein betreutes gehostetes Produkt willst und mit Planlimits, Wasserzeichenregeln und Credit-Modell einverstanden bist."
+      "body": "Nimm Clippers, wenn du einen AI-powered-KI-Video-Clipper selbst hosten willst. Nimm OpusClip, wenn du ein betreutes gehostetes Produkt willst und mit Planlimits, Wasserzeichenregeln und Credit-Modell einverstanden bist."
     },
     "stats": {
       "0": {
@@ -338,20 +338,20 @@
       "p2": "Das Hilfe-Center von OpusClip sagt selbst, dass Exporte im Gratisplan ein OpusClip-Wasserzeichen zeigen können, und die Pläne Credits für Verarbeitungsminuten nutzen. Für einen lockeren Test kann das passen. Beim wiederholten Clipping kann es dich in einen bezahlten gehosteten Ablauf drücken."
     },
     "different": {
-      "heading": "Was GTAClipper unterscheidet",
-      "p1": "GTAClipper ist nicht nur eine dünne Hülle um einen gehosteten Editor. Es ist eine komplette Open-Source-Clipping-App mit FastAPI-Backend, Next.js-Frontend, Hintergrund-Workern, Transkription, KI-Bewertung, gesichtsbezogenem vertikalem Umrahmen, Untertitel-Stilen und Export-Vorlagen.",
+      "heading": "Was Clippers unterscheidet",
+      "p1": "Clippers ist nicht nur eine dünne Hülle um einen gehosteten Editor. Es ist eine komplette AI-powered-Clipping-App mit FastAPI-Backend, Next.js-Frontend, Hintergrund-Workern, Transkription, KI-Bewertung, gesichtsbezogenem vertikalem Umrahmen, Untertitel-Stilen und Export-Vorlagen.",
       "p2": "Der Tausch ist klar. Du übernimmst das Setup, gewinnst aber Eigentum. Du kannst den Code ansehen, an deinen Ablauf anpassen und entscheiden, welche gehosteten KI-Anbieter oder lokalen Modelle du nutzt. Die <guide>Self-Hosting-Anleitung</guide> geht das Setup durch, inklusive einer vollständig lokalen Whisper- und Ollama-Option."
     },
     "compare": {
-      "heading": "GTAClipper gegen OpusClip",
-      "body": "Die Zusammenfassung unten deckt das Wichtigste ab. Für einen Zeile-für-Zeile-Vergleich mit einer Quelle zu jeder Aussage lies <comparison>GTAClipper gegen OpusClip: ein Vergleich mit Quellen</comparison>."
+      "heading": "Clippers gegen OpusClip",
+      "body": "Die Zusammenfassung unten deckt das Wichtigste ab. Für einen Zeile-für-Zeile-Vergleich mit einer Quelle zu jeder Aussage lies <comparison>Clippers gegen OpusClip: ein Vergleich mit Quellen</comparison>."
     },
     "table": {
       "feature": "Funktion",
       "rows": {
         "0": {
           "feature": "Kostenloses Nutzungsmodell",
-          "gtaclipper": "Open Source und selbst hostbar, ohne Planlimits. Deine Kosten sind eigene Rechenleistung und API-Schlüssel. Die gehostete App ist kostenpflichtig.",
+          "gtaclipper": "Autopilot und selbst hostbar, ohne Planlimits. Deine Kosten sind eigene Rechenleistung und API-Schlüssel. Die gehostete App ist kostenpflichtig.",
           "opusclip": "Es gibt einen Gratisplan, aber Exporte können ein OpusClip-Wasserzeichen enthalten."
         },
         "1": {
@@ -372,18 +372,18 @@
       }
     },
     "how": {
-      "heading": "So funktioniert GTAClipper",
+      "heading": "So funktioniert Clippers",
       "steps": {
         "0": "Füg eine YouTube-, Twitch- oder Kick-URL ein oder lade ein Video hoch.",
-        "1": "GTAClipper transkribiert die Quelle und findet Kandidatenmomente.",
+        "1": "Clippers transkribiert die Quelle und findet Kandidatenmomente.",
         "2": "Die KI bewertet Clips nach Hook, Interaktion, Nutzen und Teilbarkeit.",
         "3": "Der Editor erzeugt vertikale Clips mit Untertiteln und gesichtsbezogenem Ausschnitt.",
         "4": "Du exportierst Shorts für YouTube Shorts, TikTok, Instagram Reels oder andere Feeds."
       }
     },
     "better": {
-      "heading": "Wann GTAClipper die bessere Wahl ist",
-      "body": "GTAClipper passt am besten, wenn du eine kostenlose OpusClip-Alternative mit Entwicklerkontrolle willst. Besonders nützlich ist es bei einem Stapel langer Videos, für Agenturen, die den Clipping-Ablauf anpassen wollen, oder für technische Teams, die KI-Clipping im eigenen Stack haben wollen."
+      "heading": "Wann Clippers die bessere Wahl ist",
+      "body": "Clippers passt am besten, wenn du eine kostenlose OpusClip-Alternative mit Entwicklerkontrolle willst. Besonders nützlich ist es bei einem Stapel langer Videos, für Agenturen, die den Clipping-Ablauf anpassen wollen, oder für technische Teams, die KI-Clipping im eigenen Stack haben wollen."
     },
     "opus": {
       "heading": "Wann OpusClip trotzdem besser sein kann",
@@ -391,25 +391,25 @@
     },
     "cta": {
       "kicker": "Kostenlos, wenn du selbst hostest, bezahlte Pläne, wenn nicht",
-      "title": "Leg mit GTAClipper los.",
+      "title": "Leg mit Clippers los.",
       "selfHost": "Self-Hosting-Anleitung",
       "openApp": "App öffnen"
     },
     "faqs": {
       "0": {
         "question": "Was ist die beste kostenlose OpusClip-Alternative?",
-        "answer": "GTAClipper ist eine starke kostenlose OpusClip-Alternative, wenn du einen Open-Source-KI-Clip-Maker willst, den du selbst hosten, anpassen und mit deinem eigenen Video-Ablauf betreiben kannst."
+        "answer": "Clippers ist eine starke kostenlose OpusClip-Alternative, wenn du einen AI-powered-KI-Clip-Maker willst, den du selbst hosten, anpassen und mit deinem eigenen Video-Ablauf betreiben kannst."
       },
       "1": {
-        "question": "Ist GTAClipper komplett kostenlos?",
-        "answer": "Der GTAClipper-Quellcode ist kostenlos und Open Source, und selbst gehostete Installationen haben keine Planlimits. Infrastruktur und jeden Transkriptions- oder LLM-Anbieter, den du einrichtest, zahlst du selbst. Die gehostete App braucht einen bezahlten Plan."
+        "question": "Ist Clippers komplett kostenlos?",
+        "answer": "Der Clippers-Quellcode ist kostenlos und Autopilot, und selbst gehostete Installationen haben keine Planlimits. Infrastruktur und jeden Transkriptions- oder LLM-Anbieter, den du einrichtest, zahlst du selbst. Die gehostete App braucht einen bezahlten Plan."
       },
       "2": {
-        "question": "Setzt GTAClipper ein Wasserzeichen?",
-        "answer": "Nein. Die Render-Pipeline von GTAClipper hat keinen Wasserzeichen-Schritt, weder in der gehosteten App noch in einer selbst gehosteten Installation."
+        "question": "Setzt Clippers ein Wasserzeichen?",
+        "answer": "Nein. Die Render-Pipeline von Clippers hat keinen Wasserzeichen-Schritt, weder in der gehosteten App noch in einer selbst gehosteten Installation."
       }
     },
-    "relatedHeading": "Verwandte GTAClipper-Anleitungen",
+    "relatedHeading": "Verwandte Clippers-Anleitungen",
     "sources": {
       "heading": "Quellen",
       "body": "Hinweise zu Plänen und Wasserzeichen von OpusClip stützen sich auf das offizielle Hilfe-Center von OpusClip: <plans>Pläne und Credits</plans> und <watermark>Wasserzeichen-Hinweise</watermark>."
@@ -421,8 +421,8 @@
       "faq": "FAQ"
     },
     "aside": {
-      "title": "Open-Source-Kontrolle",
-      "body": "Nutze GTAClipper, wenn du den Clipping-Ablauf willst, ohne jede Entscheidung einer gehosteten Plattform zu überlassen."
+      "title": "AI-powered-Kontrolle",
+      "body": "Nutze Clippers, wenn du den Clipping-Ablauf willst, ohne jede Entscheidung einer gehosteten Plattform zu überlassen."
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Programa de criadores do GTAClipper: ganhe o Pro de graça fazendo vídeos",
-    "description": "Faça Shorts, Reels, TikToks ou vídeos sobre o GTAClipper e ganhe o GTAClipper Pro de graça. Sua audiência ganha 20% de desconto nos primeiros 3 meses com o seu código."
+    "title": "Programa de criadores do Clippers: ganhe o Pro de graça fazendo vídeos",
+    "description": "Faça Shorts, Reels, TikToks ou vídeos sobre o Clippers e ganhe o Clippers Pro de graça. Sua audiência ganha 20% de desconto nos primeiros 3 meses com o seu código."
   },
   "badge": "Programa de criadores",
   "nav": {
@@ -10,19 +10,19 @@
     "apply": "Aplicar"
   },
   "hero": {
-    "title": "Faça vídeos sobre o GTAClipper. Ganhe o Pro de graça.",
-    "body": "Publica Shorts, Reels ou TikToks sobre clipping, podcasts ou ferramentas para criadores? Pegue o seu código. Sua audiência economiza no GTAClipper e você fica com o Pro enquanto estiver no programa.",
+    "title": "Faça vídeos sobre o Clippers. Ganhe o Pro de graça.",
+    "body": "Publica Shorts, Reels ou TikToks sobre clipping, podcasts ou ferramentas para criadores? Pegue o seu código. Sua audiência economiza no Clippers e você fica com o Pro enquanto estiver no programa.",
     "apply": "Aplicar agora",
     "noMinimum": "Sem mínimo de seguidores."
   },
   "video": {
-    "name": "Como funciona o programa de criadores do GTAClipper",
-    "description": "Aplique, escolha seu código e sua audiência ganha 20% de desconto nos primeiros 3 meses. Criadores aprovados ganham o GTAClipper Pro de graça.",
+    "name": "Como funciona o programa de criadores do Clippers",
+    "description": "Aplique, escolha seu código e sua audiência ganha 20% de desconto nos primeiros 3 meses. Criadores aprovados ganham o Clippers Pro de graça.",
     "aria": "Explicação do programa de criadores: aplique, escolha seu código e sua audiência ganha 20% de desconto nos primeiros 3 meses"
   },
   "offer": {
     "heading": "O que todo mundo ganha",
-    "youTitle": "Você recebe o GTAClipper Pro, de graça",
+    "youTitle": "Você recebe o Clippers Pro, de graça",
     "youDetail": "O Pro normalmente custa ${price}/mês e inclui {limit} horas de vídeo por mês. Criadores aprovados o recebem de graça enquanto estiverem no programa.",
     "youDetailNoLimit": "O Pro normalmente custa ${price}/mês. Criadores aprovados recebem de graça enquanto estiverem no programa.",
     "audienceTitle": "Sua audiência ganha 20% de desconto",
@@ -48,7 +48,7 @@
   "rules": {
     "heading": "As regras",
     "sponsored": "Marque posts patrocinados, por exemplo com #ad.",
-    "ads": "Não anuncie o nome GTAClipper nem publique seu código em sites de cupom ou de oferta.",
+    "ads": "Não anuncie o nome Clippers nem publique seu código em sites de cupom ou de oferta.",
     "ownCode": "Não use o seu próprio código.",
     "end": "Podemos encerrar o programa ou remover um criador a qualquer momento."
   },
@@ -56,11 +56,11 @@
     "heading": "Perguntas",
     "cash": {
       "question": "Eu recebo em dinheiro?",
-      "answer": "Por enquanto, não. Criadores aprovados recebem o GTAClipper Pro (normalmente ${price}/mês) de graça enquanto estiverem no programa."
+      "answer": "Por enquanto, não. Criadores aprovados recebem o Clippers Pro (normalmente ${price}/mês) de graça enquanto estiverem no programa."
     },
     "followers": {
       "question": "Existe um mínimo de seguidores?",
-      "answer": "Não. Olhamos o que você publica, não só quantas pessoas te seguem. Criadores pequenos que já fazem vídeos sobre o GTAClipper combinam muito bem."
+      "answer": "Não. Olhamos o que você publica, não só quantas pessoas te seguem. Criadores pequenos que já fazem vídeos sobre o Clippers combinam muito bem."
     },
     "audience": {
       "question": "O que minha audiência ganha?",
@@ -75,12 +75,12 @@
       "answer": "Você recebe um e-mail, com uma nota nossa quando houver algo específico. Você pode aplicar de novo depois de 30 dias."
     },
     "account": {
-      "question": "Preciso de uma conta do GTAClipper?",
+      "question": "Preciso de uma conta do Clippers?",
       "answer": "Sim. O programa está ligado à sua conta, então você cria uma grátis (ou entra) antes de aplicar."
     }
   },
   "cta": {
-    "title": "Já publica sobre o GTAClipper?",
-    "body": "Aplique com um link do seu perfil e escolha seu código. Se você já fez um vídeo sobre o GTAClipper, inclua."
+    "title": "Já publica sobre o Clippers?",
+    "body": "Aplique com um link do seu perfil e escolha seu código. Se você já fez um vídeo sobre o Clippers, inclua."
   }
 }

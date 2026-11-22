@@ -18,6 +18,30 @@ import { getPrismaClient } from "@/server/prisma";
 
 export type RazorpayPlanId = "pro" | "scale";
 
+export type RazorpayOrder = {
+  id: string;
+  entity: "order";
+  amount: number;
+  amount_paid: number;
+  amount_due: number;
+  currency: string;
+  receipt: string;
+  status: string;
+  notes?: Record<string, string>;
+};
+
+export type RazorpayPayment = {
+  id: string;
+  entity: "payment";
+  amount: number;
+  currency: string;
+  status: "captured" | "authorized" | "failed" | string;
+  order_id?: string;
+  method?: string;
+  email?: string;
+  contact?: string;
+};
+
 export type RazorpaySubscription = {
   id: string;
   plan_id: string;
@@ -40,8 +64,18 @@ export class RazorpayApiError extends Error {
 }
 
 const PLAN_ENV: Record<RazorpayPlanId, Record<BillingInterval, string>> = {
-  pro: { month: "RAZORPAY_PRO_PLAN_ID", year: "RAZORPAY_PRO_ANNUAL_PLAN_ID" },
-  scale: { month: "RAZORPAY_SCALE_PLAN_ID", year: "RAZORPAY_SCALE_ANNUAL_PLAN_ID" },
+  pro: {
+    month: "RAZORPAY_PRO_PLAN_ID",
+    quarter: "RAZORPAY_PRO_QUARTERLY_PLAN_ID",
+    half_year: "RAZORPAY_PRO_HALF_YEARLY_PLAN_ID",
+    year: "RAZORPAY_PRO_ANNUAL_PLAN_ID",
+  },
+  scale: {
+    month: "RAZORPAY_SCALE_PLAN_ID",
+    quarter: "RAZORPAY_SCALE_QUARTERLY_PLAN_ID",
+    half_year: "RAZORPAY_SCALE_HALF_YEARLY_PLAN_ID",
+    year: "RAZORPAY_SCALE_ANNUAL_PLAN_ID",
+  },
 };
 
 /** Statuses that keep the plan: `pending` means Razorpay is still retrying a failed renewal. */
@@ -79,7 +113,7 @@ export function planForRazorpayPlanId(
 ): { plan: RazorpayPlanId; interval: BillingInterval } | null {
   if (!planId) return null;
   for (const plan of Object.keys(PLAN_ENV) as RazorpayPlanId[]) {
-    for (const interval of ["month", "year"] as BillingInterval[]) {
+    for (const interval of ["month", "quarter", "half_year", "year"] as BillingInterval[]) {
       if (razorpayPlanIdFor(plan, interval) === planId) return { plan, interval };
     }
   }
@@ -88,10 +122,25 @@ export function planForRazorpayPlanId(
 
 /** Billing cycles to authorise up front (Razorpay needs a finite count). */
 export function totalCountFor(interval: BillingInterval): number {
-  const name = interval === "year" ? "RAZORPAY_TOTAL_COUNT_YEARLY" : "RAZORPAY_TOTAL_COUNT_MONTHLY";
-  const parsed = Number.parseInt(env(name) ?? "", 10);
-  if (Number.isFinite(parsed) && parsed > 0) return parsed;
-  return interval === "year" ? 5 : 60;
+  switch (interval) {
+    case "quarter": {
+      const parsed = Number.parseInt(env("RAZORPAY_TOTAL_COUNT_QUARTERLY") ?? "", 10);
+      return Number.isFinite(parsed) && parsed > 0 ? parsed : 20;
+    }
+    case "half_year": {
+      const parsed = Number.parseInt(env("RAZORPAY_TOTAL_COUNT_HALF_YEARLY") ?? "", 10);
+      return Number.isFinite(parsed) && parsed > 0 ? parsed : 10;
+    }
+    case "year": {
+      const parsed = Number.parseInt(env("RAZORPAY_TOTAL_COUNT_YEARLY") ?? "", 10);
+      return Number.isFinite(parsed) && parsed > 0 ? parsed : 5;
+    }
+    case "month":
+    default: {
+      const parsed = Number.parseInt(env("RAZORPAY_TOTAL_COUNT_MONTHLY") ?? "", 10);
+      return Number.isFinite(parsed) && parsed > 0 ? parsed : 60;
+    }
+  }
 }
 
 function hmacHex(secret: string, payload: string): string {
@@ -113,6 +162,16 @@ export function verifySubscriptionPaymentSignature(
   secret: string = razorpayKeySecret(),
 ): boolean {
   return safeEqualHex(signature, hmacHex(secret, `${paymentId}|${subscriptionId}`));
+}
+
+/** Signature Checkout returns after paying a standard Razorpay order (UPI, Cards, GPay, Snapmint). */
+export function verifyOrderPaymentSignature(
+  paymentId: string,
+  orderId: string,
+  signature: string | null | undefined,
+  secret: string = razorpayKeySecret(),
+): boolean {
+  return safeEqualHex(signature, hmacHex(secret, `${orderId}|${paymentId}`));
 }
 
 /** `X-Razorpay-Signature` on webhooks: HMAC-SHA256 of the raw body with the webhook secret. */
@@ -152,21 +211,77 @@ async function razorpayRequest<T>(path: string, init: { method: string; body?: u
   return data as T;
 }
 
+export function planPriceInPaise(plan: RazorpayPlanId, interval: BillingInterval): number {
+  if (plan === "scale") {
+    switch (interval) {
+      case "quarter":
+        return 8999 * 100;
+      case "half_year":
+        return 16999 * 100;
+      case "year":
+        return 29999 * 100;
+      case "month":
+      default:
+        return 3499 * 100;
+    }
+  }
+  // Pro plan (default ₹1,400/mo)
+  const monthlyStr = process.env.NEXT_PUBLIC_PRO_PRICE_MONTHLY || "1400";
+  const monthly = Number(monthlyStr) || 1400;
+  switch (interval) {
+    case "quarter":
+      return (Number(process.env.NEXT_PUBLIC_PRO_PRICE_QUARTERLY) || 3999) * 100;
+    case "half_year":
+      return (Number(process.env.NEXT_PUBLIC_PRO_PRICE_HALF_YEARLY) || 7499) * 100;
+    case "year":
+      return (Number(process.env.NEXT_PUBLIC_PRO_PRICE_ANNUAL) || 13999) * 100;
+    case "month":
+    default:
+      return monthly * 100;
+  }
+}
+
+export function createRazorpayOrder(input: {
+  amount: number;
+  currency?: string;
+  receipt?: string;
+  notes?: Record<string, string>;
+}): Promise<RazorpayOrder> {
+  return razorpayRequest<RazorpayOrder>("/orders", {
+    method: "POST",
+    body: {
+      amount: input.amount,
+      currency: input.currency ?? "INR",
+      receipt: input.receipt ?? `clp_${Date.now()}`,
+      notes: input.notes,
+    },
+  });
+}
+
+export function fetchRazorpayPayment(id: string): Promise<RazorpayPayment> {
+  return razorpayRequest<RazorpayPayment>(`/payments/${encodeURIComponent(id)}`, { method: "GET" });
+}
+
 export function createRazorpaySubscription(input: {
   planId: string;
   totalCount: number;
   userId: string;
   email: string;
+  startAt?: number;
 }): Promise<RazorpaySubscription> {
+  const body: Record<string, unknown> = {
+    plan_id: input.planId,
+    total_count: input.totalCount,
+    quantity: 1,
+    customer_notify: 1,
+    notes: { user_id: input.userId, email: input.email, app: "gtaclipper" },
+  };
+  if (input.startAt) {
+    body.start_at = input.startAt;
+  }
   return razorpayRequest<RazorpaySubscription>("/subscriptions", {
     method: "POST",
-    body: {
-      plan_id: input.planId,
-      total_count: input.totalCount,
-      quantity: 1,
-      customer_notify: 1,
-      notes: { user_id: input.userId, email: input.email, app: "gtaclipper" },
-    },
+    body,
   });
 }
 
@@ -185,7 +300,7 @@ function fromUnix(seconds: number | null | undefined): Date | null {
   return typeof seconds === "number" && Number.isFinite(seconds) && seconds > 0 ? new Date(seconds * 1000) : null;
 }
 
-async function sendSubscriptionEmail(userId: string, event: "subscribed" | "unsubscribed") {
+export async function sendSubscriptionEmail(userId: string, event: "subscribed" | "unsubscribed") {
   try {
     const response = await fetchBackend("/billing/subscription-email", {
       method: "POST",

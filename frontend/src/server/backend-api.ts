@@ -86,6 +86,12 @@ export function createProxyResponse(
 ) {
   const responseHeaders = new Headers();
   for (const headerName of forwardedHeaders) {
+    // Never forward upstream content-length unless it is a partial range response,
+    // because fetch auto-decompresses payloads (e.g. gzip), making the body size
+    // larger than the upstream compressed content-length header.
+    if (headerName === "content-length" && !upstream.headers.get("content-range")) {
+      continue;
+    }
     const value = upstream.headers.get(headerName);
     if (value) {
       responseHeaders.set(headerName, value);

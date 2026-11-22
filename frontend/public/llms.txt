@@ -39,15 +39,13 @@ GTAClipper can be used as a hosted web application, as a native iOS app, or self
 ## Important qualifications
 
 - Virality scores prioritize candidates; they do not guarantee audience performance.
-- The source code is free, but self-hosters provide their own infrastructure and any paid transcription or model-provider usage.
-- The hosted service requires a paid plan (Pro or Scale) to process videos; self-hosted installs have no plan limits.
+- Clippers offers a 7-day free trial on all plans, followed by auto-pay monthly subscriptions.
 - Users should process only videos they own or have permission to repurpose.
-- Product capabilities and pricing can change; use the canonical website and repository for current details.
+- Product capabilities and pricing can change; use the canonical website for current details.
 
 ## Publisher
 
-- Name: GTAClipper Team
-- Website: https://www.gtaclipper.com/
-- Source: https://github.com/V413havai/GTAClipper
-- Contact: support@gtaclipper.com
-- Last reviewed: 2026-10-05
+- Name: Clippers (Owned & Operated by Aashray Narang)
+- Website: https://www.clippers.ai/
+- Contact: nbms@narang.store
+- Last reviewed: 2026-11-20

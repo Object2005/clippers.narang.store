@@ -13,10 +13,16 @@ const TTL_MS = 90 * 24 * 60 * 60 * 1000;
 
 type StoredCode = { code: string; saved_at: string };
 
+const INVALID_LEGACY_CODES = new Set(["FREE100", "VIP100", "APPLE23", "CHRISTMAS100", "NEWYEAR100"]);
+
 export function getStoredCreatorCode(): string | null {
   try {
     const stored = JSON.parse(window.localStorage.getItem(STORAGE_KEY) ?? "null") as StoredCode | null;
     if (!stored?.code || Date.now() - new Date(stored.saved_at).getTime() > TTL_MS) return null;
+    if (INVALID_LEGACY_CODES.has(stored.code.toUpperCase())) {
+      clearCreatorCode();
+      return null;
+    }
     return stored.code;
   } catch {
     return null;

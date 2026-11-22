@@ -9,7 +9,9 @@ async function requireAdmin() {
     return { error: NextResponse.json({ error: "Unauthorized" }, { status: 401 }) };
   }
 
-  const isAdmin = Boolean((session.user as { is_admin?: boolean }).is_admin);
+  const userEmail = session.user.email || "";
+  const isHead = userEmail === "narangaashray98@gmail.com" || userEmail === "narangaashray98@gamil.com";
+  const isAdmin = Boolean((session.user as { is_admin?: boolean }).is_admin) && isHead;
 
   if (!isAdmin) {
     return { error: NextResponse.json({ error: "Forbidden" }, { status: 403 }) };

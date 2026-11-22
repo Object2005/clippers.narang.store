@@ -77,7 +77,11 @@ export default async function AdminPage({
     );
   }
 
-  const isAdmin = Boolean((session.user as { is_admin?: boolean }).is_admin);
+  const userEmail = session.user?.email || "";
+  const isHeadAdminEmail =
+    userEmail === "narangaashray98@gmail.com" || userEmail === "narangaashray98@gamil.com";
+  const isAdmin =
+    Boolean((session.user as { is_admin?: boolean }).is_admin) && isHeadAdminEmail;
 
   if (!isAdmin) {
     return <Gate title={t("gate.title")} message={t("gate.notAdmin")} />;

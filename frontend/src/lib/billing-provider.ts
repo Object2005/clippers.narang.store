@@ -5,6 +5,45 @@
  */
 
 export type BillingProvider = "stripe" | "razorpay";
+export type SupportedCurrency = "INR" | "USD";
+
+export function detectUserCurrency(): SupportedCurrency {
+  if (typeof window === "undefined") {
+    return process.env.NEXT_PUBLIC_CURRENCY_SYMBOL === "₹" ? "INR" : "USD";
+  }
+  try {
+    const saved = localStorage.getItem("gtaclipper_currency") as SupportedCurrency;
+    if (saved === "INR" || saved === "USD") return saved;
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (tz && (tz === "Asia/Kolkata" || tz === "Asia/Calcutta")) {
+      return "INR";
+    }
+    const langs = navigator.languages || [navigator.language];
+    if (langs.some((l) => l.includes("-IN") || l.startsWith("hi"))) {
+      return "INR";
+    }
+  } catch {
+    // fallback
+  }
+  return "USD";
+}
+
+export function setUserCurrency(currency: SupportedCurrency): void {
+  if (typeof window !== "undefined") {
+    try {
+      localStorage.setItem("gtaclipper_currency", currency);
+      window.dispatchEvent(new Event("currency_changed"));
+    } catch {}
+  }
+}
+
+export function currencySymbolFor(currency: SupportedCurrency): string {
+  return currency === "INR" ? "₹" : "$";
+}
+
+export function paymentProviderFor(currency: SupportedCurrency): BillingProvider {
+  return currency === "INR" ? "razorpay" : "stripe";
+}
 
 export function billingProvider(): BillingProvider {
   return process.env.NEXT_PUBLIC_BILLING_PROVIDER?.trim().toLowerCase() === "razorpay"
@@ -17,13 +56,14 @@ export function razorpayBillingEnabled(): boolean {
 }
 
 /** Symbol shown before prices, e.g. "$" or "₹". */
-export function currencySymbol(): string {
+export function currencySymbol(currency?: SupportedCurrency): string {
+  if (currency) return currencySymbolFor(currency);
   return process.env.NEXT_PUBLIC_CURRENCY_SYMBOL?.trim() || "$";
 }
 
-/** `price` with the currency symbol in front, e.g. "₹799". */
-export function formatPrice(price: string | number): string {
-  return `${currencySymbol()}${price}`;
+/** `price` with the currency symbol in front, e.g. "₹799" or "$19". */
+export function formatPrice(price: string | number, currency?: SupportedCurrency): string {
+  return `${currencySymbol(currency)}${price}`;
 }
 
 /** Yearly plans are offered unless NEXT_PUBLIC_ANNUAL_BILLING=false. */

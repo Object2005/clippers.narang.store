@@ -1,7 +1,7 @@
 {
   "title": "Settings",
   "intro": "Defaults for new generations, notifications and your plan.",
-  "languageDescription": "The language used across GTAClipper.",
+  "languageDescription": "The language used across Clippers.",
   "signInRequired": {
     "title": "Sign In Required",
     "body": "You need to sign in to access your settings",
@@ -73,7 +73,7 @@
     "socialTitle": "Social accounts",
     "socialDescription": "Connect YouTube, TikTok and Instagram to publish clips and track performance",
     "creatorTitle": "Creator program",
-    "creatorDescription": "Make videos about GTAClipper, get Pro free and a code for your audience"
+    "creatorDescription": "Make videos about Clippers, get Pro free and a code for your audience"
   },
   "save": {
     "saved": "Preferences saved successfully!",
@@ -88,7 +88,7 @@
   },
   "apiKeys": {
     "title": "Agents & API",
-    "intro": "Let Claude, Cursor and other AI agents clip videos for you through the <brand>GTAClipper MCP server</brand>, or call the REST API from your own code. Treat keys like passwords; they grant full access to your account.",
+    "intro": "Let Claude, Cursor and other AI agents clip videos for you through the <brand>Clippers MCP server</brand>, or call the REST API from your own code. Treat keys like passwords; they grant full access to your account.",
     "docs": {
       "agentTitle": "Connect an agent",
       "agentDescription": "Set up the MCP server in Claude, Cursor and other MCP clients.",
@@ -147,7 +147,7 @@
   },
   "creator": {
     "title": "Creator program",
-    "intro": "Making videos about GTAClipper? Get your own code: your audience gets <em>20% off their first 3 months</em>, and you get GTAClipper Pro for free.",
+    "intro": "Making videos about Clippers? Get your own code: your audience gets <em>20% off their first 3 months</em>, and you get Clippers Pro for free.",
     "howItWorks": "How it works",
     "signIn": "Create a free account or sign in to apply to the creator program.",
     "createAccount": "Create account",
@@ -194,13 +194,13 @@
     },
     "profileLabel": "Profile link",
     "profilePlaceholder": "https://www.tiktok.com/@you",
-    "videoLabel": "A video you made about GTAClipper",
+    "videoLabel": "A video you made about Clippers",
     "optional": "(optional)",
     "videoPlaceholder": "https://",
-    "planLabel": "How will you promote GTAClipper?",
+    "planLabel": "How will you promote Clippers?",
     "termsTitle": "Program terms",
     "termSponsored": "Mark sponsored posts as such (for example #ad).",
-    "termAds": "Don't run ads on the GTAClipper name or post your code on coupon or deal sites.",
+    "termAds": "Don't run ads on the Clippers name or post your code on coupon or deal sites.",
     "termOwn": "Don't use your own code.",
     "termEnd": "We can end the program or remove a creator at any time.",
     "agree": "I agree to the program terms",

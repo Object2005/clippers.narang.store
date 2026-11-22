@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "GTAClipper – Recortador de video con IA de código abierto para Shorts",
+    "title": "Clippers – Recortador de video con IA de código abierto para Shorts",
     "description": "Convierte videos largos y VODs de Twitch o Kick en YouTube Shorts, TikToks y Reels con subtítulos, recorte con IA de código abierto, puntuación de viralidad y encuadres 9:16 centrados en el rostro.",
     "openGraphDescription": "Convierte videos largos y VODs de Twitch o Kick en YouTube Shorts, TikToks y Reels con subtítulos y recorte con IA de código abierto.",
     "twitterDescription": "Recorte con IA de código abierto, puntuación de viralidad, subtítulos y encuadres verticales centrados en el rostro.",
@@ -19,7 +19,7 @@
       "featureExports": "Exportaciones para YouTube Shorts, TikTok e Instagram Reels",
       "featureSelfHost": "Autoalojamiento de código abierto",
       "offerCategory": "Edición de código abierto autoalojada",
-      "ios": "La app de GTAClipper para iOS: convierte videos largos en shorts verticales con subtítulos desde tu iPhone.",
+      "ios": "La app de Clippers para iOS: convierte videos largos en shorts verticales con subtítulos desde tu iPhone.",
       "website": "Recorte de video con IA de código abierto para contenido de formato corto."
     }
   },
@@ -44,27 +44,27 @@
   "related": {
     "continueExploring": "Sigue explorando",
     "keepReading": "Sigue leyendo",
-    "relatedGuides": "Guías relacionadas de GTAClipper",
+    "relatedGuides": "Guías relacionadas de Clippers",
     "read": "Leer"
   },
   "links": {
     "blog_tiktok_publishing_is_live": {
       "eyebrow": "Product update",
-      "title": "TikTok publishing is now live in GTAClipper",
+      "title": "TikTok publishing is now live in Clippers",
       "label": "TikTok publishing",
       "description": "Connect TikTok, publish to TikTok and YouTube together on the web, and schedule ahead on Creator."
     },
     "demo": {
       "label": "Demo",
       "eyebrow": "Demo",
-      "title": "Mira clips reales que GTAClipper creó a partir de un video largo",
+      "title": "Mira clips reales que Clippers creó a partir de un video largo",
       "description": "Mira el resultado y salta a cada momento en el video original."
     },
     "ai_video_clipper": {
       "label": "Recortador de video con IA",
       "eyebrow": "Recorte de video con IA",
       "title": "Recortador de video con IA para Shorts, Reels y TikTok",
-      "description": "Cómo GTAClipper encuentra momentos, puntúa candidatos, reencuadra rostros y agrega subtítulos."
+      "description": "Cómo Clippers encuentra momentos, puntúa candidatos, reencuadra rostros y agrega subtítulos."
     },
     "youtube_shorts_clipper": {
       "label": "Recortador de YouTube Shorts",
@@ -81,13 +81,13 @@
     "blog_self_host_gtaclipper_docker": {
       "label": "Guía de autoalojamiento",
       "eyebrow": "Guía de autoalojamiento",
-      "title": "Autoaloja GTAClipper con Docker Compose",
+      "title": "Autoaloja Clippers con Docker Compose",
       "description": "Requisitos, variables de entorno, primer arranque, una instalación local completa y revisiones de producción."
     },
     "blog_gtaclipper_vs_opusclip": {
-      "label": "GTAClipper vs OpusClip",
+      "label": "Clippers vs OpusClip",
       "eyebrow": "Comparación",
-      "title": "GTAClipper vs OpusClip: una comparación con fuentes",
+      "title": "Clippers vs OpusClip: una comparación con fuentes",
       "description": "Modelo de precios, despliegue, marcas de agua y flujo de trabajo, con cada afirmación enlazada a una fuente."
     },
     "blog_best_free_opusclip_alternative": {
@@ -157,9 +157,9 @@
       "description": "Build a distinct batch, review each clip, and verify scheduled publication."
     },
     "blog_open_source_video_clippers": {
-      "eyebrow": "Open-source comparison",
-      "title": "Compare GTAClipper, Clips AI, and Auto-Editor",
-      "label": "Open-source video clippers",
+      "eyebrow": "AI-powered comparison",
+      "title": "Compare Clippers, Clips AI, and Auto-Editor",
+      "label": "AI-powered video clippers",
       "description": "Choose an app, Python library, or command-line tool for the editing job you need."
     },
     "faq": {
@@ -186,13 +186,13 @@
     "badge": "Código abierto y autoalojable.",
     "titleLine1": "Un video largo.",
     "titleLine2": "Una semana de shorts.",
-    "body": "GTAClipper encuentra los momentos que vale la pena publicar en tus videos, VODs y archivos, los reencuadra a 9:16 con subtítulos sincronizados palabra por palabra y los programa en YouTube Shorts.",
+    "body": "Clippers encuentra los momentos que vale la pena publicar en tus videos, VODs y archivos, los reencuadra a 9:16 con subtítulos sincronizados palabra por palabra y los programa en YouTube Shorts.",
     "startClipping": "Empieza a recortar",
     "useHosted": "Usar la app alojada",
     "viewSource": "Ver el código",
-    "appStoreAria": "Descarga GTAClipper en el App Store",
+    "appStoreAria": "Descarga Clippers en el App Store",
     "appStoreAlt": "Descargar en el App Store",
-    "productHuntAlt": "GTAClipper - Recortador de video con IA de código abierto: videos largos en shorts virales | Product Hunt",
+    "productHuntAlt": "Clippers - Recortador de video con IA de código abierto: videos largos en shorts virales | Product Hunt",
     "sources": {
       "upload": "Tus propios archivos",
       "label": "Recorta desde"
@@ -208,7 +208,7 @@
       "scheduled": "Programado",
       "steps": {
         "source": "Tu video largo",
-        "clip": "El clip que encontró GTAClipper",
+        "clip": "El clip que encontró Clippers",
         "post": "Programado en YouTube"
       },
       "longForm": "Video largo",
@@ -295,7 +295,7 @@
   "editor": {
     "eyebrow": "Editor",
     "title": "Un editor completo, incluido",
-    "body": "Cada clip se abre en un estudio pensado para video corto. Recorta, corrige una palabra, cambia el estilo de los subtítulos, reencuadra y exporta sin salir de GTAClipper.",
+    "body": "Cada clip se abre en un estudio pensado para video corto. Recorta, corrige una palabra, cambia el estilo de los subtítulos, reencuadra y exporta sin salir de Clippers.",
     "tryIt": "Esta vista previa funciona. Pulsa las pestañas, cambia el encuadre y mueve los controles.",
     "points": {
       "timeline": {
@@ -335,7 +335,7 @@
   "publish": {
     "eyebrow": "Nuevo: publicación",
     "title": "Recorta una vez. Publica toda la semana.",
-    "body": "Conecta tu canal de YouTube o tu cuenta de TikTok y programa cada clip a tu ritmo. Elige una hora, revisa el título y la descripción que propone la IA y GTAClipper lo publica por ti.",
+    "body": "Conecta tu canal de YouTube o tu cuenta de TikTok y programa cada clip a tu ritmo. Elige una hora, revisa el título y la descripción que propone la IA y Clippers lo publica por ti.",
     "platforms": {
       "youtube": "YouTube Shorts",
       "tiktok": "TikTok",
@@ -356,7 +356,7 @@
       },
       "learn": {
         "title": "Aprende lo que ve tu audiencia",
-        "description": "Las visualizaciones vuelven a GTAClipper, así que las siguientes selecciones se inclinan hacia lo que funciona en tu canal."
+        "description": "Las visualizaciones vuelven a Clippers, así que las siguientes selecciones se inclinan hacia lo que funciona en tu canal."
       }
     },
     "plan": "Programar está incluido en Creator. Publicar al momento funciona con Pro.",
@@ -424,10 +424,10 @@
     "items": {
       "sources": {
         "question": "¿Qué videos puedo recortar?",
-        "answer": "Videos de YouTube, VODs o clips de Twitch y Kick, y archivos que subas tú. Pega un enlace o arrastra una grabación, y GTAClipper se encarga del resto."
+        "answer": "Videos de YouTube, VODs o clips de Twitch y Kick, y archivos que subas tú. Pega un enlace o arrastra una grabación, y Clippers se encarga del resto."
       },
       "selection": {
-        "question": "¿Cómo elige GTAClipper los clips?",
+        "question": "¿Cómo elige Clippers los clips?",
         "answer": "Transcribe el video palabra por palabra y luego un modelo de IA lee toda la transcripción y elige momentos que se sostienen solos. Cada uno se puntúa por gancho, interacción, valor y compartibilidad, y después puedes recortar, dividir o unir cualquier clip."
       },
       "minutes": {
@@ -435,20 +435,20 @@
         "answer": "Los planes se miden en minutos de video original, no en clips. Pro incluye {proHours} horas al mes y Creator {creatorHours} horas. Un video de 30 minutos usa 30 minutos, salgan los clips que salgan. El saldo se renueva cada mes, también en los planes anuales."
       },
       "publishing": {
-        "question": "¿GTAClipper puede publicar en TikTok e Instagram?",
+        "question": "¿Clippers puede publicar en TikTok e Instagram?",
         "answer": "Sí, puedes publicar directamente en TikTok y YouTube Shorts, o programar publicaciones con Creator. La publicación en Instagram llegará pronto. Mientras tanto, descarga los clips con el ajuste de exportación para Reels y súbelos tú a Instagram."
       },
       "watermark": {
         "question": "¿Los clips llevan marca de agua?",
-        "answer": "No. GTAClipper nunca añade marca de agua, ni en los planes alojados ni si lo alojas tú."
+        "answer": "No. Clippers nunca añade marca de agua, ni en los planes alojados ni si lo alojas tú."
       },
       "languages": {
-        "question": "¿Qué idiomas admite GTAClipper?",
-        "answer": "GTAClipper admite más de 99 idiomas hablados mediante Universal-2, como inglés, español, portugués, alemán, francés, chino, japonés, hindi, árabe e indonesio. El idioma se detecta automáticamente y los clips y subtítulos siguen el idioma original. Consulta la lista completa y las limitaciones en las preguntas frecuentes."
+        "question": "¿Qué idiomas admite Clippers?",
+        "answer": "Clippers admite más de 99 idiomas hablados mediante Universal-2, como inglés, español, portugués, alemán, francés, chino, japonés, hindi, árabe e indonesio. El idioma se detecta automáticamente y los clips y subtítulos siguen el idioma original. Consulta la lista completa y las limitaciones en las preguntas frecuentes."
       },
       "selfHost": {
         "question": "¿De verdad es gratis autoalojarlo?",
-        "answer": "Sí. GTAClipper es de código abierto bajo AGPL-3.0 y funciona con Docker Compose en tu propia máquina. Solo pagas los proveedores de transcripción e IA que elijas, si usas alguno."
+        "answer": "Sí. Clippers es de código abierto bajo Commercial SaaS y funciona con Docker Compose en tu propia máquina. Solo pagas los proveedores de transcripción e IA que elijas, si usas alguno."
       },
       "cancel": {
         "question": "¿Puedo cancelar cuando quiera?",
@@ -457,32 +457,32 @@
     }
   },
   "openSource": {
-    "badge": "Licencia AGPL-3.0",
+    "badge": "Licencia Commercial SaaS",
     "title": "Hecho en público",
     "body": "Totalmente de código abierto. Autoalója en tu infraestructura, aporta funciones o haz un fork y adáptalo.",
     "commandLabel": "autoalojar",
     "comment": "# agrega un proveedor de transcripción y de LLM en .env",
     "facts": {
-      "license": "AGPL-3.0, con cada línea en GitHub",
+      "license": "Commercial SaaS, con cada línea en GitHub",
       "docker": "Un solo comando de Docker Compose para ejecutarlo tú mismo",
       "models": "Usa tus propios modelos: Gemini, OpenAI, Anthropic u Ollama"
     },
-    "ready": "GTAClipper está funcionando en localhost:3107"
+    "ready": "Clippers está funcionando en localhost:3107"
   },
   "guides": {
     "eyebrow": "Guías y comparaciones",
     "title": "Aprende el flujo completo de recorte",
-    "body": "Páginas prácticas y con fuentes para elegir un recortador de video, autoalojar GTAClipper y convertir grabaciones largas en contenido corto.",
+    "body": "Páginas prácticas y con fuentes para elegir un recortador de video, autoalojar Clippers y convertir grabaciones largas en contenido corto.",
     "read": "Leer la guía"
   },
   "cta": {
     "title": "Tu próximo video ya es una semana de contenido.",
-    "body": "Pega un enlace y mira lo que encuentra GTAClipper. Usa la app alojada o aloja gratis la versión de código abierto."
+    "body": "Pega un enlace y mira lo que encuentra Clippers. Usa la app alojada o aloja gratis la versión de código abierto."
   },
   "faqPage": {
     "title": "Idiomas, subtítulos y clips",
     "metaTitle": "Preguntas frecuentes: idiomas y procesamiento de vídeo",
-    "intro": "Encuentra el idioma de tu vídeo y resuelve tus dudas sobre transcripciones, subtítulos y cómo GTAClipper procesa tus vídeos.",
+    "intro": "Encuentra el idioma de tu vídeo y resuelve tus dudas sobre transcripciones, subtítulos y cómo Clippers procesa tus vídeos.",
     "topics": "Temas de preguntas frecuentes",
     "sections": {
       "languages": "Idiomas compatibles",
@@ -490,7 +490,7 @@
       "general": "Primeros pasos y planes"
     },
     "languageBadge": "Más de 99 idiomas hablados",
-    "languageIntro": "La aplicación alojada utiliza AssemblyAI Universal-2 para transcribir los idiomas y variantes regionales que aparecen abajo. GTAClipper utiliza la transcripción para encontrar clips y generar subtítulos en el idioma original.",
+    "languageIntro": "La aplicación alojada utiliza AssemblyAI Universal-2 para transcribir los idiomas y variantes regionales que aparecen abajo. Clippers utiliza la transcripción para encontrar clips y generar subtítulos en el idioma original.",
     "searchLabel": "Busca tu idioma",
     "searchPlaceholder": "Busca en tu idioma o en inglés…",
     "resultCount": "{count} de {total} idiomas y variantes",
@@ -507,8 +507,8 @@
         "answer": "No. La aplicación alojada detecta automáticamente el idioma hablado de cada vídeo. Cambiar el idioma de la interfaz no cambia la transcripción. Una voz clara con poco ruido de fondo facilita una detección correcta."
       },
       "translation": {
-        "question": "¿Puede GTAClipper traducir o doblar mi vídeo?",
-        "answer": "GTAClipper genera transcripciones y subtítulos en el idioma hablado del vídeo. La traducción automática de subtítulos y el doblaje no forman parte del flujo de creación de clips actual. Puedes corregir el texto de los subtítulos en el editor antes de exportar."
+        "question": "¿Puede Clippers traducir o doblar mi vídeo?",
+        "answer": "Clippers genera transcripciones y subtítulos en el idioma hablado del vídeo. La traducción automática de subtítulos y el doblaje no forman parte del flujo de creación de clips actual. Puedes corregir el texto de los subtítulos en el editor antes de exportar."
       },
       "mixed": {
         "question": "¿Qué ocurre si un vídeo cambia de idioma?",

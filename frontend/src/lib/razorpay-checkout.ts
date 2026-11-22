@@ -3,15 +3,19 @@
 /** Options returned by /api/billing/checkout when billing runs on Razorpay. */
 export type RazorpayCheckoutOptions = {
   key: string;
-  subscription_id: string;
+  order_id?: string;
+  subscription_id?: string;
+  amount?: number;
+  currency?: string;
   name: string;
   description: string;
-  prefill: { email: string; name?: string };
+  prefill: { email: string; name?: string; contact?: string };
 };
 
 type RazorpaySuccess = {
   razorpay_payment_id: string;
-  razorpay_subscription_id: string;
+  razorpay_subscription_id?: string;
+  razorpay_order_id?: string;
   razorpay_signature: string;
 };
 
@@ -45,19 +49,21 @@ function loadRazorpay(): Promise<RazorpayConstructor> {
 }
 
 /**
- * Opens Razorpay Checkout for the subscription and resolves once the payment
- * is verified by the server. Rejects if the customer closes it or it fails.
+ * Opens Razorpay Checkout for orders (UPI, Snapmint, Cards, Netbanking) or subscriptions
+ * and resolves once the payment is verified by the server. Rejects if the customer closes it or it fails.
  */
 export async function openRazorpayCheckout(options: RazorpayCheckoutOptions): Promise<void> {
   const Razorpay = await loadRazorpay();
   await new Promise<void>((resolve, reject) => {
-    const checkout = new Razorpay({
+    const config: Record<string, unknown> = {
       key: options.key,
-      subscription_id: options.subscription_id,
-      name: options.name,
+      name: options.name || "Clippers",
       description: options.description,
       prefill: options.prefill,
       theme: { color: "#111111" },
+      modal: {
+        ondismiss: () => reject(new Error("Payment was cancelled.")),
+      },
       handler: (response: RazorpaySuccess) => {
         fetch("/api/billing/razorpay/verify", {
           method: "POST",
@@ -67,14 +73,26 @@ export async function openRazorpayCheckout(options: RazorpayCheckoutOptions): Pr
           .then(async (verify) => {
             if (verify.ok) return resolve();
             const data: { error?: string } = await verify.json().catch(() => ({}));
-            reject(new Error(data.error || "We couldn't confirm the payment. If you were charged, it will activate shortly."));
+            reject(new Error(data.error || "We couldn't confirm the payment. If you were charged, please contact nbms@narang.store."));
           })
-          .catch(() => reject(new Error("We couldn't confirm the payment. If you were charged, it will activate shortly.")));
+          .catch(() => reject(new Error("We couldn't confirm the payment. If you were charged, please contact nbms@narang.store.")));
       },
-      modal: {
-        ondismiss: () => reject(new Error("Payment was cancelled.")),
-      },
-    });
+    };
+
+    if (options.subscription_id) {
+      config.subscription_id = options.subscription_id;
+    }
+    if (options.order_id) {
+      config.order_id = options.order_id;
+    }
+    if (options.amount) {
+      config.amount = options.amount;
+    }
+    if (options.currency) {
+      config.currency = options.currency;
+    }
+
+    const checkout = new Razorpay(config);
     // A failed attempt keeps the modal open so the customer can retry; closing it rejects above.
     checkout.open();
   });

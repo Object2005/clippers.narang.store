@@ -79,7 +79,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   // loaded — otherwise the page remounts and re-runs its initial fetches.
   const user = session?.user;
   useAppTheme(Boolean(user));
-  const admin = Boolean((user as { is_admin?: boolean } | undefined)?.is_admin);
+  const userEmail = user?.email || "";
+  const isHeadAdminEmail =
+    userEmail === "narangaashray98@gmail.com" || userEmail === "narangaashray98@gamil.com";
+  const admin =
+    Boolean((user as { is_admin?: boolean } | undefined)?.is_admin) && isHeadAdminEmail;
   const socialAccess = useSocialAccess(Boolean(user));
   const labeled = NAV.map((item) => ({ ...item, label: t(`nav.${item.labelKey}`) }));
   const nav = labeled.filter((item) => !item.social || socialAccess === true);
@@ -92,12 +96,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         className={cn(
           "sticky top-0 hidden h-dvh shrink-0 flex-col border-r border-sidebar-border bg-sidebar",
           !immersive && "md:flex",
-          compact ? "w-16 items-center px-2" : "w-60 px-3",
+          compact ? "w-16 items-center px-2" : "w-64 px-3",
         )}
       >
         <Link href="/" className={cn("flex h-14 items-center gap-2 font-display text-lg font-bold tracking-tight", compact ? "justify-center" : "px-2")}>
-          <Image src="/logo.png" alt="" width={24} height={24} className="size-6 dark:invert" priority />
-          {!compact && "GTAClipper"}
+          <Image src="/logo.png" alt="" width={24} height={24} className="size-6 rounded-md" priority />
+          {!compact && "Clippers"}
         </Link>
 
         <SidebarLink compact={compact} href="/" label={t("nav.newGeneration")} shortcut="N" className="mb-4 mt-1 bg-foreground text-background hover:bg-foreground/90 hover:text-background">
@@ -131,14 +135,14 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         <div className="mt-auto w-full space-y-2 pb-3">
           <Announcements key={user.id} userId={user.id} compact={compact} className="w-full" />
           {!compact && billing?.monetization_enabled && <UsageCard billing={billing} />}
-          <UserRow compact={compact} name={user.name} email={user.email} />
+          <UserRow compact={compact} name={user.name} email={user.email} plan={billing?.plan} />
         </div>
       </aside> : null}
 
       <div className={cn(user && "flex min-w-0 flex-1 flex-col", user && !immersive && "pb-[calc(4rem+env(safe-area-inset-bottom))] md:pb-0")}>
         {user && !immersive ? <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b bg-background/80 px-4 backdrop-blur md:hidden">
           <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold tracking-tight">
-            <Image src="/logo.png" alt="" width={22} height={22} className="size-[22px] dark:invert" />GTAClipper
+            <Image src="/logo.png" alt="" width={22} height={22} className="size-[22px] rounded-sm" />Clippers
           </Link>
           <div className="flex items-center gap-1">
             <Announcements key={user.id} userId={user.id} compact />
@@ -155,7 +159,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         {mobileNav.map((item) => {
           const active = item.match(pathname);
           return (
-            <Link key={item.href} href={item.href} aria-current={active ? "page" : undefined}
+            <Link key={item.href} href={item.href} prefetch={true} aria-current={active ? "page" : undefined}
               className={cn("flex h-16 flex-col items-center justify-center gap-1 text-[11px] font-medium", active ? "text-foreground" : "text-muted-foreground")}>
               <item.icon className={cn("size-5", active && "text-brand")} />{item.label}
             </Link>
@@ -174,6 +178,7 @@ function SidebarLink({ href, label, active, compact, shortcut, className, childr
   const link = (
     <Link
       href={href}
+      prefetch={true}
       aria-current={active ? "page" : undefined}
       aria-label={compact ? label : undefined}
       className={cn(
@@ -199,37 +204,70 @@ function UsageCard({ billing }: { billing: NonNullable<ReturnType<typeof useBill
   const used = billing.usage_minutes ?? 0;
   const pct = limit ? Math.min(100, (used / limit) * 100) : 0;
   const upgrade = getUpgradeState(billing);
-  const nudge = !upgrade?.isPaid
+  const isPaid = Boolean(upgrade?.isPaid || (billing.plan && billing.plan !== "free" && billing.subscription_status === "active"));
+  const planLabel = tCommon(`plans.${billingPlanMessageKey(billing.plan)}`);
+
+  // Format renewal / validity duration
+  let durationInfo = "";
+  if (billing.period_end) {
+    try {
+      const d = new Date(billing.period_end);
+      if (!isNaN(d.getTime())) {
+        const dateStr = d.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+        const intervalLabel = billing.billing_interval === "year" ? "Yearly" : "Monthly";
+        durationInfo = `Refreshes ${dateStr} · ${intervalLabel}`;
+      }
+    } catch {
+      // ignore
+    }
+  }
+
+  const nudge = !isPaid
     ? t("usage.pickPlan")
     : upgrade.nextPlan && (upgrade.atLimit || upgrade.nearLimit)
     ? t("usage.moreWith", { name: tCommon(`plans.${billingPlanMessageKey(upgrade.nextPlan.id)}`) })
     : null;
+
   return (
-    <Link href="/settings#plan" className="group block rounded-xl border border-sidebar-border bg-background p-3 text-xs transition-colors hover:border-foreground/20">
+    <Link href="/settings#plan" className="group block rounded-xl border border-sidebar-border bg-background p-3 text-xs transition-colors hover:border-foreground/20 shadow-xs">
       <div className="flex items-center justify-between">
-        <span className="font-semibold">{tCommon(`plans.${billingPlanMessageKey(billing.plan)}`)}</span>
+        <div className="flex items-center gap-1.5 font-semibold">
+          {isPaid && <span className="text-amber-400">👑</span>}
+          <span>{planLabel}</span>
+          {isPaid && (
+            <span className="flex items-center gap-1 rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-[10px] font-medium text-emerald-400">
+              <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Active
+            </span>
+          )}
+        </div>
         <span className="text-muted-foreground tabular-nums">
           {limit ? t("usage.minutesOf", { used, limit }) : t("usage.minutes", { used })}
         </span>
       </div>
+
       {limit ? (
-        <div className="mt-2 h-1 overflow-hidden rounded-full bg-muted">
+        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-muted">
           <div className="h-full rounded-full bg-brand" style={{ width: `${pct}%` }} />
         </div>
       ) : null}
+
+      <div className="mt-2 flex items-center justify-between text-[11px] text-muted-foreground">
+        <span>{limit && upgrade?.remaining !== null ? t("usage.minutesLeft", { count: upgrade?.remaining ?? 0 }) : t("usage.minutesThisMonth")}</span>
+        {durationInfo && <span className="font-medium text-foreground/80">{durationInfo}</span>}
+      </div>
+
       {nudge ? (
         <p className="mt-2 flex items-center gap-1 font-medium text-foreground">
           {nudge}
           <ArrowRight className="ml-auto size-3 transition-transform group-hover:translate-x-0.5" />
         </p>
-      ) : (
-        <p className="mt-2 text-muted-foreground">{limit && upgrade?.remaining !== null ? t("usage.minutesLeft", { count: upgrade?.remaining ?? 0 }) : t("usage.minutesThisMonth")}</p>
-      )}
+      ) : null}
     </Link>
   );
 }
 
-function UserRow({ compact, name, email }: { compact: boolean; name?: string | null; email?: string | null }) {
+function UserRow({ compact, name, email, plan }: { compact: boolean; name?: string | null; email?: string | null; plan?: string }) {
   const t = useTranslations("shell");
   const [signingOut, setSigningOut] = useState(false);
   const handleSignOut = async () => {
@@ -237,6 +275,9 @@ function UserRow({ compact, name, email }: { compact: boolean; name?: string | n
     try { await signOut(); resetAnalytics(); window.location.assign("/sign-in"); }
     catch { toast.error(t("user.signOutError")); setSigningOut(false); }
   };
+  const isPaid = plan && plan !== "free";
+  const planBadge = plan === "scale" ? "Creator" : plan === "pro" ? "Pro" : null;
+
   return (
     <div className={cn("flex items-center gap-2 rounded-lg", compact ? "flex-col" : "px-1.5 py-1")}>
       <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand to-amber-400 text-xs font-semibold text-white">
@@ -244,8 +285,15 @@ function UserRow({ compact, name, email }: { compact: boolean; name?: string | n
       </span>
       {!compact && (
         <div className="min-w-0 flex-1 leading-tight">
-          <p className="truncate text-sm font-medium">{name || t("user.creator")}</p>
-          <p className="truncate text-xs text-muted-foreground">{email}</p>
+          <div className="flex items-center gap-1.5">
+            <p className="truncate text-sm font-medium">{name || t("user.creator")}</p>
+            {isPaid && planBadge && (
+              <span className="rounded-md bg-brand/15 px-1.5 py-0.2 text-[10px] font-bold uppercase tracking-wider text-brand">
+                {planBadge}
+              </span>
+            )}
+          </div>
+          <p className="break-all text-xs font-normal leading-normal text-muted-foreground select-text" title={email || undefined}>{email}</p>
         </div>
       )}
       <ThemeToggle tooltipSide={compact ? "right" : "top"} />

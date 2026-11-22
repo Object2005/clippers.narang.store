@@ -27,7 +27,7 @@ async function sendPasswordResetEmail(userId: string, url: string) {
   }
 }
 
-const trustedOrigins = getAuthTrustedOrigins({
+const staticTrustedOrigins = getAuthTrustedOrigins({
   NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
   BETTER_AUTH_TRUSTED_ORIGINS: process.env.BETTER_AUTH_TRUSTED_ORIGINS,
@@ -38,6 +38,37 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
+  advanced: {
+    trustedProxyHeaders: true,
+  },
+  trustedOrigins: async (request?: Request) => {
+    const list = [
+      ...staticTrustedOrigins,
+      "https://*.trycloudflare.com",
+      "*.trycloudflare.com",
+      "https://*.loca.lt",
+      "*.loca.lt",
+      "https://*.ngrok-free.app",
+      "*.ngrok-free.app",
+      "https://*.ngrok.io",
+      "*.ngrok.io",
+    ];
+    if (request) {
+      const origin = request.headers.get("origin") || request.headers.get("referer");
+      if (origin) {
+        try {
+          const u = new URL(origin);
+          list.push(u.origin);
+        } catch {}
+      }
+      const host = request.headers.get("x-forwarded-host") || request.headers.get("host");
+      const proto = request.headers.get("x-forwarded-proto") || "https";
+      if (host) {
+        list.push(`${proto}://${host}`);
+      }
+    }
+    return list;
+  },
   user: {
     deleteUser: {
       enabled: true,
@@ -52,7 +83,6 @@ export const auth = betterAuth({
       },
     },
   },
-  trustedOrigins,
   emailVerification: {
     sendOnSignUp: false,
     sendOnSignIn: false,

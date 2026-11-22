@@ -68,13 +68,13 @@ class SubscriptionEmailService:
             f"until {end_date}. You can undo the cancellation in Settings before then."
         )
         return EmailContent(
-            subject="A quick question about your GTAClipper experience",
-            reply_to=("support@gtaclipper.com",),
+            subject="A quick question about your Clippers experience",
+            reply_to=("nbms@narang.store",),
             category=PRODUCT_UPDATE if include_retention_offer else TRANSACTIONAL,
             html=(
                 f"<p>Hey {escape(first_name)},</p>"
                 + "".join(f"<p>{escape(paragraph)}</p>" for paragraph in paragraphs)
-                + "<p>Best,<br>Team GTAClipper</p>"
+                + "<p>Best,<br>Team Clippers</p>"
                 + f"<p>{escape(closing)}</p>"
             ),
             text=(
@@ -86,22 +86,94 @@ class SubscriptionEmailService:
 
     def _build_subscribed_email(self, user: User) -> EmailContent:
         first_name = self._first_name_for(user)
+        plan_name = "Creator Plan" if user.plan == "scale" else f"{user.plan.capitalize()} Plan"
+
+        end_date_str = ""
+        if user.billing_period_end:
+            end_date_str = user.billing_period_end.strftime("%d %B, %Y")
+
+        minutes = "1,500 Minutes (25 Hours)" if user.plan == "scale" else "300 Minutes (5 Hours)"
+        resolution = "1080p Full HD" if user.plan == "scale" else "720p HD"
+
+        validity_row = f'<tr><td style="padding: 8px 0; color: #94a3b8;">Valid Until:</td><td style="padding: 8px 0; font-weight: bold; color: #ffffff; text-align: right;">{end_date_str}</td></tr>' if end_date_str else ''
+
+        html = f"""
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; background: #0f172a; border-radius: 16px; overflow: hidden; color: #f8fafc; border: 1px solid #1e293b;">
+            <div style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); padding: 32px 24px; text-align: center;">
+                <h1 style="margin: 0; font-size: 26px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">🎉 Welcome to Clippers {plan_name}!</h1>
+                <p style="margin: 8px 0 0; color: #f1f5f9; font-size: 15px;">Your membership is now active and ready to create viral clips.</p>
+            </div>
+            
+            <div style="padding: 28px 24px;">
+                <p style="font-size: 16px; margin: 0 0 20px; color: #cbd5e1;">Hi <strong>{first_name}</strong>,</p>
+                <p style="font-size: 14px; line-height: 1.6; color: #94a3b8; margin: 0 0 24px;">
+                    Thank you for subscribing to Clippers! Your payment was successful, and your account has been upgraded with all premium creator superpowers.
+                </p>
+                
+                <div style="background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 24px; border: 1px solid #334155;">
+                    <h3 style="margin: 0 0 14px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; color: #38bdf8;">Your Membership Details</h3>
+                    <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 8px 0; color: #94a3b8;">Plan Tier:</td>
+                            <td style="padding: 8px 0; font-weight: bold; color: #ffffff; text-align: right;">{plan_name}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 0; color: #94a3b8;">Status:</td>
+                            <td style="padding: 8px 0; font-weight: bold; color: #10b981; text-align: right;">● Active</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 0; color: #94a3b8;">Video Allowance:</td>
+                            <td style="padding: 8px 0; font-weight: bold; color: #ffffff; text-align: right;">{minutes}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 0; color: #94a3b8;">Output Quality:</td>
+                            <td style="padding: 8px 0; font-weight: bold; color: #ffffff; text-align: right;">{resolution}</td>
+                        </tr>
+                        {validity_row}
+                    </table>
+                </div>
+
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="https://clippers.narang.store" style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); color: #ffffff; font-weight: 700; text-decoration: none; padding: 14px 32px; border-radius: 10px; font-size: 15px; display: inline-block;">
+                        Start Creating Clips Now →
+                    </a>
+                </div>
+
+                <p style="font-size: 12px; color: #64748b; line-height: 1.5; margin: 24px 0 0; text-align: center;">
+                    If you have any questions or need priority support, reply directly to this email or reach us at <a href="mailto:nbms@narang.store" style="color: #38bdf8;">nbms@narang.store</a>.
+                </p>
+            </div>
+            
+            <div style="background: #090d16; padding: 16px; text-align: center; font-size: 12px; color: #475569; border-top: 1px solid #1e293b;">
+                © 2026 Clippers. All rights reserved.
+            </div>
+        </div>
+        """
+
+        validity_text = f"Valid Until: {end_date_str}\n" if end_date_str else ""
+        text = f"""
+Hi {first_name},
+
+Welcome to Clippers {plan_name}!
+Your paid membership is now active.
+
+Plan: {plan_name}
+Status: Active
+Video Allowance: {minutes}
+Output Quality: {resolution}
+{validity_text}
+Start creating viral clips: https://clippers.narang.store
+
+Need help? Contact support at nbms@narang.store
+
+Best,
+Team Clippers
+        """.strip()
+
         return EmailContent(
-            subject="Thanks for subscribing to GTAClipper",
-            html=(
-                f"<p>Hi {first_name},</p>"
-                "<p>Thanks for subscribing to GTAClipper.</p>"
-                "<p>Your paid plan is now active, and you can jump back in anytime to create more clips.</p>"
-                "<p>We’re excited to have you with us.</p>"
-                "<p>Team GTAClipper</p>"
-            ),
-            text=(
-                f"Hi {first_name},\n\n"
-                "Thanks for subscribing to GTAClipper.\n\n"
-                "Your paid plan is now active, and you can jump back in anytime to create more clips.\n\n"
-                "We’re excited to have you with us.\n\n"
-                "Team GTAClipper"
-            ),
+            subject=f"🎉 Welcome to Clippers {plan_name} - Membership Active!",
+            html=html,
+            text=text,
         )
 
     def _build_unsubscribed_email(self, user: User) -> EmailContent:

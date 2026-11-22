@@ -48,9 +48,9 @@ export async function generateMetadata(): Promise<Metadata> {
   },
   description: t("description"),
   metadataBase: new URL(getSiteUrl()),
-  applicationName: "GTAClipper",
-  authors: [{ name: "GTAClipper Team", url: getSiteUrl() }],
-  creator: "GTAClipper Team",
+  applicationName: "Clippers",
+  authors: [{ name: "Clippers Team", url: getSiteUrl() }],
+  creator: "Clippers Team",
   publisher: COMPANY_NAME,
   category: t("category"),
   icons: {
@@ -59,7 +59,7 @@ export async function generateMetadata(): Promise<Metadata> {
   openGraph: {
     title: t("title"),
     description: t("openGraphDescription"),
-    siteName: "GTAClipper",
+    siteName: "Clippers",
     type: "website",
   },
   twitter: {

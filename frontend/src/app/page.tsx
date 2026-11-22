@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description: t("metadata.openGraphDescription"),
       url: siteUrl,
-      siteName: "GTAClipper",
+      siteName: "Clippers",
       type: "website",
     },
     twitter: {
@@ -47,7 +47,7 @@ export default async function HomePage() {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "GTAClipper",
+      name: "Clippers",
       legalName: COMPANY_NAME,
       url: siteUrl,
       logo: `${siteUrl}/logo.png`,
@@ -56,7 +56,7 @@ export default async function HomePage() {
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      name: "GTAClipper",
+      name: "Clippers",
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Web, Docker",
       url: siteUrl,
@@ -78,7 +78,7 @@ export default async function HomePage() {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "GTAClipper",
+      name: "Clippers",
       url: siteUrl,
       description: t("metadata.structured.website"),
     },

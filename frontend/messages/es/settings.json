@@ -1,7 +1,7 @@
 {
   "title": "Ajustes",
   "intro": "Valores predeterminados para las nuevas generaciones, las notificaciones y tu plan.",
-  "languageDescription": "El idioma de GTAClipper.",
+  "languageDescription": "El idioma de Clippers.",
   "signInRequired": {
     "title": "Necesitas iniciar sesión",
     "body": "Inicia sesión para ver tus ajustes",
@@ -73,7 +73,7 @@
     "socialTitle": "Cuentas sociales",
     "socialDescription": "Conecta YouTube, TikTok e Instagram para publicar clips y ver el rendimiento",
     "creatorTitle": "Programa de creadores",
-    "creatorDescription": "Haz videos sobre GTAClipper, obtén Pro gratis y un código para tu audiencia"
+    "creatorDescription": "Haz videos sobre Clippers, obtén Pro gratis y un código para tu audiencia"
   },
   "save": {
     "saved": "¡Preferencias guardadas!",
@@ -88,7 +88,7 @@
   },
   "apiKeys": {
     "title": "Agentes y API",
-    "intro": "Deja que Claude, Cursor y otros agentes de IA recorten videos por ti con el <brand>servidor MCP de GTAClipper</brand>, o llama a la API REST desde tu código. Trata las claves como contraseñas: dan acceso total a tu cuenta.",
+    "intro": "Deja que Claude, Cursor y otros agentes de IA recorten videos por ti con el <brand>servidor MCP de Clippers</brand>, o llama a la API REST desde tu código. Trata las claves como contraseñas: dan acceso total a tu cuenta.",
     "docs": {
       "agentTitle": "Conectar un agente",
       "agentDescription": "Configura el servidor MCP en Claude, Cursor y otros clientes MCP.",
@@ -147,7 +147,7 @@
   },
   "creator": {
     "title": "Programa de creadores",
-    "intro": "¿Haces videos sobre GTAClipper? Consigue tu código: tu audiencia recibe <em>20% de descuento en sus primeros 3 meses</em> y tú recibes GTAClipper Pro gratis.",
+    "intro": "¿Haces videos sobre Clippers? Consigue tu código: tu audiencia recibe <em>20% de descuento en sus primeros 3 meses</em> y tú recibes Clippers Pro gratis.",
     "howItWorks": "Cómo funciona",
     "signIn": "Crea una cuenta gratis o inicia sesión para postularte al programa de creadores.",
     "createAccount": "Crear cuenta",
@@ -194,13 +194,13 @@
     },
     "profileLabel": "Enlace del perfil",
     "profilePlaceholder": "https://www.tiktok.com/@you",
-    "videoLabel": "Un video que hiciste sobre GTAClipper",
+    "videoLabel": "Un video que hiciste sobre Clippers",
     "optional": "(opcional)",
     "videoPlaceholder": "https://",
-    "planLabel": "¿Cómo vas a promover GTAClipper?",
+    "planLabel": "¿Cómo vas a promover Clippers?",
     "termsTitle": "Términos del programa",
     "termSponsored": "Marca las publicaciones patrocinadas (por ejemplo #ad).",
-    "termAds": "No hagas anuncios con el nombre GTAClipper ni publiques tu código en sitios de cupones u ofertas.",
+    "termAds": "No hagas anuncios con el nombre Clippers ni publiques tu código en sitios de cupones u ofertas.",
     "termOwn": "No uses tu propio código.",
     "termEnd": "Podemos terminar el programa o dar de baja a un creador en cualquier momento.",
     "agree": "Acepto los términos del programa",

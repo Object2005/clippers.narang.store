@@ -14,6 +14,7 @@ import time
 
 from fastapi import FastAPI, Depends, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from fastapi.encoders import jsonable_encoder
@@ -112,6 +113,51 @@ def create_app(
         ],
         expose_headers=["x-trace-id"],
     )
+
+    # app.add_middleware(GZipMiddleware, minimum_size=1000)
+
+    # Security: In-memory sliding window rate limiter fallback
+    _ip_request_counts: dict[str, list[float]] = {}
+    MAX_REQUESTS_PER_MINUTE = 120
+
+    @app.middleware("http")
+    async def security_and_rate_limit_middleware(request: Request, call_next):
+        # 1. Enforce payload size check to prevent memory exhaustion / drive abuse
+        content_length = request.headers.get("content-length")
+        if content_length:
+            try:
+                if int(content_length) > runtime_config.max_video_upload_bytes:
+                    return JSONResponse(
+                        status_code=413,
+                        content={"error": "Payload too large. Maximum file upload size is 4GB."},
+                    )
+            except ValueError:
+                pass
+
+        # 2. Rate Limiting per Client IP (prevents API spam, brute-force, scraping)
+        client_ip = request.client.host if request.client else "unknown"
+        # Exempt healthchecks
+        if request.url.path not in ("/health", "/api/health", "/ready"):
+            now = time.time()
+            req_times = _ip_request_counts.setdefault(client_ip, [])
+            # prune requests older than 60s
+            _ip_request_counts[client_ip] = [t for t in req_times if now - t < 60.0]
+            if len(_ip_request_counts[client_ip]) >= MAX_REQUESTS_PER_MINUTE:
+                return JSONResponse(
+                    status_code=429,
+                    content={"error": "Rate limit exceeded. Too many requests. Please wait a minute."},
+                    headers={"Retry-After": "60", "X-Content-Type-Options": "nosniff"},
+                )
+            _ip_request_counts[client_ip].append(now)
+
+        response = await call_next(request)
+
+        # 3. HTTP Security Headers (prevent MIME-sniffing, Clickjacking, XSS)
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["X-XSS-Protection"] = "1; mode=block"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        return response
 
     @app.middleware("http")
     async def trace_and_request_logging_middleware(request: Request, call_next):

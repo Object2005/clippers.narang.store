@@ -1,8 +1,8 @@
 {
-  "title": "GTAClipper – Open-Source-Videoclipper mit KI",
-  "titleTemplate": "%s | GTAClipper",
-  "description": "Mach aus langen Videos untertitelte Kurzclips – mit Open-Source-KI, Viralitätsbewertung und gesichtszentrierten Hochformat-Schnitten.",
-  "openGraphDescription": "Mach aus langen Videos untertitelte Kurzclips mit Open-Source-KI.",
-  "twitterDescription": "Open-Source-KI-Clipping, Viralitätsbewertung, Untertitel und gesichtszentrierte Hochformat-Schnitte.",
+  "title": "Clippers – AI-powered-Videoclipper mit KI",
+  "titleTemplate": "%s | Clippers",
+  "description": "Mach aus langen Videos untertitelte Kurzclips – mit AI-powered-KI, Viralitätsbewertung und gesichtszentrierten Hochformat-Schnitten.",
+  "openGraphDescription": "Mach aus langen Videos untertitelte Kurzclips mit AI-powered-KI.",
+  "twitterDescription": "AI-powered-KI-Clipping, Viralitätsbewertung, Untertitel und gesichtszentrierte Hochformat-Schnitte.",
   "category": "Videosoftware"
 }

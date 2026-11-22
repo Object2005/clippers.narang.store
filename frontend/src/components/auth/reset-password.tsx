@@ -7,6 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { resetPassword } from "../../lib/auth-client";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import { Eye, EyeOff } from "lucide-react";
 
 export function ResetPassword() {
   const t = useTranslations("auth");
@@ -15,6 +16,8 @@ export function ResetPassword() {
   const linkError = searchParams.get("error");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [done, setDone] = useState(false);
@@ -64,26 +67,48 @@ export function ResetPassword() {
           <p className="text-sm text-green-600">{t("reset.success")}</p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <Input
-              className="h-11"
-              type="password"
-              placeholder={t("reset.newPassword")}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              minLength={8}
-              disabled={loading}
-            />
-            <Input
-              className="h-11"
-              type="password"
-              placeholder={t("reset.confirmPassword")}
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-              minLength={8}
-              disabled={loading}
-            />
+            <div className="relative">
+              <Input
+                className="h-11 pr-10"
+                type={showPassword ? "text" : "password"}
+                placeholder={t("reset.newPassword")}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength={8}
+                disabled={loading}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground focus:outline-none"
+                tabIndex={-1}
+                aria-label={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
+              </button>
+            </div>
+            <div className="relative">
+              <Input
+                className="h-11 pr-10"
+                type={showConfirmPassword ? "text" : "password"}
+                placeholder={t("reset.confirmPassword")}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                minLength={8}
+                disabled={loading}
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground focus:outline-none"
+                tabIndex={-1}
+                aria-label={showConfirmPassword ? "Hide password" : "Show password"}
+              >
+                {showConfirmPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
+              </button>
+            </div>
             <Button type="submit" className="h-11 w-full" disabled={loading}>
               {loading ? t("reset.submitting") : t("reset.submit")}
             </Button>

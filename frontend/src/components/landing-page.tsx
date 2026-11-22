@@ -13,12 +13,13 @@ import {
   Github,
   Info,
   Menu,
+  Sparkles,
   Upload,
   X,
 } from "lucide-react";
 
 import { Announcements } from "@/components/announcements";
-import { BillingIntervalToggle, ComingSoonTag, useBillingPlanText } from "@/components/billing/upgrade-prompt";
+import { BillingIntervalToggle, CurrencyToggle, ComingSoonTag, useBillingPlanText } from "@/components/billing/upgrade-prompt";
 import { FaqSection } from "@/components/landing/faq-section";
 import { EditorSection } from "@/components/landing/editor-section";
 import { FeatureBento } from "@/components/landing/feature-bento";
@@ -38,6 +39,9 @@ import {
   annualFullPrice,
   annualMonthlyEquivalent,
   annualMonthsFree,
+  intervalFullPrice,
+  intervalMonthlyEquivalent,
+  intervalDiscountPercent,
   billingPlanMessageKey,
   getPublicBillingPlans,
   planPrice,
@@ -52,7 +56,7 @@ import {
 } from "@/lib/marketing-links";
 import { GITHUB_URL, HOSTED_APP_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
-import { formatPrice } from "@/lib/billing-provider";
+import { detectUserCurrency, formatPrice, type SupportedCurrency } from "@/lib/billing-provider";
 
 type Translate = (key: string, values?: Record<string, string | number>) => string;
 
@@ -62,8 +66,8 @@ const NAV_LINKS = [
   { href: "#features", key: "features" },
   { href: "#editor", key: "editor" },
   { href: "#publish", key: "publishing" },
+  { href: "#autopilot", key: "autopilot" },
   { href: "#pricing", key: "pricing" },
-  { href: "#open-source", key: "openSource" },
   { href: "/faq", key: "faq" },
   { href: "/blog", key: "blog" },
   { href: "/affiliate", key: "affiliate" },
@@ -84,62 +88,53 @@ function getPlans(
   tCommon: Translate,
   interval: BillingInterval,
   planText: ReturnType<typeof useBillingPlanText>,
+  currency: SupportedCurrency = "INR",
 ) {
   // The landing page states which platforms scheduling reaches, so it swaps the
   // generic billing line for YouTube + TikTok (live) and Instagram (soon).
   const showScheduling = socialPublishingStage() !== "off";
   const genericScheduling = planText.t("highlights.scheduling");
-  return [
-    {
-      id: "selfHost",
-      name: tCommon("plans.selfHost"),
-      price: formatPrice(0),
-      originalPrice: null as string | null,
-      period: t("pricing.period.forever"),
-      note: null as string | null,
-      soon: null as string | null,
-      usageExample: null as string | null,
-      description: t("pricing.selfHost.description"),
+  return getOfferedBillingPlans(currency).map((plan) => {
+    const exampleVideos = Math.floor(plan.minuteLimit / PRICING_EXAMPLE_VIDEO_MINUTES);
+    const scheduling = plan.scheduling && showScheduling;
+    return {
+      id: plan.id,
+      name: tCommon(`plans.${billingPlanMessageKey(plan.id)}`),
+      price: formatPrice(planPrice(plan, interval), currency),
+      originalPrice:
+        interval !== "month" && intervalDiscountPercent(plan, interval) > 0
+          ? formatPrice(intervalFullPrice(plan, interval), currency)
+          : null,
+      period:
+        interval === "year"
+          ? t("pricing.period.year")
+          : interval === "half_year"
+            ? "/6 months"
+            : interval === "quarter"
+              ? "/3 months"
+              : t("pricing.period.month"),
+      note:
+        interval !== "month"
+          ? `${formatPrice(intervalMonthlyEquivalent(plan, interval), currency)}/mo equivalent`
+          : null,
+      soon: scheduling ? t("pricing.schedulingSoon") : null,
+      usageExample:
+        exampleVideos > 0
+          ? t("pricing.usageExample.videos", { count: exampleVideos })
+          : null,
+      description: t(`pricing.${plan.id}.description`),
       features: [
-        t("pricing.selfHost.features.crop"),
-        t("pricing.selfHost.features.subtitles"),
-        t("pricing.selfHost.features.virality"),
-        t("pricing.selfHost.features.exports"),
-        t("pricing.selfHost.features.source"),
+        ...planText.highlights(plan).filter((line) => line !== genericScheduling),
+        // Creator schedules; plans without scheduling can still post right away.
+        ...(scheduling ? [t("pricing.schedulingPlatforms")] : showScheduling ? [t("pricing.publishPlatforms")] : []),
+        t("pricing.hosted.tracking"),
+        t("pricing.hosted.exports"),
       ],
-      cta: t("pricing.selfHost.cta"),
-      ctaHref: GITHUB_URL,
-      highlighted: false,
-    },
-    ...getOfferedBillingPlans().map((plan) => {
-      const exampleVideos = Math.floor(plan.minuteLimit / PRICING_EXAMPLE_VIDEO_MINUTES);
-      const scheduling = plan.scheduling && showScheduling;
-      return {
-        id: plan.id,
-        name: tCommon(`plans.${billingPlanMessageKey(plan.id)}`),
-        price: formatPrice(planPrice(plan, interval)),
-        originalPrice: interval === "year" && annualMonthsFree(plan) > 0 ? formatPrice(annualFullPrice(plan)) : null,
-        period: interval === "year" ? t("pricing.period.year") : t("pricing.period.month"),
-        note: interval === "year" ? t("pricing.billedYearly", { price: annualMonthlyEquivalent(plan) }) : null,
-        soon: scheduling ? t("pricing.schedulingSoon") : null,
-        usageExample:
-          exampleVideos > 0
-            ? t("pricing.usageExample.videos", { count: exampleVideos })
-            : null,
-        description: t(`pricing.${plan.id}.description`),
-        features: [
-          ...planText.highlights(plan).filter((line) => line !== genericScheduling),
-          // Creator schedules; plans without scheduling can still post right away.
-          ...(scheduling ? [t("pricing.schedulingPlatforms")] : showScheduling ? [t("pricing.publishPlatforms")] : []),
-          t("pricing.hosted.tracking"),
-          t("pricing.hosted.exports"),
-        ],
-        cta: t(`pricing.${plan.id}.cta`),
-        ctaHref: "",
-        highlighted: plan.highlighted,
-      };
-    }),
-  ];
+      cta: t(`pricing.${plan.id}.cta`),
+      ctaHref: "",
+      highlighted: plan.highlighted,
+    };
+  });
 }
 
 function PrimaryCta({ authEnabled, label, hostedLabel, className }: {
@@ -170,7 +165,8 @@ export default function LandingPage() {
   const tCommon = useTranslations("common");
   const planText = useBillingPlanText();
   const [billingInterval, setBillingInterval] = useState<BillingInterval>("month");
-  const plans = getPlans(t, tCommon, billingInterval, planText);
+  const [currency, setCurrency] = useState<SupportedCurrency>(() => detectUserCurrency());
+  const plans = getPlans(t, tCommon, billingInterval, planText, currency);
   const [scrolled, setScrolled] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const authEnabled = !isLandingOnlyModeEnabled;
@@ -197,8 +193,8 @@ export default function LandingPage() {
           )}
         >
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.png" alt="GTAClipper" width={24} height={24} className="rounded-md dark:invert" />
-            <span className="font-display text-[17px] font-bold tracking-tight">GTAClipper</span>
+            <Image src="/logo.png" alt="Clippers" width={24} height={24} className="rounded-md" />
+            <span className="font-display text-[17px] font-bold tracking-tight">Clippers</span>
           </Link>
 
           <div className="hidden items-center gap-1 xl:flex">
@@ -206,9 +202,9 @@ export default function LandingPage() {
               const className =
                 "whitespace-nowrap rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground";
               return href.startsWith("#") ? (
-                <a key={key} href={href} className={className}>{t(`nav.${key}`)}</a>
+                <a key={href} href={href} className={className}>{t(`nav.${key}`)}</a>
               ) : (
-                <Link key={key} href={href} className={className}>{t(`nav.${key}`)}</Link>
+                <Link key={href} href={href} className={className}>{t(`nav.${key}`)}</Link>
               );
             })}
           </div>
@@ -217,10 +213,10 @@ export default function LandingPage() {
             {authEnabled ? (
               <>
                 <Button asChild variant="ghost" size="sm" className="rounded-full">
-                  <Link href="/sign-in">{t("nav.signIn")}</Link>
+                  <Link href="/sign-in" prefetch={true}>{t("nav.signIn")}</Link>
                 </Button>
                 <Button asChild size="sm" className="rounded-full px-4">
-                  <Link href="/sign-up">{t("nav.getStarted")}</Link>
+                  <Link href="/sign-up" prefetch={true}>Start Free Trial</Link>
                 </Button>
               </>
             ) : (
@@ -251,9 +247,9 @@ export default function LandingPage() {
               const className =
                 "block rounded-2xl px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground";
               return href.startsWith("#") ? (
-                <a key={key} href={href} onClick={() => setMobileNavOpen(false)} className={className}>{t(`nav.${key}`)}</a>
+                <a key={href} href={href} onClick={() => setMobileNavOpen(false)} className={className}>{t(`nav.${key}`)}</a>
               ) : (
-                <Link key={key} href={href} onClick={() => setMobileNavOpen(false)} className={className}>{t(`nav.${key}`)}</Link>
+                <Link key={href} href={href} onClick={() => setMobileNavOpen(false)} className={className}>{t(`nav.${key}`)}</Link>
               );
             })}
             <div className="mt-2 grid grid-cols-2 gap-2 border-t pt-3">
@@ -263,7 +259,7 @@ export default function LandingPage() {
                     <Link href="/sign-in" onClick={() => setMobileNavOpen(false)}>{t("nav.signIn")}</Link>
                   </Button>
                   <Button asChild className="rounded-full">
-                    <Link href="/sign-up" onClick={() => setMobileNavOpen(false)}>{t("nav.getStarted")}</Link>
+                    <Link href="/sign-up" onClick={() => setMobileNavOpen(false)}>Start Free Trial</Link>
                   </Button>
                 </>
               ) : (
@@ -319,12 +315,18 @@ export default function LandingPage() {
               className="mt-9 flex flex-wrap items-center justify-center gap-3"
               style={{ animation: "landing-fade-in-up 0.7s ease-out 0.24s both" }}
             >
-              <PrimaryCta authEnabled={authEnabled} label={t("hero.startClipping")} hostedLabel={t("hero.useHosted")} />
-              <Button asChild variant="outline" size="lg" className="h-12 rounded-full bg-background px-7 text-sm">
-                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
-                  <Github className="size-4" />
-                  {t("hero.viewSource")}
+              <PrimaryCta authEnabled={authEnabled} label="Start 7-Day Free Trial" hostedLabel={t("hero.useHosted")} />
+              <Button asChild variant="outline" size="lg" className="h-12 rounded-full bg-background px-6 text-sm">
+                <a href="#pricing">
+                  <Sparkles className="mr-1.5 size-4 text-primary" />
+                  <span>Membership Plans</span>
                 </a>
+              </Button>
+              <Button asChild variant="secondary" size="lg" className="h-12 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-6 text-sm text-emerald-600 dark:text-emerald-400 font-medium">
+                <Link href="/sign-up">
+                  <Check className="mr-1.5 size-4" />
+                  <span>7-Day Free Trial (₹0 Today)</span>
+                </Link>
               </Button>
             </div>
             <p
@@ -395,18 +397,19 @@ export default function LandingPage() {
           <SectionHeading
             eyebrow={t("nav.pricing")}
             title={t("pricing.title")}
-            body={t("pricing.body", { price: getPublicBillingPlans()[0]?.priceMonthly ?? "9.99" })}
+            body={currency === "INR" ? "Plans starting at ₹1,400/month. Save up to 35% on multi-month memberships." : "Plans starting at $29/month. Save up to 35% on multi-month memberships."}
           />
-          <Reveal className="mt-8 flex justify-center">
+          <Reveal className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <BillingIntervalToggle
               className="rounded-full bg-background [&_button]:rounded-full"
               value={billingInterval}
               onChange={setBillingInterval}
-              plan={getPublicBillingPlans()[0]}
+              plan={getPublicBillingPlans(currency)[0]}
             />
+            <CurrencyToggle value={currency} onChange={setCurrency} />
           </Reveal>
 
-          <div className="mx-auto mt-14 grid max-w-5xl items-stretch gap-4 md:grid-cols-3">
+          <div className="mx-auto mt-14 grid max-w-4xl items-stretch gap-6 md:grid-cols-2">
             {plans.map((plan, i) => (
               <Reveal key={plan.id} delay={i * 0.08} className="h-full">
                 <div
@@ -526,64 +529,105 @@ export default function LandingPage() {
 
           <Reveal>
             <p className="mx-auto mt-10 max-w-md text-center text-sm text-muted-foreground">{t("pricing.clipsNote")}</p>
-            <p className="mx-auto mt-2 max-w-md text-center text-xs text-muted-foreground">
-              {t("pricing.selfHostNote")}{" "}
-              <Link href={SELF_HOSTING_GUIDE_HREF} className="underline underline-offset-2 transition-colors hover:text-foreground">
-                {t("pricing.selfHostGuide")}
-              </Link>
-              .
-            </p>
           </Reveal>
         </div>
       </section>
 
       <FaqSection />
 
-      {/* ─── OPEN SOURCE ─── */}
-      <section id="open-source" className="scroll-mt-24 border-y bg-canvas py-24 md:py-32">
+      {/* ─── AI AUTOPILOT / MULTI-CHANNEL SCHEDULER ─── */}
+      <section id="autopilot" className="scroll-mt-24 border-y bg-canvas py-24 md:py-32">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
           <div>
-            <SectionHeading eyebrow={t("openSource.badge")} title={t("openSource.title")} body={t("openSource.body")} align="left" />
+            <SectionHeading
+              eyebrow="⚡ 100% AUTOMATED WORKFLOW"
+              title="Publish Everywhere in 1-Click. Autopilot Viral Reach."
+              body="Set your growth on auto-pilot. Clippers AI finds the most viral moments, crops with intelligent face-tracking, burns animated subtitles, and publishes directly to all your social channels on schedule."
+              align="left"
+            />
             <Reveal delay={0.05}>
-              <ul className="mt-8 space-y-3 text-sm">
-                {(["license", "docker", "models"] as const).map((fact) => (
+              <ul className="mt-8 space-y-3.5 text-sm">
+                {[
+                  "Direct 1-Click Auto Upload to Instagram Reels & YouTube Shorts",
+                  "AI Virality Prediction (85+ Viral Score) for maximum organic reach",
+                  "Auto Face-Tracking & 9:16 vertical re-framing for podcast cameras",
+                  "Trending dynamic animated captions & karaoke word pop",
+                  "7-Day Free Trial on all memberships – zero risk, auto-pay after trial",
+                ].map((fact) => (
                   <li key={fact} className="flex items-start gap-3">
-                    <Check className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
-                    {t(`openSource.facts.${fact}`)}
+                    <Check className="mt-0.5 size-4 shrink-0 text-emerald-500" />
+                    <span>{fact}</span>
                   </li>
                 ))}
               </ul>
               <div className="mt-9 flex flex-wrap gap-3">
-                <Button asChild className="rounded-full">
-                  <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
-                    <Github className="size-4" />
-                    {t("pricing.selfHost.cta")}
-                  </a>
+                <Button asChild size="lg" className="rounded-full px-7 shadow-lg">
+                  <Link href="/sign-up">
+                    <Sparkles className="size-4 mr-2" />
+                    Start 7-Day Free Trial
+                  </Link>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full bg-background">
-                  <Link href={SELF_HOSTING_GUIDE_HREF}>{t(`links.${catalogKey(SELF_HOSTING_GUIDE_HREF)}.label`)}</Link>
+                <Button asChild variant="outline" size="lg" className="rounded-full bg-background px-6">
+                  <a href="#pricing">View Pricing (₹1,400/mo)</a>
                 </Button>
               </div>
             </Reveal>
           </div>
 
           <Reveal delay={0.1} className="min-w-0">
-            <div className="dark overflow-hidden rounded-[22px] border bg-background text-foreground shadow-2xl">
-              <div className="flex items-center gap-1.5 border-b px-4 py-3">
-                {[0, 1, 2].map((dot) => (
-                  <span key={dot} className="size-2.5 rounded-full bg-foreground/20" />
-                ))}
-                <span className="ml-3 font-mono text-[11px] text-muted-foreground">{t("openSource.commandLabel")}</span>
+            <div className="overflow-hidden rounded-[24px] border border-border/80 bg-background/95 p-6 shadow-2xl backdrop-blur-xl">
+              <div className="flex items-center justify-between border-b pb-4">
+                <div className="flex items-center gap-2.5">
+                  <span className="relative flex size-3">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex size-3 rounded-full bg-emerald-500" />
+                  </span>
+                  <span className="font-semibold text-sm">Clippers Social Autopilot</span>
+                </div>
+                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                  Multi-Channel Sync
+                </span>
               </div>
-              <pre className="overflow-x-auto p-6 font-mono text-[13px] leading-8">
-                <code>
-                  <span className="text-muted-foreground">$ </span>git clone {GITHUB_URL} gtaclipper{"\n"}
-                  <span className="text-muted-foreground">$ </span>cd gtaclipper && cp .env.example .env{"\n"}
-                  <span className="text-muted-foreground">{t("openSource.comment")}</span>{"\n"}
-                  <span className="text-muted-foreground">$ </span>docker compose up -d --build{"\n"}
-                  <span className="text-emerald-400">✓</span> <span className="text-muted-foreground">{t("openSource.ready")}</span>
-                </code>
-              </pre>
+
+              <div className="mt-5 space-y-3">
+                <div className="flex items-center justify-between rounded-xl border bg-muted/40 p-3.5">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xl">📸</span>
+                    <div>
+                      <p className="text-sm font-semibold">Instagram Reels</p>
+                      <p className="text-xs text-muted-foreground">Connected • Daily 3 Clips Scheduled</p>
+                    </div>
+                  </div>
+                  <span className="text-xs font-semibold text-emerald-500 bg-emerald-500/10 px-2.5 py-1 rounded-full">Active ✅</span>
+                </div>
+
+                <div className="flex items-center justify-between rounded-xl border bg-muted/40 p-3.5">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xl">🔴</span>
+                    <div>
+                      <p className="text-sm font-semibold">YouTube Shorts</p>
+                      <p className="text-xs text-muted-foreground">Connected • Auto-Title & Tags</p>
+                    </div>
+                  </div>
+                  <span className="text-xs font-semibold text-emerald-500 bg-emerald-500/10 px-2.5 py-1 rounded-full">Active ✅</span>
+                </div>
+
+                <div className="flex items-center justify-between rounded-xl border bg-muted/40 p-3.5">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xl">🔥</span>
+                    <div>
+                      <p className="text-sm font-semibold">AI Virality Score Engine</p>
+                      <p className="text-xs text-muted-foreground">Analyzed 10 clips • Avg Virality 89/100</p>
+                    </div>
+                  </div>
+                  <span className="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">Top Tier ⚡</span>
+                </div>
+              </div>
+
+              <div className="mt-5 rounded-xl border border-dashed border-emerald-500/30 bg-emerald-500/5 p-3.5 text-center text-xs text-muted-foreground">
+                <p className="font-medium text-foreground text-emerald-600 dark:text-emerald-400">🎁 7-Day Free Trial Active For All New Accounts</p>
+                <p className="mt-0.5">Test automated clipping, virality scoring, and auto-publishing with zero risk.</p>
+              </div>
             </div>
           </Reveal>
         </div>

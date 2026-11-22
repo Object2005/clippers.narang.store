@@ -15,6 +15,10 @@ import {
   annualFullPrice,
   annualMonthlyEquivalent,
   annualMonthsFree,
+  intervalFullPrice,
+  intervalMonthlyEquivalent,
+  intervalDiscountPercent,
+  intervalMonths,
   billingPlanMessageKey,
   getNextBillingPlan,
   planPrice,
@@ -30,7 +34,7 @@ import { PaymentFailedBanner } from "@/components/payment-failed-banner";
 import { startUpgrade } from "@/lib/start-upgrade";
 import { hasPaidAccess, stripePaymentNeedsUpdate } from "@/lib/subscription-status";
 import { cn } from "@/lib/utils";
-import { annualBillingEnabled, formatPrice } from "@/lib/billing-provider";
+import { annualBillingEnabled, formatPrice, detectUserCurrency, setUserCurrency, type SupportedCurrency } from "@/lib/billing-provider";
 
 export type UpgradeReason =
   | { kind: "start" }
@@ -234,7 +238,8 @@ export function UpgradeDialog({ open, onOpenChange, reason, billing, source }: U
   const text = useBillingPlanText();
   const settings = useTranslations("settings");
   const state = getUpgradeState(billing);
-  const allPlans = getOfferedBillingPlans();
+  const [currency, setCurrency] = useState<SupportedCurrency>(() => detectUserCurrency());
+  const allPlans = getOfferedBillingPlans(currency);
   // Free users choose between every plan; subscribers see their plan next to the step up.
   const options: PublicBillingPlan[] = state?.isPaid ? (state.nextPlan ? [state.nextPlan] : []) : allPlans;
   const currentPlan = state?.isPaid ? allPlans.find((plan) => plan.id === billing?.plan) : undefined;
@@ -260,7 +265,7 @@ export function UpgradeDialog({ open, onOpenChange, reason, billing, source }: U
     if (!target) return;
     setIsRedirecting(true);
     try {
-      await startUpgrade(target.id, `${source}:${reason.kind}`, billingInterval);
+      await startUpgrade(target.id, `${source}:${reason.kind}`, billingInterval, currency);
     } catch (error) {
       toast.error(error instanceof Error ? error.message : text.t("checkoutError"));
       setIsRedirecting(false);
@@ -296,16 +301,20 @@ export function UpgradeDialog({ open, onOpenChange, reason, billing, source }: U
             </p>
           ) : (
             <>
-              {options.length > 0 && (
-                <BillingIntervalToggle className="mt-6 self-start" value={billingInterval} onChange={setBillingInterval} plan={options[0]} />
-              )}
+              <div className="mt-6 flex flex-wrap items-center justify-between gap-2">
+                {options.length > 0 && (
+                  <BillingIntervalToggle value={billingInterval} onChange={setBillingInterval} plan={options[0]} />
+                )}
+                <CurrencyToggle value={currency} onChange={setCurrency} />
+              </div>
               <div className="mt-3 space-y-2" role="radiogroup" aria-label={text.t("plansLabel")}>
-                {currentPlan && <PlanOption plan={currentPlan} interval={billingInterval} current />}
+                {currentPlan && <PlanOption plan={currentPlan} interval={billingInterval} currency={currency} current />}
                 {options.map((plan) => (
                   <PlanOption
                     key={plan.id}
                     plan={plan}
                     interval={billingInterval}
+                    currency={currency}
                     selected={plan.id === target?.id}
                     recommended={options.length > 1 && plan.id === preferred}
                     onSelect={() => setSelected(plan.id)}
@@ -367,7 +376,57 @@ function preferredPlan(reason: UpgradeReason, options: PublicBillingPlan[]): Bil
   return (options.find((plan) => plan.highlighted) ?? options[0])?.id;
 }
 
-/** Monthly / yearly switch; the yearly label shows what it saves. */
+/** Currency switcher: INR (India / UPI / Razorpay) vs USD (Global / Stripe) */
+export function CurrencyToggle({
+  value,
+  onChange,
+  className,
+}: {
+  value: SupportedCurrency;
+  onChange: (currency: SupportedCurrency) => void;
+  className?: string;
+}) {
+  return (
+    <div className={cn("inline-flex items-center gap-1 rounded-xl border bg-muted/40 p-1 text-xs", className)}>
+      <button
+        type="button"
+        role="button"
+        aria-label="Indian Rupees"
+        onClick={() => {
+          onChange("INR");
+          setUserCurrency("INR");
+        }}
+        className={cn(
+          "rounded-lg px-2.5 py-1 font-semibold transition-all",
+          value === "INR"
+            ? "bg-background text-foreground shadow-xs ring-1 ring-border"
+            : "text-muted-foreground hover:bg-background/40 hover:text-foreground",
+        )}
+      >
+        🇮🇳 ₹ INR
+      </button>
+      <button
+        type="button"
+        role="button"
+        aria-label="US Dollars"
+        onClick={() => {
+          onChange("USD");
+          setUserCurrency("USD");
+        }}
+        className={cn(
+          "rounded-lg px-2.5 py-1 font-semibold transition-all",
+          value === "USD"
+            ? "bg-background text-foreground shadow-xs ring-1 ring-border"
+            : "text-muted-foreground hover:bg-background/40 hover:text-foreground",
+        )}
+      >
+        🌐 $ USD
+      </button>
+    </div>
+  );
+}
+
+/** Membership duration selector: Monthly, 3 Months, 6 Months, 1 Year */
 export function BillingIntervalToggle({
   value,
   onChange,
@@ -376,35 +435,58 @@ export function BillingIntervalToggle({
 }: {
   value: BillingInterval;
   onChange: (interval: BillingInterval) => void;
-  /** Used to state the yearly saving. */
+  /** Used to state saving. */
   plan?: PublicBillingPlan;
   className?: string;
 }) {
   const text = useBillingPlanText();
-  const monthsFree = plan ? annualMonthsFree(plan) : 0;
   if (!annualBillingEnabled()) return null;
+
+  const intervals: { id: BillingInterval; label: string; badge?: string }[] = [
+    { id: "month", label: "Monthly" },
+    { id: "quarter", label: "3 Months", badge: "15% OFF" },
+    { id: "half_year", label: "6 Months", badge: "25% OFF" },
+    { id: "year", label: "1 Year", badge: "BEST VALUE · 35% OFF" },
+  ];
+
   return (
-    <div role="radiogroup" aria-label={text.t("interval.label")} className={cn("inline-flex rounded-lg border p-0.5 text-sm", className)}>
-      {(["month", "year"] as const).map((option) => (
-        <button
-          key={option}
-          type="button"
-          role="radio"
-          aria-checked={value === option}
-          onClick={() => onChange(option)}
-          className={cn(
-            "rounded-md px-3 py-1 font-medium transition-colors",
-            value === option ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground",
-          )}
-        >
-          {option === "month" ? text.t("interval.monthly") : text.t("interval.yearly")}
-          {option === "year" && monthsFree > 0 && (
-            <span className={cn("ml-1.5 text-xs font-normal", value === option ? "text-background/70" : "text-muted-foreground")}>
-              {text.t("interval.monthsFree", { count: monthsFree })}
-            </span>
-          )}
-        </button>
-      ))}
+    <div
+      role="radiogroup"
+      aria-label={text.t("interval.label")}
+      className={cn("inline-flex flex-wrap sm:flex-nowrap gap-1 rounded-xl border bg-muted/40 p-1 text-sm", className)}
+    >
+      {intervals.map((item) => {
+        const isSelected = value === item.id;
+        return (
+          <button
+            key={item.id}
+            type="button"
+            role="radio"
+            aria-checked={isSelected}
+            onClick={() => onChange(item.id)}
+            className={cn(
+              "relative flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 font-medium transition-all",
+              isSelected
+                ? "bg-background text-foreground shadow-sm ring-1 ring-border"
+                : "text-muted-foreground hover:bg-background/50 hover:text-foreground",
+            )}
+          >
+            <span>{item.label}</span>
+            {item.badge && (
+              <span
+                className={cn(
+                  "rounded-full px-1.5 py-0.5 text-[10px] font-semibold tracking-wide",
+                  isSelected
+                    ? "bg-amber-500/15 text-amber-600 dark:text-amber-400"
+                    : "bg-muted text-muted-foreground",
+                )}
+              >
+                {item.badge}
+              </span>
+            )}
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -412,6 +494,7 @@ export function BillingIntervalToggle({
 function PlanOption({
   plan,
   interval,
+  currency,
   current,
   selected,
   recommended,
@@ -419,12 +502,17 @@ function PlanOption({
 }: {
   plan: PublicBillingPlan;
   interval: BillingInterval;
+  currency?: SupportedCurrency;
   current?: boolean;
   selected?: boolean;
   recommended?: boolean;
   onSelect?: () => void;
 }) {
   const text = useBillingPlanText();
+  const months = intervalMonths(interval);
+  const discount = intervalDiscountPercent(plan, interval);
+  const intervalUnit = interval === "year" ? "/yr" : interval === "half_year" ? "/6mo" : interval === "quarter" ? "/3mo" : "/mo";
+
   return (
     <button
       type="button"
@@ -463,14 +551,16 @@ function PlanOption({
         </span>
       </span>
       <span className="text-right text-sm font-semibold tabular-nums">
-        {interval === "year" && annualMonthsFree(plan) > 0 && (
-          <span className="mr-1.5 text-xs font-normal text-muted-foreground line-through">{formatPrice(annualFullPrice(plan))}</span>
+        {interval !== "month" && discount > 0 && (
+          <span className="mr-1.5 text-xs font-normal text-muted-foreground line-through">
+            {formatPrice(intervalFullPrice(plan, interval), currency)}
+          </span>
         )}
-        {formatPrice(planPrice(plan, interval))}
-        <span className="text-xs font-normal text-muted-foreground">{interval === "year" ? text.t("perYear") : text.t("perMonth")}</span>
-        {interval === "year" && (
+        {formatPrice(planPrice(plan, interval), currency)}
+        <span className="text-xs font-normal text-muted-foreground">{intervalUnit}</span>
+        {interval !== "month" && (
           <span className="block text-[11px] font-normal text-muted-foreground">
-            {text.t("monthlyEquivalent", { price: annualMonthlyEquivalent(plan) })}
+            {formatPrice(intervalMonthlyEquivalent(plan, interval), currency)}/mo
           </span>
         )}
       </span>

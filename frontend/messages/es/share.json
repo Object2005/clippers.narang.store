@@ -1,5 +1,5 @@
 {
-  "brand": "GTAClipper",
+  "brand": "Clippers",
   "makeYourOwn": "Crea los tuyos",
   "unavailableTitle": "Este enlace no está disponible",
   "unavailable": "Este enlace para compartir no está disponible",
@@ -8,8 +8,8 @@
   "summary": "{count, plural, one {# clip} other {# clips}} · {duration} de momentos destacados",
   "topVirality": "puntaje de viralidad más alto",
   "ctaTitle": "Convierte tus videos largos en clips como estos.",
-  "ctaBody": "GTAClipper encuentra los mejores momentos, encuadra a quien habla y escribe los subtítulos. Código abierto y gratis para autoalojar.",
-  "try": "Probar GTAClipper",
+  "ctaBody": "Clippers encuentra los mejores momentos, encuadra a quien habla y escribe los subtítulos. Código abierto y gratis para autoalojar.",
+  "try": "Probar Clippers",
   "workflowBadge": {
     "series": "Serie · {count, plural, one {# parte} other {# partes}}",
     "topic": "Tema: {topic}",

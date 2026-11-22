@@ -5,12 +5,18 @@ import { clearCreatorCode, getStoredCreatorCode } from "@/lib/creator-code";
 import { track } from "@/lib/datafast";
 import { EXISTING_SUBSCRIPTION_NEEDS_PAYMENT } from "@/lib/subscription-status";
 import { openRazorpayCheckout, type RazorpayCheckoutOptions } from "@/lib/razorpay-checkout";
+import { detectUserCurrency, type SupportedCurrency } from "@/lib/billing-provider";
 
-async function requestCheckout(plan: BillingPlanId, interval: BillingInterval, code: string | null) {
+async function requestCheckout(
+  plan: BillingPlanId,
+  interval: BillingInterval,
+  code: string | null,
+  currency: SupportedCurrency = detectUserCurrency(),
+) {
   const response = await fetch("/api/billing/checkout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(code ? { plan, interval, code } : { plan, interval }),
+    body: JSON.stringify(code ? { plan, interval, code, currency } : { plan, interval, currency }),
   });
   const data: { url?: string; error?: string; code?: string; razorpay?: RazorpayCheckoutOptions } =
     await response.json().catch(() => ({}));
@@ -18,18 +24,16 @@ async function requestCheckout(plan: BillingPlanId, interval: BillingInterval, c
 }
 
 /**
- * Sends the user to Stripe for `plan`, billed every `interval`. New subscribers get Checkout; existing
- * subscribers get the portal's plan-change confirmation (see the checkout route).
- * A remembered creator code is applied; if it stopped being valid it is dropped
- * and checkout continues at the regular price.
+ * Sends the user to Razorpay (for INR) or Stripe (for USD) for `plan`, billed every `interval`.
  */
 export async function startUpgrade(
   plan: BillingPlanId,
   source: string,
   interval: BillingInterval = "month",
+  currency: SupportedCurrency = detectUserCurrency(),
 ): Promise<void> {
   const code = getStoredCreatorCode();
-  let { response, data } = await requestCheckout(plan, interval, code);
+  let { response, data } = await requestCheckout(plan, interval, code, currency);
   if (data.code === EXISTING_SUBSCRIPTION_NEEDS_PAYMENT) {
     const portal = await fetch("/api/billing/portal", { method: "POST" });
     const portalData: { url?: string; error?: string } = await portal.json().catch(() => ({}));

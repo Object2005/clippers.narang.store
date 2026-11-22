@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       url: `${siteUrl}/affiliate`,
-      siteName: "GTAClipper",
+      siteName: "Clippers",
       type: "website",
     },
     twitter: { card: "summary_large_image", title, description },
@@ -57,7 +57,7 @@ export default async function AffiliatePage() {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "GTAClipper", item: siteUrl },
+          { "@type": "ListItem", position: 1, name: "Clippers", item: siteUrl },
           { "@type": "ListItem", position: 2, name: t("badge"), item: `${siteUrl}/affiliate` },
         ],
       },
@@ -78,8 +78,8 @@ export default async function AffiliatePage() {
       <header className="border-b bg-background/95">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/logo.png" alt="GTAClipper" width={24} height={24} className="rounded-lg dark:invert" />
-            <span className="text-lg font-bold tracking-tight">GTAClipper</span>
+            <Image src="/logo.png" alt="Clippers" width={24} height={24} className="rounded-lg " />
+            <span className="text-lg font-bold tracking-tight">Clippers</span>
           </Link>
           <nav className="flex items-center gap-2" aria-label={t("nav.label")}>
             <Link href="/demo"><Button variant="ghost" size="sm">{t("nav.demo")}</Button></Link>

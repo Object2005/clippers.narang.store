@@ -190,11 +190,11 @@ def build_reaction_layout(
     # Remove the inset from the source background too, avoiding a ghost copy.
     graph = [
         '[0:v]split=3[reactor_src][source_bg][source_src]',
-        f'[reactor_src]crop={rw}:{rh}:{rx}:{ry},scale=1080:{REACTOR_HEIGHT}:flags=lanczos,'
+        f'[reactor_src]crop={rw}:{rh}:{rx}:{ry},scale=1080:{REACTOR_HEIGHT}:flags=bicubic,'
         f'{UPSCALE_SHARPEN_FILTER},setsar=1[reactor]',
         f'[source_bg]drawbox=x={int(ix)}:y=0:w={int(iw)}:h={int(ih)}:color=black:t=fill,'
         'scale=540:640:force_original_aspect_ratio=increase,crop=540:640,'
-        f'gblur=sigma=18:steps=2,scale=1080:{SOURCE_HEIGHT},setsar=1[base0]',
+        f'boxblur=12:2,scale=1080:{SOURCE_HEIGHT},setsar=1[base0]',
         '[source_src]split=' + str(len(runs)) + ''.join(f'[part{i}]' for i in range(len(runs))),
     ]
     # The space beside the inset contains a full-height, unobstructed closeup.
@@ -221,7 +221,7 @@ def build_reaction_layout(
         if len(guest_crops) == 2 and guest_crops[0] != guest_crops[1]:
             graph.append(f'[part{i}]split=2[guest{i}a][guest{i}b]')
             for label, (gw, gh, gx, gy) in zip(('a', 'b'), guest_crops):
-                graph.append(f'[guest{i}{label}]crop={gw}:{gh}:{gx}:{gy},scale=1080:640:flags=lanczos,setsar=1[g{i}{label}]')
+                graph.append(f'[guest{i}{label}]crop={gw}:{gh}:{gx}:{gy},scale=1080:640:flags=bicubic,setsar=1[g{i}{label}]')
             graph.append(f'[g{i}a][g{i}b]vstack=inputs=2[p{i}]')
             enable = f'gte(t\\,{start:.3f})*lt(t\\,{end:.3f})'
             graph.append(f"[base{i}][p{i}]overlay=0:0:enable='{enable}'[base{i+1}]")
@@ -247,22 +247,22 @@ def build_reaction_layout(
                     ch = round_to_even(int(min(max(0, height-y), cw * SOURCE_HEIGHT / 1080)))
                 x = clamp_even(int(cx - cw / 2), 0, max(0, width-cw))
             if _crop_inside(cw, ch, x, y, width, height):
-                crop = f'crop={cw}:{ch}:{x}:{y},scale=1080:{SOURCE_HEIGHT}:flags=lanczos'
+                crop = f'crop={cw}:{ch}:{x}:{y},scale=1080:{SOURCE_HEIGHT}:flags=bicubic'
             else:
                 y = min(round_to_even(int(max(ih, 0))), round_to_even(max(0, height - 2)))
                 crop = (
                     f'crop={round_to_even(width)}:{round_to_even(height - y)}:0:{y},'
-                    f'scale=1080:{SOURCE_HEIGHT}:force_original_aspect_ratio=decrease:flags=lanczos'
+                    f'scale=1080:{SOURCE_HEIGHT}:force_original_aspect_ratio=decrease:flags=bicubic'
                 )
         elif mode == 'wide' and all(f[1] >= ih for f in faces):
             # Both guests in a wide shot sit below the upper-corner camera.
             y = round_to_even(int(ih))
-            crop = f'crop={round_to_even(width)}:{round_to_even(height-y)}:0:{y},scale=1080:{SOURCE_HEIGHT}:force_original_aspect_ratio=decrease:flags=lanczos'
+            crop = f'crop={round_to_even(width)}:{round_to_even(height-y)}:0:{y},scale=1080:{SOURCE_HEIGHT}:force_original_aspect_ratio=decrease:flags=bicubic'
         else:
             # Keep source text and slides in full. The webcam already covers
             # this rectangle in the original; mask it instead of duplicating it.
             crop = (f'format=rgba,drawbox=x={int(ix)}:y=0:w={int(iw)}:h={int(ih)}:color=black@0:t=fill:replace=1,'
-                    f'scale=1080:{SOURCE_HEIGHT}:force_original_aspect_ratio=decrease:flags=lanczos')
+                    f'scale=1080:{SOURCE_HEIGHT}:force_original_aspect_ratio=decrease:flags=bicubic')
         graph.append(f'[part{i}]{crop},setsar=1[p{i}]')
         enable = f'gte(t\\,{start:.3f})*lt(t\\,{end:.3f})'
         graph.append(f"[base{i}][p{i}]overlay=(W-w)/2:(H-h)/2:enable='{enable}'[base{i+1}]")

@@ -9,6 +9,7 @@ from typing import Tuple
 from ..clip_source_map import normalize_source_ranges
 from ..config import get_config
 import json
+import os
 import re
 import subprocess
 import tempfile
@@ -36,8 +37,12 @@ def clamp_even(value: int, minimum: int, maximum: int) -> int:
     return round_to_even(max(minimum, min(value, maximum)))
 
 
-def run_ffmpeg_command(command: List[str], timeout: int = 900) -> subprocess.CompletedProcess:
+def run_ffmpeg_command(
+    command: List[str], timeout: Optional[int] = None
+) -> subprocess.CompletedProcess:
     """Run ffmpeg/ffprobe and log stderr on failure."""
+    if timeout is None:
+        timeout = int(os.getenv("FFMPEG_TIMEOUT_SECONDS", "1800"))
     result = subprocess.run(
         command,
         capture_output=True,
@@ -310,7 +315,7 @@ NO_CHAPTERS = ("-map_chapters", "-1")
 
 def build_final_video_encode_args(
     crf: int = FINAL_VIDEO_CRF,
-    preset: str = FINAL_VIDEO_PRESET,
+    preset: str | None = None,
     fps: int | str = OUTPUT_FPS,
     level: str = "4.1",
 ) -> List[str]:
@@ -319,10 +324,11 @@ def build_final_video_encode_args(
     Level 4.1 covers 1080p30. Original-format output at 60 fps (or 59.94)
     needs 4.2 or x264 rejects the stream.
     """
+    actual_preset = preset if preset and preset != "medium" else os.getenv("FINAL_VIDEO_PRESET", "ultrafast")
     return [
         *NO_CHAPTERS,
         "-c:v", "libx264",
-        "-preset", preset,
+        "-preset", actual_preset,
         "-crf", str(crf),
         "-pix_fmt", "yuv420p",
         "-profile:v", "high",
@@ -571,7 +577,7 @@ def _range_inputs(
                 "ffmpeg", "-y", "-ss", f"{origin:.3f}", "-i", str(video_path),
                 *audio_stream_map_args(audio_stream),
                 "-t", f"{length:.3f}",
-                "-c:v", "libx264", "-preset", "veryfast", "-crf", str(INTERMEDIATE_CRF),
+                "-c:v", "libx264", "-preset", os.getenv("INTERMEDIATE_VIDEO_PRESET", "ultrafast"), "-crf", str(INTERMEDIATE_CRF),
                 "-pix_fmt", "yuv420p",
             ]
             if audio_stream is not None:
@@ -704,7 +710,7 @@ def render_ranges_crossfade_ffmpeg(
             "-filter_complex", ";".join(parts),
             *map_args,
             *NO_CHAPTERS,
-            "-c:v", "libx264", "-preset", "veryfast", "-crf", str(INTERMEDIATE_CRF),
+            "-c:v", "libx264", "-preset", os.getenv("INTERMEDIATE_VIDEO_PRESET", "ultrafast"), "-crf", str(INTERMEDIATE_CRF),
             "-pix_fmt", "yuv420p",
         ]
         if has_audio:
@@ -775,7 +781,7 @@ def render_source_ranges_ffmpeg(
             "-c:v",
             "libx264",
             "-preset",
-            "veryfast",
+            os.getenv("INTERMEDIATE_VIDEO_PRESET", "ultrafast"),
             "-crf",
             str(INTERMEDIATE_CRF),
             "-pix_fmt",
@@ -850,7 +856,7 @@ def render_source_ranges_ffmpeg(
             "-c:v",
             "libx264",
             "-preset",
-            "veryfast",
+            os.getenv("INTERMEDIATE_VIDEO_PRESET", "ultrafast"),
             "-crf",
             str(INTERMEDIATE_CRF),
             "-pix_fmt",

@@ -86,7 +86,7 @@ export async function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
           <thead className="bg-muted">
             <tr>
               <th scope="col" className="p-3">{t(`${slug}.comparison.area`)}</th>
-              <th scope="col" className="p-3">GTAClipper</th>
+              <th scope="col" className="p-3">Clippers</th>
               <th scope="col" className="p-3">OpusClip</th>
             </tr>
           </thead>
@@ -126,10 +126,10 @@ export async function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
         })}
       </p>
 
-      <h2 id="choose-gtaclipper">{t(`${slug}.chooseGTAClipper.heading`)}</h2>
+      <h2 id="choose-gtaclipper">{t(`${slug}.chooseClippers.heading`)}</h2>
       <ul>
         {(["li1", "li2", "li3", "li4"] as const).map((key) => (
-          <li key={key}>{t.rich(`${slug}.chooseGTAClipper.${key}`, { strong: (chunks) => <strong>{chunks}</strong> })}</li>
+          <li key={key}>{t.rich(`${slug}.chooseClippers.${key}`, { strong: (chunks) => <strong>{chunks}</strong> })}</li>
         ))}
       </ul>
 

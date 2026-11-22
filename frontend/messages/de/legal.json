@@ -2,18 +2,18 @@
   "bindingNotice": "Die englische Fassung dieses Dokuments ist die rechtlich verbindliche. Diese Übersetzung dient nur deiner Orientierung.",
   "hostedApp": "Gehostete App",
   "lastUpdated": "Zuletzt aktualisiert: {date}",
-  "back": "Zurück zu GTAClipper",
+  "back": "Zurück zu Clippers",
   "terms": {
-    "metaTitle": "Nutzungsbedingungen | GTAClipper",
-    "metaDescription": "Die Bedingungen für deine Nutzung der GTAClipper-Apps und des gehosteten Video-Clipping-Dienstes, einschließlich Abos, die du im Web oder über den App Store kaufst.",
-    "ogTitle": "GTAClipper-Nutzungsbedingungen",
-    "ogDescription": "Die Bedingungen für deine Nutzung von GTAClipper.",
+    "metaTitle": "Nutzungsbedingungen | Clippers",
+    "metaDescription": "Die Bedingungen für deine Nutzung der Clippers-Apps und des gehosteten Video-Clipping-Dienstes, einschließlich Abos, die du im Web oder über den App Store kaufst.",
+    "ogTitle": "Clippers-Nutzungsbedingungen",
+    "ogDescription": "Die Bedingungen für deine Nutzung von Clippers.",
     "title": "Nutzungsbedingungen",
     "privacyLink": "Datenschutzerklärung",
     "agreement": {
       "title": "Vereinbarung",
-      "p1": "Diese Nutzungsbedingungen („Bedingungen“) gelten zwischen dir und {company} („wir“, „uns“), dem Betreiber der GTAClipper-Apps und des gehosteten Dienstes (der „Dienst“), die lange Videos in kurze Clips mit Untertiteln umwandeln. Mit der Erstellung eines Kontos oder der Nutzung des Dienstes stimmst du diesen Bedingungen zu. Wenn du nicht zustimmst, nutze den Dienst nicht.",
-      "p2": "GTAClipper gibt es auch als Open-Source-Software, die du selbst hosten kannst. Diese Bedingungen gelten für den von GTAClipper betriebenen gehosteten Dienst; selbst gehostete Instanzen unterliegen der jeweiligen Open-Source-Lizenz und den eigenen Bedingungen der betreibenden Person."
+      "p1": "Diese Nutzungsbedingungen („Bedingungen“) gelten zwischen dir und {company} („wir“, „uns“), dem Betreiber der Clippers-Apps und des gehosteten Dienstes (der „Dienst“), die lange Videos in kurze Clips mit Untertiteln umwandeln. Mit der Erstellung eines Kontos oder der Nutzung des Dienstes stimmst du diesen Bedingungen zu. Wenn du nicht zustimmst, nutze den Dienst nicht.",
+      "p2": "Clippers gibt es auch als AI-powered-Software, die du selbst hosten kannst. Diese Bedingungen gelten für den von Clippers betriebenen gehosteten Dienst; selbst gehostete Instanzen unterliegen der jeweiligen AI-powered-Lizenz und den eigenen Bedingungen der betreibenden Person."
     },
     "account": {
       "title": "Dein Konto",
@@ -43,7 +43,7 @@
     },
     "ip": {
       "title": "Geistiges Eigentum",
-      "p1": "Der Dienst, einschließlich Software, Design und Marke, gehört {company} oder den jeweiligen Lizenzgebern. Die Open-Source-Bestandteile stehen unter ihren jeweiligen Lizenzen. Diese Bedingungen räumen dir keine Rechte an unseren Marken ein."
+      "p1": "Der Dienst, einschließlich Software, Design und Marke, gehört {company} oder den jeweiligen Lizenzgebern. Die AI-powered-Bestandteile stehen unter ihren jeweiligen Lizenzen. Diese Bedingungen räumen dir keine Rechte an unseren Marken ein."
     },
     "disclaimers": {
       "title": "Haftungsausschlüsse",
@@ -63,19 +63,19 @@
     },
     "contact": {
       "title": "Kontakt",
-      "body": "Fragen zu diesen Bedingungen? Schreib uns an <email>support@gtaclipper.com</email>."
+      "body": "Fragen zu diesen Bedingungen? Schreib uns an <email>nbms@narang.store</email>."
     }
   },
   "privacy": {
-    "metaTitle": "Datenschutzerklärung | GTAClipper",
-    "metaDescription": "Wie GTAClipper deine Daten erhebt, nutzt, teilt und schützt, wenn du den GTAClipper-Video-Clipping-Dienst nutzt.",
-    "ogTitle": "GTAClipper-Datenschutzerklärung",
-    "ogDescription": "Wie GTAClipper mit deinen Daten umgeht.",
+    "metaTitle": "Datenschutzerklärung | Clippers",
+    "metaDescription": "Wie Clippers deine Daten erhebt, nutzt, teilt und schützt, wenn du den Clippers-Video-Clipping-Dienst nutzt.",
+    "ogTitle": "Clippers-Datenschutzerklärung",
+    "ogDescription": "Wie Clippers mit deinen Daten umgeht.",
     "title": "Datenschutzerklärung",
     "overview": {
       "title": "Überblick",
-      "p1": "{company} („wir“, „uns“) betreibt die GTAClipper-Apps und den gehosteten Dienst (der „Dienst“) und ist der Verantwortliche für die personenbezogenen Daten, die zur Bereitstellung dieser Angebote verarbeitet werden. Diese Datenschutzerklärung erläutert, wie wir Informationen erheben, verwenden, weitergeben und schützen, wenn du den Dienst nutzt, der lange Videos in kurze Clips mit Untertiteln umwandelt.",
-      "p2": "GTAClipper gibt es auch als Open-Source-Software, die du selbst hosten kannst. Wenn du eine selbst gehostete Instanz nutzt, die du oder jemand anderes betreibt, ist die betreibende Person—nicht GTAClipper—für die Daten verantwortlich, die diese Instanz verarbeitet. Diese Erklärung beschreibt den von GTAClipper betriebenen gehosteten Dienst."
+      "p1": "{company} („wir“, „uns“) betreibt die Clippers-Apps und den gehosteten Dienst (der „Dienst“) und ist der Verantwortliche für die personenbezogenen Daten, die zur Bereitstellung dieser Angebote verarbeitet werden. Diese Datenschutzerklärung erläutert, wie wir Informationen erheben, verwenden, weitergeben und schützen, wenn du den Dienst nutzt, der lange Videos in kurze Clips mit Untertiteln umwandelt.",
+      "p2": "Clippers gibt es auch als AI-powered-Software, die du selbst hosten kannst. Wenn du eine selbst gehostete Instanz nutzt, die du oder jemand anderes betreibt, ist die betreibende Person—nicht Clippers—für die Daten verantwortlich, die diese Instanz verarbeitet. Diese Erklärung beschreibt den von Clippers betriebenen gehosteten Dienst."
     },
     "collect": {
       "title": "Welche Informationen wir erheben",
@@ -89,7 +89,7 @@
       "usage": "Wir erheben Sitzungskennungen, die IP-Adresse und grundlegende technische Protokolle, um den Dienst zu betreiben, abzusichern und zu debuggen. Wenn für die gehostete Website Analysen aktiv sind, nutzen wir einen datenschutzfreundlichen Analyseanbieter, der keine seitenübergreifenden Werbeprofile erstellt. Auf der gehosteten Website nutzen wir außerdem PostHog, um zu verstehen, wie das Produkt genutzt wird, um Sitzungen wiederzugeben (alles, was du in Formularfelder eingibst, wird maskiert) und um Fehlerberichte zu erhalten, damit wir Probleme beheben können.",
       "campaignLabel": "Kampagnen- und Empfehlungsdaten.",
       "campaign1": "Wenn du unsere Website abgemeldet besuchst, merkt sich dein Browser bis zu 90 Tage, wie du das erste Mal angekommen bist. Das liegt im lokalen Speicher deines Browsers, nicht in einem Cookie. Der Eintrag enthält Kampagnen-Tags aus dem Link, dem du gefolgt bist (etwa <utmSource>utm_source</utmSource>, <utmCampaign>utm_campaign</utmCampaign> oder einen <ref>ref</ref>-Code), die Domain der verweisenden Website (nicht die volle Adresse), die Seite, auf der du gelandet bist, und den Zeitpunkt dieses Besuchs. Seitenadressen werden auf die Route gekürzt, deshalb werden Share-Links und Projekt-IDs nie gespeichert. Solange du angemeldet bist, wird nichts aufgezeichnet.",
-      "campaign2": "Das erste Konto, das sich in diesem Browser anmeldet, übernimmt den Eintrag. Danach wird er aus dem Browser gelöscht, damit kein anderes Konto ihn nutzen kann. Wenn das Konto neu ist, speichern wir den Eintrag einmal kurz nach der Registrierung daran. Wir merken uns auch, wann du zum ersten Mal einen Clip herunterlädst oder exportierst. Damit lernen wir, welche Kanäle Menschen bringen, die GTAClipper nützlich finden. Wenn Analysen aktiv sind, enthalten die Registrierungs- und Clip-Export-Ereignisse, die wir an unseren Analyseanbieter senden, dieselben Kampagnenfelder. Wir nutzen diese Informationen nicht für Werbung und verkaufen sie nicht. Du kannst den Eintrag aus deinem Browser entfernen, indem du die Website-Daten für gtaclipper.com löschst."
+      "campaign2": "Das erste Konto, das sich in diesem Browser anmeldet, übernimmt den Eintrag. Danach wird er aus dem Browser gelöscht, damit kein anderes Konto ihn nutzen kann. Wenn das Konto neu ist, speichern wir den Eintrag einmal kurz nach der Registrierung daran. Wir merken uns auch, wann du zum ersten Mal einen Clip herunterlädst oder exportierst. Damit lernen wir, welche Kanäle Menschen bringen, die Clippers nützlich finden. Wenn Analysen aktiv sind, enthalten die Registrierungs- und Clip-Export-Ereignisse, die wir an unseren Analyseanbieter senden, dieselben Kampagnenfelder. Wir nutzen diese Informationen nicht für Werbung und verkaufen sie nicht. Du kannst den Eintrag aus deinem Browser entfernen, indem du die Website-Daten für gtaclipper.com löschst."
     },
     "use": {
       "title": "Wie wir deine Informationen nutzen",
@@ -104,16 +104,16 @@
     },
     "social": {
       "title": "Verbundene Social-Konten",
-      "p1": "Du kannst ein YouTube-, TikTok- oder Instagram-Konto verbinden, damit GTAClipper Clips für dich veröffentlicht. Das Verbinden ist optional, läuft über die eigene Anmeldeseite der Plattform, und wir sehen nie dein Passwort für diese Plattform.",
+      "p1": "Du kannst ein YouTube-, TikTok- oder Instagram-Konto verbinden, damit Clippers Clips für dich veröffentlicht. Das Verbinden ist optional, läuft über die eigene Anmeldeseite der Plattform, und wir sehen nie dein Passwort für diese Plattform.",
       "accessLabel": "Worauf wir zugreifen und warum.",
       "li1": "<label>Basisprofil</label> (Konto-ID, Anzeigename, Nutzername, Profilbild) — um zu zeigen, welches Konto verbunden ist.",
       "li2": "<label>Erlaubnis zum Hochladen oder Veröffentlichen</label> — um die Clips zu posten, die du auswählst, mit Titel, Bildunterschrift, Sichtbarkeit und Zeitpunkt, die du festlegst. Wir posten nie etwas, worum du uns nicht gebeten hast.",
-      "li3": "<label>Statistiken für Beiträge, die über GTAClipper entstanden sind</label> (Aufrufe, Likes, Kommentare, Shares) — um dir zu zeigen, wie deine Clips laufen, und, sobald genug Ergebnisse da sind, die Clip-Auswahl für deine künftigen Videos anzupassen.",
+      "li3": "<label>Statistiken für Beiträge, die über Clippers entstanden sind</label> (Aufrufe, Likes, Kommentare, Shares) — um dir zu zeigen, wie deine Clips laufen, und, sobald genug Ergebnisse da sind, die Clip-Auswahl für deine künftigen Videos anzupassen.",
       "tokens": "Wir speichern die Zugriffstokens der Plattform verschlüsselt und nutzen sie nur für die Zwecke oben. Wir verkaufen diese Daten nicht, nutzen sie nicht für Werbung, teilen sie nicht mit anderen Nutzern und trainieren damit keine allgemeinen KI-Modelle.",
       "disconnectLabel": "Trennen und Löschen.",
-      "disconnect": "Du kannst ein Konto jederzeit auf der Social-Seite trennen. Dabei werden die gespeicherten Tokens sofort gelöscht, noch geplante Beiträge für dieses Konto abgebrochen und die Plattform gebeten, den Zugriff von GTAClipper zu widerrufen, soweit sie das unterstützt. Du kannst auch Einträge veröffentlichter Beiträge samt Statistiken aus der App entfernen. Wenn du dein GTAClipper-Konto löschst, werden all diese Daten entfernt. Du kannst den Zugriff auch bei der Plattform selbst widerrufen, bei Google unter <google>Google-Sicherheitseinstellungen</google>. Wenn wir diese Daten löschen sollen, schreib an <email>privacy@gtaclipper.com</email>.",
+      "disconnect": "Du kannst ein Konto jederzeit auf der Social-Seite trennen. Dabei werden die gespeicherten Tokens sofort gelöscht, noch geplante Beiträge für dieses Konto abgebrochen und die Plattform gebeten, den Zugriff von Clippers zu widerrufen, soweit sie das unterstützt. Du kannst auch Einträge veröffentlichter Beiträge samt Statistiken aus der App entfernen. Wenn du dein Clippers-Konto löschst, werden all diese Daten entfernt. Du kannst den Zugriff auch bei der Plattform selbst widerrufen, bei Google unter <google>Google-Sicherheitseinstellungen</google>. Wenn wir diese Daten löschen sollen, schreib an <email>nbms@narang.store</email>.",
       "youtubeLabel": "YouTube und Google.",
-      "youtube": "GTAClipper nutzt YouTube API Services. Wenn du ein YouTube-Konto verbindest, stimmst du den <youtubeTerms>YouTube-Nutzungsbedingungen</youtubeTerms> zu, und wie Google deine Daten behandelt, steht in der <googlePrivacy>Datenschutzerklärung von Google</googlePrivacy>. GTAClippers Nutzung und Weitergabe von Informationen aus Google-APIs an eine andere App hält sich an die <googleApi>Google API Services User Data Policy</googleApi>, einschließlich der Limited-Use-Anforderungen."
+      "youtube": "Clippers nutzt YouTube API Services. Wenn du ein YouTube-Konto verbindest, stimmst du den <youtubeTerms>YouTube-Nutzungsbedingungen</youtubeTerms> zu, und wie Google deine Daten behandelt, steht in der <googlePrivacy>Datenschutzerklärung von Google</googlePrivacy>. Clipperss Nutzung und Weitergabe von Informationen aus Google-APIs an eine andere App hält sich an die <googleApi>Google API Services User Data Policy</googleApi>, einschließlich der Limited-Use-Anforderungen."
     },
     "processors": {
       "title": "Dienstleister und Unterauftragsverarbeiter",
@@ -134,7 +134,7 @@
     },
     "rights": {
       "title": "Deine Rechte und Wahlmöglichkeiten",
-      "p1": "Du kannst deine Kontodaten in der App ansehen und aktualisieren. Einzelne Aufgaben und Clips kannst du jederzeit löschen. Dein Konto—und damit die zugehörigen Daten—löschst du in der App oder indem du uns unter <email>privacy@gtaclipper.com</email> schreibst.",
+      "p1": "Du kannst deine Kontodaten in der App ansehen und aktualisieren. Einzelne Aufgaben und Clips kannst du jederzeit löschen. Dein Konto—und damit die zugehörigen Daten—löschst du in der App oder indem du uns unter <email>nbms@narang.store</email> schreibst.",
       "p2": "Je nachdem, wo du wohnst (zum Beispiel nach DSGVO oder CCPA/CPRA), hast du vielleicht Rechte auf Auskunft, Berichtigung, Löschung oder Übertragung deiner personenbezogenen Daten und kannst bestimmter Verarbeitung widersprechen oder sie einschränken. Um diese Rechte auszuüben, schreib uns an die Adresse unten. Wir benachteiligen dich nicht, weil du deine Rechte nutzt."
     },
     "security": {
@@ -155,7 +155,7 @@
     },
     "contact": {
       "title": "Kontakt",
-      "body": "Fragen zu dieser Erklärung oder deinen Daten? Schreib uns an <email>privacy@gtaclipper.com</email>."
+      "body": "Fragen zu dieser Erklärung oder deinen Daten? Schreib uns an <email>nbms@narang.store</email>."
     }
   },
   "operatorDetails": "Betreiber des Dienstes: {company}, eine Gesellschaft mit beschränkter Haftung nach dem Recht von Delaware (Registernummer {registration}). Eingetragener Sitz: {address}."

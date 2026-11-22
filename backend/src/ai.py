@@ -37,7 +37,7 @@ MIN_ACCEPTED_CLIP_SECONDS = 15
 MAX_ACCEPTED_CLIP_SECONDS = 60
 TRANSCRIPT_ANALYSIS_CACHE_VERSION = "windowed-rerank-v6"
 TRANSCRIPT_ANALYSIS_MAX_ATTEMPTS = 3
-TRANSCRIPT_ANALYSIS_TIMEOUT_SECONDS = 600
+TRANSCRIPT_ANALYSIS_TIMEOUT_SECONDS = 90
 # Long transcripts are analysed in overlapping windows so every part of the
 # source gets the model's full attention; candidates are then reranked together.
 ANALYSIS_WINDOW_SECONDS = 12 * 60

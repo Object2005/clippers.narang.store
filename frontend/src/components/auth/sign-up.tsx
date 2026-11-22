@@ -9,12 +9,14 @@ import { postAuthPath } from "@/lib/auth-redirect";
 import { track } from "@/lib/datafast";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import { Eye, EyeOff } from "lucide-react";
 
 export function SignUp() {
   const t = useTranslations("auth");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [ok, setOk] = useState(false);
@@ -76,16 +78,27 @@ export function SignUp() {
             required
             disabled={loading}
           />
-          <Input
-            className="h-11"
-            type="password"
-            placeholder={t("signUp.password")}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            disabled={loading}
-            minLength={8}
-          />
+          <div className="relative">
+            <Input
+              className="h-11 pr-10"
+              type={showPassword ? "text" : "password"}
+              placeholder={t("signUp.password")}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              disabled={loading}
+              minLength={8}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground focus:outline-none"
+              tabIndex={-1}
+              aria-label={showPassword ? "Hide password" : "Show password"}
+            >
+              {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
+            </button>
+          </div>
           <Button type="submit" className="h-11 w-full" disabled={loading}>
             {loading ? t("signUp.submitting") : t("signUp.submit")}
           </Button>

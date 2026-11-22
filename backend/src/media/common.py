@@ -22,6 +22,7 @@ import subprocess
 
 import tempfile
 
+import os
 import time
 
 import cv2
@@ -32,6 +33,7 @@ import httpx
 
 import srt
 
+import os
 from datetime import timedelta
 
 try:
@@ -142,7 +144,7 @@ _WHISPER_MODEL_CACHE: Dict[str, Any] = {}
 
 FINAL_VIDEO_CRF = 19
 
-FINAL_VIDEO_PRESET = "medium"
+FINAL_VIDEO_PRESET = os.getenv("FINAL_VIDEO_PRESET", "ultrafast")
 
 INTERMEDIATE_CRF = 16
 

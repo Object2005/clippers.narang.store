@@ -175,5 +175,9 @@ export async function flushServerEvents(timeoutMs = 2000): Promise<void> {
 /** Billing interval of a subscription period, from its length in seconds. */
 export function intervalFromPeriod(start: number | null | undefined, end: number | null | undefined): Interval {
   if (typeof start !== "number" || typeof end !== "number" || end <= start) return null;
-  return end - start > 60 * 24 * 60 * 60 ? "year" : "month";
+  const days = (end - start) / (24 * 60 * 60);
+  if (days <= 45) return "month";
+  if (days <= 120) return "quarter";
+  if (days <= 240) return "half_year";
+  return "year";
 }

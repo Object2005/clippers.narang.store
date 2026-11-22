@@ -6,26 +6,26 @@
     "allArticles": "Todos os artigos",
     "startClipping": "Comece a cortar",
     "breadcrumbNav": "Trilha",
-    "byline": "Por GTAClipper · Atualizado em <date>{when}</date> · {readingTime}",
+    "byline": "Por Clippers · Atualizado em <date>{when}</date> · {readingTime}",
     "updated": "Atualizado em <date>{when}</date>",
     "inThisArticle": "Neste artigo",
     "faqHeading": "Perguntas frequentes",
     "faq": "Perguntas frequentes",
-    "startAria": "Comece com o GTAClipper",
+    "startAria": "Comece com o Clippers",
     "ctaTitle": "Teste com uma gravação que você conhece bem.",
     "ctaBody": "Use o app hospedado ou rode o mesmo código aberto na sua máquina.",
     "getSource": "Pegue o código",
     "keepReading": "Continue lendo"
   },
   "index": {
-    "metaTitle": "Blog do GTAClipper | Guias de corte de vídeo com IA",
-    "metaDescription": "Guias práticos, comparações de produtos e fluxos de trabalho para transformar vídeos longos em shorts prontos para as redes com o GTAClipper.",
-    "ogTitle": "Blog do GTAClipper",
+    "metaTitle": "Blog do Clippers | Guias de corte de vídeo com IA",
+    "metaDescription": "Guias práticos, comparações de produtos e fluxos de trabalho para transformar vídeos longos em shorts prontos para as redes com o Clippers.",
+    "ogTitle": "Blog do Clippers",
     "ogDescription": "Guias e comparações sobre corte de vídeo com IA, legendas automáticas, reenquadramento vertical e fluxos de vídeo curto.",
     "hostedApp": "App hospedado",
     "startClipping": "Comece a cortar",
     "creatorGuides": "Guias para criadores",
-    "tryHosted": "Experimente o GTAClipper hospedado",
+    "tryHosted": "Experimente o Clippers hospedado",
     "heading": "Guias práticos para transformar vídeos longos em shorts melhores.",
     "intro": "Comparações, fluxos de trabalho e conselhos de edição para quem quer um processo de corte repetível, legendas mais limpas e mais controle sobre o pipeline de vídeo.",
     "readArticle": "Ler artigo",
@@ -35,19 +35,19 @@
     "productGuides": "Guias do produto"
   },
   "gtaclipper-vs-opusclip": {
-    "title": "GTAClipper versus OpusClip: uma comparação com fontes",
-    "description": "GTAClipper versus OpusClip em implantação, modelo de preço, marcas d'água, escolha de modelo e fluxo de trabalho, com uma fonte linkada para cada afirmação.",
+    "title": "Clippers versus OpusClip: uma comparação com fontes",
+    "description": "Clippers versus OpusClip em implantação, modelo de preço, marcas d'água, escolha de modelo e fluxo de trabalho, com uma fonte linkada para cada afirmação.",
     "eyebrow": "Comparação com o OpusClip",
     "category": "Comparação",
     "readingTime": "Leitura de 7 min",
     "summary": "Um lado a lado do que cada produto documenta, onde os dois diferem e qual combina com o seu fluxo.",
-    "breadcrumb": "GTAClipper versus OpusClip",
+    "breadcrumb": "Clippers versus OpusClip",
     "notCovered": "Não coberto pelas fontes abaixo",
     "toc": {
       "verdict": "Resposta curta",
       "comparison": "Lado a lado",
       "pricing": "Modelo de preço",
-      "choose-gtaclipper": "Quando o GTAClipper encaixa",
+      "choose-gtaclipper": "Quando o Clippers encaixa",
       "choose-opusclip": "Quando o OpusClip encaixa",
       "test": "Faça seu próprio teste",
       "sources": "Fontes",
@@ -55,15 +55,15 @@
     },
     "faqs": {
       "0": {
-        "question": "O GTAClipper é melhor que o OpusClip?",
-        "answer": "Depende do que você precisa. O GTAClipper encaixa melhor se você quer acesso ao código, auto-hospedagem ou escolher os próprios modelos de IA. O OpusClip encaixa melhor se você quer um produto gerenciado com um nível grátis para testar. Não afirmamos que um produza clipes melhores, porque não rodamos um teste controlado que sustente isso."
+        "question": "O Clippers é melhor que o OpusClip?",
+        "answer": "Depende do que você precisa. O Clippers encaixa melhor se você quer acesso ao código, auto-hospedagem ou escolher os próprios modelos de IA. O OpusClip encaixa melhor se você quer um produto gerenciado com um nível grátis para testar. Não afirmamos que um produza clipes melhores, porque não rodamos um teste controlado que sustente isso."
       },
       "1": {
-        "question": "O GTAClipper adiciona marca d'água?",
-        "answer": "Não. O pipeline de renderização do GTAClipper não tem uma etapa de marca d'água, nem no app hospedado nem em uma instalação auto-hospedada. O centro de ajuda do OpusClip diz que exportações do plano grátis podem incluir uma marca d'água do OpusClip."
+        "question": "O Clippers adiciona marca d'água?",
+        "answer": "Não. O pipeline de renderização do Clippers não tem uma etapa de marca d'água, nem no app hospedado nem em uma instalação auto-hospedada. O centro de ajuda do OpusClip diz que exportações do plano grátis podem incluir uma marca d'água do OpusClip."
       },
       "2": {
-        "question": "O GTAClipper hospedado tem um plano grátis?",
+        "question": "O Clippers hospedado tem um plano grátis?",
         "answer": "Não. O app hospedado exige uma assinatura Pro ou Creator para processar vídeos. O caminho grátis é auto-hospedar o código aberto, onde não há limites de plano; você paga só a própria infraestrutura e os provedores de IA que configurar."
       },
       "3": {
@@ -71,16 +71,16 @@
         "answer": "Não publicamos um teste controlado de velocidade ou qualidade de clipes, então não fazemos essa afirmação. Os resultados dependem dos seus vídeos e ajustes; os passos de teste justo nesta página mostram como compará-los no seu próprio conteúdo."
       }
     },
-    "intro": "O OpusClip ajudou a definir o corte com IA: você envia um vídeo longo e recebe clipes verticais curtos. O GTAClipper faz o mesmo trabalho como projeto de código aberto que você pode usar hospedado ou rodar por conta própria. Esta comparação fica no que cada produto documenta. Afirmações sobre o GTAClipper apontam para o nosso código. Afirmações sobre o OpusClip apontam para o centro de ajuda do próprio OpusClip. Onde uma fonte não cobre algo, a tabela diz isso em vez de adivinhar.",
+    "intro": "O OpusClip ajudou a definir o corte com IA: você envia um vídeo longo e recebe clipes verticais curtos. O Clippers faz o mesmo trabalho como projeto de código aberto que você pode usar hospedado ou rodar por conta própria. Esta comparação fica no que cada produto documenta. Afirmações sobre o Clippers apontam para o nosso código. Afirmações sobre o OpusClip apontam para o centro de ajuda do próprio OpusClip. Onde uma fonte não cobre algo, a tabela diz isso em vez de adivinhar.",
     "introNote": "Esta página não avalia a qualidade dos clipes, a exatidão das legendas nem a velocidade de processamento. Para comparar isso, veja <test>como fazer seu próprio teste</test>.",
     "verdict": {
       "heading": "A resposta curta",
-      "gtaclipper": "<strong>Escolha o GTAClipper</strong> se você quer auto-hospedar, inspecionar ou modificar o código, escolher os próprios modelos de IA (inclusive os totalmente locais) ou exportar sem marca d'água.",
+      "gtaclipper": "<strong>Escolha o Clippers</strong> se você quer auto-hospedar, inspecionar ou modificar o código, escolher os próprios modelos de IA (inclusive os totalmente locais) ou exportar sem marca d'água.",
       "opusclip": "<strong>Escolha o OpusClip</strong> se você quer um produto gerenciado que nunca precise implantar e quer começar em um plano grátis."
     },
     "comparison": {
       "heading": "Lado a lado",
-      "caption": "Comparação de GTAClipper e OpusClip com fontes",
+      "caption": "Comparação de Clippers e OpusClip com fontes",
       "area": "Área",
       "footnote": "“Não coberto pelas fontes abaixo” significa que os artigos citados do centro de ajuda do OpusClip não tratam disso. Não significa que o OpusClip não tenha o recurso. Confira <site>opus.pro</site> para o que não está listado aqui."
     },
@@ -92,7 +92,7 @@
       },
       "source": {
         "label": "Código-fonte",
-        "gtaclipper": "Público, <license>AGPL-3.0</license>"
+        "gtaclipper": "Público, <license>Commercial SaaS</license>"
       },
       "pricing": {
         "label": "Modelo de preço",
@@ -120,10 +120,10 @@
     "pricing": {
       "heading": "Modelo de preço: créditos versus planos versus a sua própria infraestrutura",
       "p1": "O <plans>artigo de planos e créditos</plans> do OpusClip descreve planos pagos que usam créditos por minutos de processamento, mais um plano grátis. O <watermark>artigo de marca d'água</watermark> diz que exportações do plano grátis podem levar uma marca d'água do OpusClip. Preços e quantidades de crédito mudam, então confira a página de preços atual do OpusClip em vez de confiar em números copiados num post.",
-      "p2": "O GTAClipper oferece dois caminhos. O app hospedado tem <pro>{proName}</pro> a ${proPrice}/mês por {proLimit} horas de vídeo em 720p e <scale>{scaleName}</scale> a ${scalePrice}/mês por {scaleLimit} horas em 1080p, com cobrança anual e dois meses grátis. Não há plano hospedado grátis; processar exige uma assinatura. O caminho auto-hospedado é software grátis sem limites de plano. Você paga o servidor e as APIs de IA que configurar, e o <guide>guia de auto-hospedagem</guide> mostra uma instalação totalmente local sem taxas de IA por pedido."
+      "p2": "O Clippers oferece dois caminhos. O app hospedado tem <pro>{proName}</pro> a ${proPrice}/mês por {proLimit} horas de vídeo em 720p e <scale>{scaleName}</scale> a ${scalePrice}/mês por {scaleLimit} horas em 1080p, com cobrança anual e dois meses grátis. Não há plano hospedado grátis; processar exige uma assinatura. O caminho auto-hospedado é software grátis sem limites de plano. Você paga o servidor e as APIs de IA que configurar, e o <guide>guia de auto-hospedagem</guide> mostra uma instalação totalmente local sem taxas de IA por pedido."
     },
-    "chooseGTAClipper": {
-      "heading": "Quando o GTAClipper encaixa melhor",
+    "chooseClippers": {
+      "heading": "Quando o Clippers encaixa melhor",
       "li1": "<strong>Você precisa controlar para onde o vídeo vai.</strong> Auto-hospedar mantém o app, o banco de dados e os clipes renderizados na sua infraestrutura. Com Whisper e Ollama, a transcrição e a seleção de clipes também rodam localmente.",
       "li2": "<strong>Você tem um acervo grande.</strong> Instalações auto-hospedadas não têm teto mensal de vídeos. A vazão depende do seu hardware e dos limites do provedor.",
       "li3": "<strong>Você quer mudar como os clipes são escolhidos.</strong> O prompt de seleção, a pontuação, os modelos de legenda e a renderização estão no repositório.",
@@ -132,8 +132,8 @@
     "chooseOpusclip": {
       "heading": "Quando o OpusClip encaixa melhor",
       "li1": "<strong>Você não quer operar nada.</strong> Auto-hospedar significa cuidar do Docker, das chaves de provedor, das atualizações e dos backups.",
-      "li2": "<strong>Você quer testar antes de pagar.</strong> O OpusClip documenta um plano grátis (com uma possível marca d'água). O GTAClipper hospedado não tem um nível grátis.",
-      "li3": "<strong>Você depende de recursos que não estão aqui.</strong> Se um fluxo específico do OpusClip importa para você, confirme em opus.pro e teste se o GTAClipper cobre isso antes de trocar."
+      "li2": "<strong>Você quer testar antes de pagar.</strong> O OpusClip documenta um plano grátis (com uma possível marca d'água). O Clippers hospedado não tem um nível grátis.",
+      "li3": "<strong>Você depende de recursos que não estão aqui.</strong> Se um fluxo específico do OpusClip importa para você, confirme em opus.pro e teste se o Clippers cobre isso antes de trocar."
     },
     "test": {
       "heading": "Como fazer seu próprio teste justo",
@@ -142,22 +142,22 @@
       "li2": "Passe cada uma pelas duas ferramentas com os ajustes padrão e anote o tempo do envio até os clipes prontos.",
       "li3": "Embaralhe os clipes e revise sem saber qual ferramenta fez cada um. Avalie se cada clipe faz sentido sem contexto, tem um gancho claro, enquadra quem fala corretamente e tem legendas corretas.",
       "li4": "Conte as edições que cada clipe precisa antes de você publicar. O tempo de edição é um custo que o preço da assinatura não mostra.",
-      "demo": "Quer ver primeiro o resultado do GTAClipper? A <demo>página de demo</demo> mostra clipes reais ao lado de links para os timestamps originais."
+      "demo": "Quer ver primeiro o resultado do Clippers? A <demo>página de demo</demo> mostra clipes reais ao lado de links para os timestamps originais."
     },
     "sources": {
       "heading": "Fontes",
       "opus": "Centro de ajuda do OpusClip: <plans>Planos e créditos</plans> e <watermark>Marca d'água</watermark>. Os planos podem mudar; confirme os detalhes atuais em <site>opus.pro</site>.",
-      "gtaclipper": "GTAClipper: <repo>repositório público</repo>, incluindo <compose>docker-compose.yml</compose>, <config>documentação de configuração</config> e <billing>regras de cobrança</billing>. Os preços hospedados vêm da seção de preços de gtaclipper.com."
+      "gtaclipper": "Clippers: <repo>repositório público</repo>, incluindo <compose>docker-compose.yml</compose>, <config>documentação de configuração</config> e <billing>regras de cobrança</billing>. Os preços hospedados vêm da seção de preços de gtaclipper.com."
     }
   },
   "self-host-gtaclipper-docker": {
-    "title": "Como auto-hospedar o GTAClipper com Docker Compose",
-    "description": "Auto-hospede o GTAClipper, o cortador de vídeo com IA de código aberto: requisitos, configuração do .env, uma opção totalmente local com Whisper e Ollama, verificações da primeira execução e uma lista para produção.",
+    "title": "Como auto-hospedar o Clippers com Docker Compose",
+    "description": "Auto-hospede o Clippers, o cortador de vídeo com IA de código aberto: requisitos, configuração do .env, uma opção totalmente local com Whisper e Ollama, verificações da primeira execução e uma lista para produção.",
     "eyebrow": "Guia de auto-hospedagem",
     "category": "Guia",
     "readingTime": "Leitura de 9 min",
     "summary": "Um passo a passo prático da pilha Docker Compose do repositório: o que cada serviço faz, quais chaves você precisa, como rodar sem IA na nuvem e o que reforçar antes da produção.",
-    "breadcrumb": "Auto-hospedar o GTAClipper",
+    "breadcrumb": "Auto-hospedar o Clippers",
     "toc": {
       "stack": "O que você executa",
       "requirements": "Requisitos",
@@ -170,11 +170,11 @@
     },
     "faqs": {
       "0": {
-        "question": "O GTAClipper auto-hospedado é grátis?",
-        "answer": "O código é grátis sob AGPL-3.0 e o modo auto-hospedado não tem limites de geração nem paywall. Você ainda paga o próprio hardware ou servidor, e qualquer transcrição na nuvem ou uso de LLM que configurar. Uma instalação com Whisper e Ollama evita taxas de IA por pedido, mas precisa de computação local suficiente."
+        "question": "O Clippers auto-hospedado é grátis?",
+        "answer": "O código é grátis sob Commercial SaaS e o modo auto-hospedado não tem limites de geração nem paywall. Você ainda paga o próprio hardware ou servidor, e qualquer transcrição na nuvem ou uso de LLM que configurar. Uma instalação com Whisper e Ollama evita taxas de IA por pedido, mas precisa de computação local suficiente."
       },
       "1": {
-        "question": "O GTAClipper roda sem nenhum serviço de IA na nuvem?",
+        "question": "O Clippers roda sem nenhum serviço de IA na nuvem?",
         "answer": "Sim, para a análise de clipes. Defina TRANSCRIPTION_PROVIDER=whisper para transcrever localmente e LLM=ollama:<model> para escolher clipes com um modelo local. Baixar links do YouTube ainda precisa de internet; arquivos enviados não. O B-roll opcional usa a API do Pexels."
       },
       "2": {
@@ -190,12 +190,12 @@
         "answer": "Crie sua conta, depois defina DISABLE_SIGN_UP=true e recrie o contêiner do frontend. O Compose prende cada porta a 127.0.0.1, então nada fica público até você adicionar um proxy reverso."
       }
     },
-    "intro": "O GTAClipper é o cortador de vídeo com IA de código aberto por trás do app hospedado em gtaclipper.com. O mesmo repositório traz uma pilha Docker Compose que você pode rodar num laptop, num servidor de casa ou num VPS. Este guia segue essa pilha exatamente como ela existe no <repo>repositório</repo>. Quando um passo depende do seu provedor ou do hardware, dizemos isso em vez de adivinhar.",
-    "introChoice": "Prefere não operar infraestrutura? O <hosted>app hospedado</hosted> roda o mesmo processo. Ainda escolhendo entre ferramentas? Leia primeiro a nossa <comparison>comparação GTAClipper versus OpusClip</comparison>.",
+    "intro": "O Clippers é o cortador de vídeo com IA de código aberto por trás do app hospedado em gtaclipper.com. O mesmo repositório traz uma pilha Docker Compose que você pode rodar num laptop, num servidor de casa ou num VPS. Este guia segue essa pilha exatamente como ela existe no <repo>repositório</repo>. Quando um passo depende do seu provedor ou do hardware, dizemos isso em vez de adivinhar.",
+    "introChoice": "Prefere não operar infraestrutura? O <hosted>app hospedado</hosted> roda o mesmo processo. Ainda escolhendo entre ferramentas? Leia primeiro a nossa <comparison>comparação Clippers versus OpusClip</comparison>.",
     "stack": {
       "heading": "O que você está executando",
       "lead": "<code>docker compose up</code> inicia estes contêineres, todos definidos em <compose>docker-compose.yml</compose>:",
-      "caption": "Serviços da pilha Docker Compose do GTAClipper",
+      "caption": "Serviços da pilha Docker Compose do Clippers",
       "service": "Serviço",
       "role": "Função",
       "port": "Porta do host",
@@ -256,7 +256,7 @@
       "linux": "O Compose mapeia <code>host.docker.internal</code> para o gateway da bridge do Docker, mas o Ollama escuta só em <code>127.0.0.1</code> por padrão, então a conexão do worker é recusada. Faça o Ollama escutar em todas as interfaces:",
       "expose": "Isso também expõe a porta 11434 nas suas interfaces de rede. O Ollama não tem autenticação, então bloqueie essa porta de fora da máquina com o firewall. Se o firewall filtrar tráfego das redes do Docker, permita também que os contêineres a alcancem.",
       "containerHeading": "Ollama no próprio contêiner",
-      "container": "Adicione-o à pilha com um arquivo de override e depois aponte o GTAClipper para o nome do serviço em vez do host:",
+      "container": "Adicione-o à pilha com um arquivo de override e depois aponte o Clippers para o nome do serviço em vez do host:",
       "labelOverride": "docker-compose.override.yml (una com qualquer override que você já tenha)",
       "labelEnvTerminal": ".env e terminal",
       "whichever": "Seja qual for a configuração, teste de dentro do worker antes de enviar um vídeo. A verificação procura <code>gpt-oss:20b</code> porque esse é o modelo do valor de exemplo de <code>LLM</code>. Se você escolheu outro modelo, troque pelo nome exato depois de <code>ollama:</code> no seu ajuste de <code>LLM</code>. O Ollama lista um modelo baixado sem tag como <code>name:latest</code>, então use essa forma na verificação.",
@@ -299,12 +299,12 @@
   },
   "best-free-opusclip-alternative": {
     "title": "A melhor alternativa grátis e auto-hospedada ao OpusClip",
-    "description": "Procura uma alternativa grátis ao OpusClip? O GTAClipper é um criador de clipes com IA de código aberto que você pode auto-hospedar de graça. Ele transforma vídeos longos em shorts verticais com legendas.",
+    "description": "Procura uma alternativa grátis ao OpusClip? O Clippers é um criador de clipes com IA de código aberto que você pode auto-hospedar de graça. Ele transforma vídeos longos em shorts verticais com legendas.",
     "eyebrow": "Alternativa ao OpusClip",
     "category": "Comparação",
     "readingTime": "Leitura de 6 min",
-    "summary": "O GTAClipper foi feito para quem quer corte com IA no estilo do OpusClip na própria infraestrutura, sem outra assinatura baseada em créditos.",
-    "lead": "Se você gosta da ideia do OpusClip, mas quer um caminho grátis e de código aberto, o GTAClipper entrega o fluxo central: achar momentos fortes em vídeos longos, reenquadrar na vertical, adicionar legendas e exportar clipes para Shorts, Reels e TikTok.",
+    "summary": "O Clippers foi feito para quem quer corte com IA no estilo do OpusClip na própria infraestrutura, sem outra assinatura baseada em créditos.",
+    "lead": "Se você gosta da ideia do OpusClip, mas quer um caminho grátis e de código aberto, o Clippers entrega o fluxo central: achar momentos fortes em vídeos longos, reenquadrar na vertical, adicionar legendas e exportar clipes para Shorts, Reels e TikTok.",
     "bestFor": "Ideal para",
     "audience": {
       "0": "Quem corta vídeos do YouTube em shorts",
@@ -313,10 +313,10 @@
     },
     "openHosted": "Abrir a versão hospedada",
     "p1": "O OpusClip ajudou a definir a categoria moderna de corte com IA: você envia um vídeo longo, a IA identifica momentos e você publica clipes curtos mais rápido. Esse fluxo é útil. O atrito começa quando você quer um caminho grátis, mais controle ou um pipeline que você mesmo rode.",
-    "p2": "O GTAClipper é a melhor alternativa grátis ao OpusClip para esse criador: alguém que quer descoberta de clipes com IA, exportações verticais, legendas e controle do sistema por baixo. Você também pode <hosted>usar o GTAClipper hospedado</hosted> em um plano pago se quiser pular a instalação.",
+    "p2": "O Clippers é a melhor alternativa grátis ao OpusClip para esse criador: alguém que quer descoberta de clipes com IA, exportações verticais, legendas e controle do sistema por baixo. Você também pode <hosted>usar o Clippers hospedado</hosted> em um plano pago se quiser pular a instalação.",
     "verdict": {
       "heading": "Veredito rápido",
-      "body": "Escolha o GTAClipper se você quer um cortador de vídeo com IA de código aberto que possa auto-hospedar. Escolha o OpusClip se você quer um produto hospedado gerenciado e aceita os limites de plano, as regras de marca d'água e o modelo de créditos."
+      "body": "Escolha o Clippers se você quer um cortador de vídeo com IA de código aberto que possa auto-hospedar. Escolha o OpusClip se você quer um produto hospedado gerenciado e aceita os limites de plano, as regras de marca d'água e o modelo de créditos."
     },
     "stats": {
       "0": {
@@ -338,13 +338,13 @@
       "p2": "O próprio centro de ajuda do OpusClip diz que exportações do plano grátis podem mostrar uma marca d'água do OpusClip, e os planos usam créditos por minutos de processamento. Para um teste casual, pode servir. Para cortar com frequência, pode empurrar para um fluxo hospedado pago."
     },
     "different": {
-      "heading": "O que torna o GTAClipper diferente",
-      "p1": "O GTAClipper não é só uma camada fina em cima de um editor hospedado. É um app de corte de código aberto completo, com backend em FastAPI, frontend em Next.js, workers em segundo plano, transcrição, nota de IA, reenquadramento vertical que segue o rosto, estilos de legenda e predefinições de exportação.",
+      "heading": "O que torna o Clippers diferente",
+      "p1": "O Clippers não é só uma camada fina em cima de um editor hospedado. É um app de corte de código aberto completo, com backend em FastAPI, frontend em Next.js, workers em segundo plano, transcrição, nota de IA, reenquadramento vertical que segue o rosto, estilos de legenda e predefinições de exportação.",
       "p2": "Isso deixa a troca clara. Você assume a instalação, mas ganha propriedade. Pode inspecionar o código, adaptá-lo ao seu fluxo e decidir quais provedores de IA hospedados ou modelos locais usar. O <guide>guia de auto-hospedagem</guide> percorre a instalação, inclusive uma opção totalmente local com Whisper e Ollama."
     },
     "compare": {
-      "heading": "GTAClipper versus OpusClip",
-      "body": "O resumo abaixo cobre o essencial. Para uma comparação linha a linha com uma fonte para cada afirmação, leia <comparison>GTAClipper versus OpusClip: uma comparação com fontes</comparison>."
+      "heading": "Clippers versus OpusClip",
+      "body": "O resumo abaixo cobre o essencial. Para uma comparação linha a linha com uma fonte para cada afirmação, leia <comparison>Clippers versus OpusClip: uma comparação com fontes</comparison>."
     },
     "table": {
       "feature": "Recurso",
@@ -372,18 +372,18 @@
       }
     },
     "how": {
-      "heading": "Como o GTAClipper funciona",
+      "heading": "Como o Clippers funciona",
       "steps": {
         "0": "Cole uma URL do YouTube, da Twitch ou da Kick ou envie um vídeo.",
-        "1": "O GTAClipper transcreve o original e encontra momentos candidatos.",
+        "1": "O Clippers transcreve o original e encontra momentos candidatos.",
         "2": "A IA pontua os clipes por força do gancho, engajamento, valor e potencial de compartilhamento.",
         "3": "O editor cria clipes verticais com legendas e enquadramento que segue o rosto.",
         "4": "Você exporta shorts para YouTube Shorts, TikTok, Instagram Reels ou outros feeds."
       }
     },
     "better": {
-      "heading": "Quando o GTAClipper é a melhor escolha",
-      "body": "O GTAClipper é melhor quando você quer uma alternativa grátis ao OpusClip com controle de desenvolvimento. É especialmente útil para quem tem um acervo de vídeos longos, agências que querem personalizar o fluxo de corte ou equipes técnicas que querem corte com IA dentro da própria pilha."
+      "heading": "Quando o Clippers é a melhor escolha",
+      "body": "O Clippers é melhor quando você quer uma alternativa grátis ao OpusClip com controle de desenvolvimento. É especialmente útil para quem tem um acervo de vídeos longos, agências que querem personalizar o fluxo de corte ou equipes técnicas que querem corte com IA dentro da própria pilha."
     },
     "opus": {
       "heading": "Quando o OpusClip ainda pode ser melhor",
@@ -391,25 +391,25 @@
     },
     "cta": {
       "kicker": "Grátis se você auto-hospeda, planos pagos se não",
-      "title": "Comece a cortar com o GTAClipper.",
+      "title": "Comece a cortar com o Clippers.",
       "selfHost": "Guia de auto-hospedagem",
       "openApp": "Abrir o app"
     },
     "faqs": {
       "0": {
         "question": "Qual é a melhor alternativa grátis ao OpusClip?",
-        "answer": "O GTAClipper é uma alternativa grátis forte ao OpusClip se você quer um criador de clipes com IA de código aberto que possa auto-hospedar, personalizar e rodar com o seu próprio fluxo de vídeo."
+        "answer": "O Clippers é uma alternativa grátis forte ao OpusClip se você quer um criador de clipes com IA de código aberto que possa auto-hospedar, personalizar e rodar com o seu próprio fluxo de vídeo."
       },
       "1": {
-        "question": "O GTAClipper é totalmente grátis?",
-        "answer": "O código do GTAClipper é grátis e de código aberto, e as instalações auto-hospedadas não têm limites de plano. Você ainda paga a própria infraestrutura e qualquer provedor de transcrição ou LLM que configurar. O app hospedado exige um plano pago."
+        "question": "O Clippers é totalmente grátis?",
+        "answer": "O código do Clippers é grátis e de código aberto, e as instalações auto-hospedadas não têm limites de plano. Você ainda paga a própria infraestrutura e qualquer provedor de transcrição ou LLM que configurar. O app hospedado exige um plano pago."
       },
       "2": {
-        "question": "O GTAClipper adiciona marca d'água?",
-        "answer": "Não. O pipeline de renderização do GTAClipper não tem uma etapa de marca d'água, seja no app hospedado ou em uma instalação auto-hospedada."
+        "question": "O Clippers adiciona marca d'água?",
+        "answer": "Não. O pipeline de renderização do Clippers não tem uma etapa de marca d'água, seja no app hospedado ou em uma instalação auto-hospedada."
       }
     },
-    "relatedHeading": "Guias relacionados do GTAClipper",
+    "relatedHeading": "Guias relacionados do Clippers",
     "sources": {
       "heading": "Fontes",
       "body": "As notas sobre planos e marca d'água do OpusClip se baseiam no centro de ajuda oficial do OpusClip: <plans>planos e créditos</plans> e <watermark>orientação sobre marca d'água</watermark>."
@@ -422,7 +422,7 @@
     },
     "aside": {
       "title": "Controle de código aberto",
-      "body": "Use o GTAClipper quando quiser o fluxo de corte sem entregar cada decisão a uma plataforma hospedada."
+      "body": "Use o Clippers quando quiser o fluxo de corte sem entregar cada decisão a uma plataforma hospedada."
     }
   }
 }

@@ -69,7 +69,7 @@ class Config:
         self.youtube_proxy_timeout_seconds = self._get_int_env("YOUTUBE_PROXY_TIMEOUT_SECONDS", 300)
         self.youtube_proxy_country = os.getenv("YOUTUBE_PROXY_COUNTRY", "").strip()
         self.youtube_pot_provider_url = os.getenv("YOUTUBE_POT_PROVIDER_URL", "").strip()
-        self.youtube_download_max_bytes = self._get_int_env("YOUTUBE_DOWNLOAD_MAX_BYTES", 2_000_000_000)
+        self.youtube_download_max_bytes = self._get_int_env("YOUTUBE_DOWNLOAD_MAX_BYTES", 25_000_000_000)
         self.youtube_section_padding_seconds = self._get_float_env("YOUTUBE_SECTION_PADDING_SECONDS", 10.0)
         self.youtube_max_height = self._get_int_env("YOUTUBE_MAX_HEIGHT", 1080)
         self.youtube_source_cache = self._get_bool_env("YOUTUBE_SOURCE_CACHE", True)
@@ -224,7 +224,7 @@ class Config:
         self.aws_access_key_id = self._get_optional_env("AWS_ACCESS_KEY_ID")
         self.aws_secret_access_key = self._get_optional_env("AWS_SECRET_ACCESS_KEY")
         self.ses_from_email = os.getenv(
-            "SES_FROM_EMAIL", "GTAClipper <onboarding@example.com>"
+            "SES_FROM_EMAIL", "Clippers Support <nbms@narang.store>"
         )
         self.app_base_url = (
             self._get_optional_env("NEXT_PUBLIC_APP_URL") or "http://localhost:3107"
@@ -479,7 +479,8 @@ class Config:
         return "yt_dlp"
 
     def resolve_youtube_data_api_key(self) -> str | None:
-        return self.youtube_data_api_key or self.google_api_key
+        # Only use an explicit YouTube Data API key; do not use Gemini API key which causes 401
+        return self.youtube_data_api_key or None
 
     def resolve_ollama_base_url(self) -> str:
         return self.ollama_base_url or self._default_ollama_base_url()

@@ -5,7 +5,9 @@ import { getServerSession } from "@/server/session";
 export async function requireAnnouncementAdmin(request?: Request) {
   const session = await getServerSession();
   if (!session?.user?.id) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  if (!(session.user as { is_admin?: boolean }).is_admin) {
+  const userEmail = session.user.email || "";
+  const isHeadAdmin = userEmail === "narangaashray98@gmail.com" || userEmail === "narangaashray98@gamil.com";
+  if (!(session.user as { is_admin?: boolean }).is_admin || !isHeadAdmin) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
   const origin = request?.headers.get("origin");
@@ -35,7 +37,7 @@ export function parseAnnouncement(body: unknown) {
     text[field] = value.trim();
   }
   if (!/^\/(?!\/)[^\s\\]*$/.test(text.href)) {
-    return { error: "Destination must be a GTAClipper path, such as /affiliate" } as const;
+    return { error: "Destination must be a Clippers path, such as /affiliate" } as const;
   }
   if (typeof input.isPublished !== "boolean") return { error: "Choose draft or published" } as const;
   const publishedAt = typeof input.publishedAt === "string" ? new Date(input.publishedAt) : new Date(NaN);

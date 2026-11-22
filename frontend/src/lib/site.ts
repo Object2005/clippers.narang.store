@@ -1,18 +1,15 @@
-export const SITE_NAME = "GTAClipper";
+export const SITE_NAME = "Clippers";
 /** Operator shown in the footer and legal pages. Set NEXT_PUBLIC_COMPANY_* in .env. */
-export const COMPANY_NAME = process.env.NEXT_PUBLIC_COMPANY_NAME?.trim() || "GTAClipper";
+export const COMPANY_NAME = process.env.NEXT_PUBLIC_COMPANY_NAME?.trim() || "Clippers by Aashray Narang";
+export const OWNER_NAME = "Aashray Narang";
+export const SUPPORT_EMAIL = "nbms@narang.store";
 export const COMPANY_REGISTRATION_NUMBER = process.env.NEXT_PUBLIC_COMPANY_REGISTRATION_NUMBER?.trim() || "N/A";
 export const COMPANY_REGISTERED_ADDRESS = process.env.NEXT_PUBLIC_COMPANY_ADDRESS?.trim() || "India";
-export const DEFAULT_SITE_URL = "https://www.gtaclipper.com";
+export const DEFAULT_SITE_URL = "https://www.clippers.ai";
 export const HOSTED_APP_URL = DEFAULT_SITE_URL;
-/** Public GitHub repository for this project. */
-export const DEFAULT_SOURCE_CODE_URL = "https://github.com/V413havai/GTAClipper";
-/**
- * Where users can get this deployment's source code. AGPL-3.0 section 13 requires
- * offering the source to people who use the app over a network. If you deploy a
- * modified copy, point NEXT_PUBLIC_SOURCE_CODE_URL at your own repository.
- */
-export const GITHUB_URL = process.env.NEXT_PUBLIC_SOURCE_CODE_URL?.trim() || DEFAULT_SOURCE_CODE_URL;
+/** Proprietary Commercial Software */
+export const DEFAULT_SOURCE_CODE_URL = "";
+export const GITHUB_URL = "";
 /** The hosted MCP server's Streamable HTTP endpoint (legacy SSE clients use `/sse`). */
 export const HOSTED_MCP_URL = "https://mcp.gtaclipper.com/mcp";
 

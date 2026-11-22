@@ -19,6 +19,8 @@ export function getServerBillingPlans(): ServerBillingPlan[] {
       id: "pro",
       priceIds: {
         month: process.env[`${prefix}PRO_PRICE_ID`] || process.env[`${prefix}PRICE_ID`] || null,
+        quarter: process.env[`${prefix}PRO_QUARTERLY_PRICE_ID`] || null,
+        half_year: process.env[`${prefix}PRO_HALF_YEARLY_PRICE_ID`] || null,
         year: process.env[`${prefix}PRO_ANNUAL_PRICE_ID`] || null,
       },
       legacyPriceIds: priceIdList(process.env[`${prefix}PRO_LEGACY_PRICE_IDS`]),
@@ -27,6 +29,8 @@ export function getServerBillingPlans(): ServerBillingPlan[] {
       id: "scale",
       priceIds: {
         month: process.env[`${prefix}SCALE_PRICE_ID`] || null,
+        quarter: process.env[`${prefix}SCALE_QUARTERLY_PRICE_ID`] || null,
+        half_year: process.env[`${prefix}SCALE_HALF_YEARLY_PRICE_ID`] || null,
         year: process.env[`${prefix}SCALE_ANNUAL_PRICE_ID`] || null,
       },
       legacyPriceIds: priceIdList(process.env[`${prefix}SCALE_LEGACY_PRICE_IDS`]),
@@ -45,8 +49,7 @@ export function getPlanIdForStripePrice(priceId: string | null | undefined): Bil
 
   const plan = getServerBillingPlans().find(
     (candidate) =>
-      candidate.priceIds.month === priceId ||
-      candidate.priceIds.year === priceId ||
+      Object.values(candidate.priceIds).includes(priceId) ||
       candidate.legacyPriceIds.includes(priceId)
   );
   return plan?.id || null;

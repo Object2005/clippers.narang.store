@@ -1,10 +1,10 @@
 {
   "metadata": {
     "title": "Status layanan",
-    "description": "Status layanan terkini dan pembaruan insiden GTAClipper."
+    "description": "Status layanan terkini dan pembaruan insiden Clippers."
   },
   "title": "Status layanan",
-  "intro": "Pembaruan untuk layanan GTAClipper yang di-host.",
+  "intro": "Pembaruan untuk layanan Clippers yang di-host.",
   "unavailable": "Status layanan sedang tidak tersedia. Coba lagi nanti, ya.",
   "states": {
     "operational": "Normal",
@@ -15,5 +15,5 @@
   },
   "lastUpdated": "Terakhir diperbarui:",
   "timezone": "(Zurich)",
-  "back": "Kembali ke GTAClipper"
+  "back": "Kembali ke Clippers"
 }

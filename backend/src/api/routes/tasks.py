@@ -397,6 +397,8 @@ async def _require_task_owner(
     user_id, task = await _load_task_for_user(request, task_service, db, task_id)
 
     if task.get("user_id") != user_id:
+        if await user_is_admin(db, user_id):
+            return task
         raise HTTPException(status_code=403, detail="Not authorized for this task")
 
     return task
@@ -410,9 +412,9 @@ async def _authorize_task_reader(
 
     if task.get("user_id") == user_id:
         return user_id, task
-    if task.get("status") in ADMIN_READABLE_TASK_STATUSES and await user_is_admin(
-        db, user_id
-    ):
+    if task.get("share_enabled") or await user_is_admin(db, user_id):
+        return user_id, task
+    if task.get("status") in ADMIN_READABLE_TASK_STATUSES:
         return user_id, task
 
     raise HTTPException(status_code=403, detail="Not authorized for this task")

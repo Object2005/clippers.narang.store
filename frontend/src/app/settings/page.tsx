@@ -20,6 +20,10 @@ import {
   annualFullPrice,
   annualMonthlyEquivalent,
   annualMonthsFree,
+  intervalFullPrice,
+  intervalMonthlyEquivalent,
+  intervalDiscountPercent,
+  intervalMonths,
   isPaidBillingPlan,
   planPrice,
   type BillingInterval,
@@ -27,7 +31,8 @@ import {
   getOfferedBillingPlans,
 } from "@/lib/billing-plans";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { BillingIntervalToggle, ComingSoonTag, UpgradeNudge, getUpgradeState, useBillingPlanText } from "@/components/billing/upgrade-prompt";
+import { BillingIntervalToggle, CurrencyToggle, ComingSoonTag, UpgradeNudge, getUpgradeState, useBillingPlanText } from "@/components/billing/upgrade-prompt";
+import { detectUserCurrency, formatPrice, type SupportedCurrency } from "@/lib/billing-provider";
 import type { BillingSummary } from "@/hooks/use-billing-summary";
 import { startUpgrade } from "@/lib/start-upgrade";
 import { CreatorCodeField } from "@/components/billing/creator-code-field";
@@ -37,7 +42,6 @@ import Link from "next/link";
 import { AlertCircle, Bot, Check, ChevronRight, Clock, CreditCard, Languages, Loader2, Mail, Megaphone, Share2, Type } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FontSelectOption, type FontOption } from "@/components/font-select-option";
-import { formatPrice } from "@/lib/billing-provider";
 
 interface UserPreferences {
   fontFamily: string;
@@ -61,6 +65,7 @@ export default function SettingsPage() {
   const [isBillingActionLoading, setIsBillingActionLoading] = useState(false);
   const [canCancelTransfer, setCanCancelTransfer] = useState(false);
   const [billingInterval, setBillingInterval] = useState<BillingInterval>("month");
+  const [currency, setCurrency] = useState<SupportedCurrency>(() => detectUserCurrency());
   const { data: session, isPending } = useSession();
   const socialAccess = useSocialAccess(Boolean(session?.user));
   const t = useTranslations("settings");
@@ -68,7 +73,7 @@ export default function SettingsPage() {
   const tLang = useTranslations("language");
   const plans = useBillingPlanText();
 
-  const paidPlans = getOfferedBillingPlans();
+  const paidPlans = getOfferedBillingPlans(currency);
   const upgradeState = getUpgradeState(billingSummary);
   const paymentNeedsUpdate = upgradeState?.needsPayment ?? false;
   const currentPaidPlan = paidPlans.find((plan) => plan.id === billingSummary?.plan);
@@ -90,7 +95,7 @@ export default function SettingsPage() {
   const handlePlanChange = async (plan: BillingPlanId, interval: BillingInterval) => {
     setIsBillingActionLoading(true);
     try {
-      await startUpgrade(plan, "settings", interval);
+      await startUpgrade(plan, "settings", interval, currency);
     } catch (upgradeError) {
       toast.error(upgradeError instanceof Error ? upgradeError.message : plans.t("checkoutError"));
       setIsBillingActionLoading(false);
@@ -198,7 +203,7 @@ export default function SettingsPage() {
       try {
         setIsBillingActionLoading(true);
         track("billing_checkout_started", { plan: billingSummary.plan, selected_plan: selectedPlan });
-        await startUpgrade(selectedPlan ?? "pro", "settings", billingInterval);
+        await startUpgrade(selectedPlan ?? "pro", "settings", billingInterval, currency);
       } catch (billingError) {
         setError(billingError instanceof Error ? billingError.message : t("plan.actionFailed"));
         setIsBillingActionLoading(false);
@@ -439,20 +444,60 @@ export default function SettingsPage() {
         {billingSummary?.monetization_enabled && (
           <Section id="plan" icon={<CreditCard className="size-4" />} title={t("plan.title")} description={paymentNeedsUpdate || isPaidBillingPlan(billingSummary.plan) ? t("plan.paidDescription") : t("plan.freeDescription")}>
             <div className="space-y-4">
-              <div className="rounded-xl bg-muted/50 p-4">
-                <div className="flex items-baseline justify-between gap-3">
-                  <p className="font-semibold">
-                    {plans.planName(billingSummary.plan)}
-                    <span className="ml-2 text-xs font-normal capitalize text-muted-foreground">{billingSummary.subscription_status}</span>
-                  </p>
-                  <p className="text-sm tabular-nums text-muted-foreground">
+              <div className="rounded-xl border border-sidebar-border bg-muted/40 p-5 shadow-xs">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex items-center gap-2.5">
+                    <span className="text-lg font-bold tracking-tight text-foreground flex items-center gap-1.5">
+                      {isPaidBillingPlan(billingSummary.plan) && <span className="text-amber-400">👑</span>}
+                      {plans.planName(billingSummary.plan)}
+                    </span>
+                    <span className={cn(
+                      "rounded-full px-2.5 py-0.5 text-xs font-semibold tracking-wide flex items-center gap-1.5",
+                      billingSummary.subscription_status === "active"
+                        ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
+                        : "bg-muted text-muted-foreground border"
+                    )}>
+                      {billingSummary.subscription_status === "active" ? (
+                        <>
+                          <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          Active Membership
+                        </>
+                      ) : (
+                        billingSummary.subscription_status
+                      )}
+                    </span>
+                  </div>
+                  <p className="text-sm font-semibold tabular-nums text-foreground">
                     {minuteLimit === null ? t("plan.usageMinutes", { used: usageMinutes }) : t("plan.usageMinutesOf", { used: usageMinutes, limit: minuteLimit })}
                   </p>
                 </div>
+
                 {minuteLimit !== null && (
-                  <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-background"><div className="h-full rounded-full bg-brand" style={{ width: `${usagePct}%` }} /></div>
+                  <div className="mt-3 h-2 overflow-hidden rounded-full bg-background/80">
+                    <div className="h-full rounded-full bg-brand transition-all" style={{ width: `${usagePct}%` }} />
+                  </div>
                 )}
-                <p className="mt-2 text-xs text-muted-foreground">
+
+                {/* Membership Duration & Specs Pill Bar */}
+                {upgradeState?.isPaid && (
+                  <div className="mt-3.5 flex flex-wrap items-center gap-2 text-xs">
+                    <span className="rounded-lg bg-brand/10 border border-brand/25 px-2.5 py-1 font-semibold text-brand">
+                      {billingSummary.billing_interval === "year" ? "Yearly Duration · 12 Months" : "Monthly Duration"}
+                    </span>
+                    {upgradeState.resetsOn && (
+                      <span className="rounded-lg bg-background border px-2.5 py-1 font-medium text-foreground/80">
+                        Refreshes on {upgradeState.resetsOn}
+                      </span>
+                    )}
+                    {billingSummary.output_short_side && (
+                      <span className="rounded-lg bg-background border px-2.5 py-1 font-medium text-foreground/80">
+                        {billingSummary.output_short_side}p Full HD Quality
+                      </span>
+                    )}
+                  </div>
+                )}
+
+                <p className="mt-2.5 text-xs text-muted-foreground">
                   {paymentNeedsUpdate && !upgradeState?.isPaid
                     ? t("paymentFailed.paused")
                     : !upgradeState?.isPaid
@@ -467,14 +512,6 @@ export default function SettingsPage() {
                       ? t("plan.leftRefresh", { left: plans.formatMinutes(Math.max(minuteLimit - usageMinutes, 0)), date: upgradeState.resetsOn })
                       : t("plan.leftPeriod", { left: plans.formatMinutes(Math.max(minuteLimit - usageMinutes, 0)) }))}
                 </p>
-                {upgradeState?.isPaid && billingSummary.output_short_side && (
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {billingSummary.legacy_hd
-                      ? t("plan.clipsResolutionLegacy", { resolution: `${billingSummary.output_short_side}p` })
-                      : t("plan.clipsResolution", { resolution: `${billingSummary.output_short_side}p` })}
-                    {billingSummary.billing_interval === "year" ? ` · ${t("plan.billedYearly")}` : ""}
-                  </p>
-                )}
               </div>
 
               {billingSummary.cancel_at &&
@@ -549,12 +586,14 @@ export default function SettingsPage() {
                 )
               ) : paymentNeedsUpdate ? null : (
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <BillingIntervalToggle
-                    className="justify-self-start sm:col-span-2"
-                    value={billingInterval}
-                    onChange={setBillingInterval}
-                    plan={paidPlans[0]}
-                  />
+                  <div className="flex flex-wrap items-center justify-between gap-2 sm:col-span-2">
+                    <BillingIntervalToggle
+                      value={billingInterval}
+                      onChange={setBillingInterval}
+                      plan={paidPlans[0]}
+                    />
+                    <CurrencyToggle value={currency} onChange={setCurrency} />
+                  </div>
                   {paidPlans.map((plan) => (
                     <button
                       key={plan.id}
@@ -571,17 +610,25 @@ export default function SettingsPage() {
                         {plan.highlighted && <span className="text-xs text-muted-foreground">{plans.t("mostPopular")}</span>}
                       </span>
                       <span className="mt-1 block text-2xl font-bold tracking-tight">
-                        {billingInterval === "year" && annualMonthsFree(plan) > 0 && (
-                          <span className="mr-1.5 text-sm font-normal text-muted-foreground line-through">{formatPrice(annualFullPrice(plan))}</span>
+                        {billingInterval !== "month" && intervalDiscountPercent(plan, billingInterval) > 0 && (
+                          <span className="mr-1.5 text-sm font-normal text-muted-foreground line-through">
+                            {formatPrice(intervalFullPrice(plan, billingInterval), currency)}
+                          </span>
                         )}
-                        {formatPrice(planPrice(plan, billingInterval))}
+                        {formatPrice(planPrice(plan, billingInterval), currency)}
                         <span className="text-xs font-normal text-muted-foreground">
-                          {billingInterval === "year" ? plans.t("perYear") : plans.t("perMonth")}
+                          {billingInterval === "year"
+                            ? plans.t("perYear")
+                            : billingInterval === "half_year"
+                              ? "/6mo"
+                              : billingInterval === "quarter"
+                                ? "/3mo"
+                                : plans.t("perMonth")}
                         </span>
                       </span>
-                      {billingInterval === "year" && (
+                      {billingInterval !== "month" && (
                         <span className="block text-xs text-muted-foreground">
-                          {t("plan.monthlyEquivalentYearly", { price: annualMonthlyEquivalent(plan) })}
+                          {formatPrice(intervalMonthlyEquivalent(plan, billingInterval), currency)}/mo equivalent
                         </span>
                       )}
                       <span className="mt-3 block space-y-1.5">

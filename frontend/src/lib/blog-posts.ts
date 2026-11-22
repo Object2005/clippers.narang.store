@@ -25,31 +25,31 @@ export const blogPosts: BlogPost[] = [
   {
     language: "en",
     slug: "tiktok-publishing-is-live",
-    title: "TikTok publishing is now live in GTAClipper",
+    title: "TikTok publishing is now live in Clippers",
     description: "Publish clips straight to TikTok, select TikTok and YouTube together on the web, and schedule ahead on Creator. Here’s how to get started.",
     eyebrow: "Product update",
     category: "Product updates",
     publishedAt: "2026-10-30",
     updatedAt: "2026-10-30",
     readingTime: "3 min read",
-    author: "GTAClipper",
-    keywords: ["GTAClipper TikTok publishing", "publish clips to TikTok", "TikTok and YouTube publishing", "schedule TikTok posts"],
-    summary: "Your finished clips can now go straight to TikTok. Connect your account, pick a clip, and publish from GTAClipper—without downloading and uploading it again.",
+    author: "Clippers",
+    keywords: ["Clippers TikTok publishing", "publish clips to TikTok", "TikTok and YouTube publishing", "schedule TikTok posts"],
+    summary: "Your finished clips can now go straight to TikTok. Connect your account, pick a clip, and publish from Clippers—without downloading and uploading it again.",
   },
   ...creatorGuides.map((guide) => guide.post),
   {
     slug: "gtaclipper-vs-opusclip",
-    title: "GTAClipper vs OpusClip: A Sourced Comparison",
+    title: "Clippers vs OpusClip: A Sourced Comparison",
     description:
-      "GTAClipper vs OpusClip compared on deployment, pricing model, watermarks, model choice, and workflow, with a source linked for every claim.",
+      "Clippers vs OpusClip compared on deployment, pricing model, watermarks, model choice, and workflow, with a source linked for every claim.",
     eyebrow: "OpusClip Comparison",
     category: "Comparison",
     publishedAt: "2026-10-05",
     updatedAt: "2026-10-05",
     readingTime: "7 min read",
-    author: "GTAClipper",
+    author: "Clippers",
     keywords: [
-      "GTAClipper vs OpusClip",
+      "Clippers vs OpusClip",
       "OpusClip alternative",
       "OpusClip vs open source",
       "self-hosted OpusClip alternative",
@@ -60,17 +60,17 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "self-host-gtaclipper-docker",
-    title: "How to Self-Host GTAClipper with Docker Compose",
+    title: "How to Self-Host Clippers with Docker Compose",
     description:
-      "Self-host GTAClipper, the open-source AI video clipper: requirements, .env setup, a fully local Whisper + Ollama option, first-run checks, and a production checklist.",
+      "Self-host Clippers, the open-source AI video clipper: requirements, .env setup, a fully local Whisper + Ollama option, first-run checks, and a production checklist.",
     eyebrow: "Self-Hosting Guide",
     category: "Guide",
     publishedAt: "2026-10-05",
     updatedAt: "2026-10-05",
     readingTime: "9 min read",
-    author: "GTAClipper",
+    author: "Clippers",
     keywords: [
-      "self-host GTAClipper",
+      "self-host Clippers",
       "self-hosted AI video clipper",
       "open-source video clipper Docker",
       "self-hosted OpusClip alternative",
@@ -82,13 +82,13 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "best-free-opusclip-alternative",
     title: "Free OpusClip Alternative: Self-Hosting Costs and Tradeoffs",
-    description: "Looking for a free OpusClip alternative? Understand what self-hosting GTAClipper costs, what you maintain, and when a paid hosted workflow is a better fit.",
+    description: "Looking for a free OpusClip alternative? Understand what self-hosting Clippers costs, what you maintain, and when a paid hosted workflow is a better fit.",
     eyebrow: "OpusClip Alternative",
     category: "Comparison",
     publishedAt: "2026-05-07",
     updatedAt: "2026-10-26",
     readingTime: "6 min read",
-    author: "GTAClipper",
+    author: "Clippers",
     keywords: [
       "free OpusClip alternative",
       "OpusClip alternative",
@@ -97,7 +97,7 @@ export const blogPosts: BlogPost[] = [
       "open-source OpusClip alternative",
       "YouTube shorts clipper",
     ],
-    summary: "The GTAClipper source is free. This guide explains the hardware, provider costs, and maintenance behind a self-hosted clipping workflow so you can decide whether it fits.",
+    summary: "The Clippers source is free. This guide explains the hardware, provider costs, and maintenance behind a self-hosted clipping workflow so you can decide whether it fits.",
   },
 ];
 
@@ -126,7 +126,7 @@ export function getBlogPostMetadata(post: BlogPost): Metadata {
   const url = `${siteUrl}/blog/${post.slug}`;
 
   return {
-    title: { absolute: `${post.title} | GTAClipper` },
+    title: { absolute: `${post.title} | Clippers` },
     description: post.description,
     keywords: post.keywords,
     alternates: {
@@ -137,7 +137,7 @@ export function getBlogPostMetadata(post: BlogPost): Metadata {
       description: post.description,
       type: "article",
       url,
-      siteName: "GTAClipper",
+      siteName: "Clippers",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       authors: [post.author],
