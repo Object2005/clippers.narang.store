@@ -1,83 +1,87 @@
 <p align="center">
-  <img src="assets/banner.png" alt="GTAClipper home page" width="100%" />
+  <img src="assets/banner.png" alt="Clippers Banner" width="100%" />
 </p>
 
-<h1 align="center">GTAClipper</h1>
+<h1 align="center">Clippers — AI Video Clipper & Shorts Generator</h1>
 
 <p align="center">
-  <b>Turn one long video into a week of Shorts and Reels, free, on your own computer.</b><br/>
-  AI finds the best moments, crops them to 9:16 around the speaker and adds word-by-word captions.
+  <b>Turn long videos into viral Shorts, Reels, and TikToks with AI.</b><br/>
+  Auto-transcription, face tracking, 9:16 reframing, word-by-word captions, and viral hook detection.
 </p>
 
 <p align="center">
-  <a href="INSTALL.md"><b>📦 Install guide</b></a> ·
+  <a href="https://clippers.narang.store"><b>🌐 Live Website: clippers.narang.store</b></a> ·
   <a href="#whats-inside">Features</a> ·
-  <a href="#what-it-costs">Costs</a> ·
-  <a href="docs/README.md">Docs</a>
+  <a href="#quick-start">Quick Start</a> ·
+  <a href="#creator">Creator</a>
+</p>
+
+<p align="center">
+  <a href="https://clippers.narang.store"><img src="https://img.shields.io/badge/Live_Site-clippers.narang.store-00C853?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Site" /></a>
+  <a href="https://github.com/Object2005/clippers.narang.store"><img src="https://img.shields.io/badge/GitHub-Object2005-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  <img src="https://img.shields.io/badge/License-AGPL--3.0-blue?style=for-the-badge" alt="License" />
 </p>
 
 ---
 
-## What it does
+## 🌐 Live Platform
 
-Paste a **YouTube, Twitch or Kick** link (or upload a video file). GTAClipper:
+Access the live production platform directly at:
+👉 **[https://clippers.narang.store](https://clippers.narang.store)**
 
-1. **Transcribes** the video with word-level timing
-2. **Finds the most viral moments** with AI and scores each one
-3. **Crops to vertical 9:16**, keeping the speaker's face in frame
-4. **Adds animated captions** and a hook title
-5. Gives you **ready-to-post clips** for Reels, Shorts and TikTok
+---
 
-No watermarks. No monthly limits. Your videos stay on your computer.
+## ✨ What it does
 
-## What's inside
+Paste a **YouTube, Twitch or Kick** link (or upload an MP4/MOV video). Clippers will:
 
-- 🎬 **AI clip picking:** Gemini, GPT, Claude or a free local model chooses the best moments
-- 🗣️ **Word-by-word captions** in many styles, including the **GTAClipper style** (bold caps with a yellow highlight)
-- 🇮🇳 **Hindi and Hinglish captions** that render properly, plus 99+ spoken languages
-- 🙂 **Face tracking** so the speaker stays centred, with speaker switching for podcasts
-- 📺 **YouTube, Twitch and Kick** links, or upload your own files
-- ✂️ **Clip editor:** fix words, change timing, framing and style, then export
-- 🤖 **Works with AI agents:** an MCP server lets Claude, Cursor and others make clips for you
-- 💳 **Optional paid hosting:** built-in Razorpay (India, UPI) or Stripe subscriptions if you want to run it as a service
+1. 🎙️ **Transcribe** the audio with word-level precision and animated timing.
+2. 🧠 **Find the most viral moments** with advanced AI scoring.
+3. 🎯 **Crop to vertical 9:16**, actively keeping the speaker centered with face tracking.
+4. ✍️ **Add animated captions** in bold viral styles (yellow highlights, custom fonts, emojis).
+5. 🚀 Give you **ready-to-post vertical clips** for Instagram Reels, YouTube Shorts, and TikTok.
 
-## Install
+---
 
-👉 **Follow the step-by-step [Install guide](INSTALL.md).** It's written for beginners and takes about 30 minutes, most of it waiting for the first download.
+## 🔥 Features & Capabilities
 
-The short version, if you already use Docker:
+- 🎬 **AI Moment Selection:** Gemini, Claude, GPT, or local Ollama models identify viral hooks.
+- 🗣️ **Animated Captions:** Word-by-word highlight animations with 99+ languages, including Hindi and Hinglish.
+- 🙂 **Smart Face Reframing:** Automatically tracks speaker faces and switches camera views during podcasts.
+- ✂️ **In-Browser Video Editor:** Fine-tune timestamps, edit caption text, customize fonts, colors, and layout.
+- 💳 **Billing & Monetization:** Integrated Razorpay checkout (UPI, Cards, Netbanking) with coupon discounts.
+- 📧 **Automated Notifications:** SMTP confirmation emails on membership activation and updates.
+
+---
+
+## 🚀 Quick Start (Self-Hosting with Docker)
 
 ```bash
-git clone https://github.com/V413havai/GTAClipper.git
-cd GTAClipper
-cp .env.example .env      # then add ASSEMBLY_AI_API_KEY and GOOGLE_API_KEY
-./start.sh                # or: docker compose up -d --build
+# Clone the repository
+git clone https://github.com/Object2005/clippers.narang.store.git
+cd clippers.narang.store
+
+# Configure environment variables
+cp .env.example .env
+
+# Run services
+./run_live.sh
+# or: docker compose up -d
 ```
 
-Open **http://localhost:3107**, create an account and paste a video link.
-
-## What it costs
-
-GTAClipper itself is free. You pay the AI services directly, per use:
-
-| Service | What it does | Cost |
-|---|---|---|
-| AssemblyAI | Transcription | about $0.21 per hour of video (new accounts get free credit) |
-| Google Gemini | Picks the best moments | a few cents per video |
-
-Typical cost: **under ₹50 per hour of video**. You can also use a free local model with [Ollama](https://ollama.com) instead of Gemini.
-
-## Need help?
-
-- Something not working? See [Troubleshooting](INSTALL.md#troubleshooting) in the install guide.
-- Found a bug or have an idea? [Open an issue](https://github.com/V413havai/GTAClipper/issues).
-
-## License
-
-GTAClipper is free and open source under the **AGPL-3.0** license. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
-
-If you run a modified version as a public website, the license requires you to share your changes with its users.
+Open **http://localhost:3107** or your public Cloudflare domain.
 
 ---
 
-<p align="center">Made by <a href="https://www.instagram.com/vaibhavv.ai/">Vaibhav Hedaoo (@vaibhavv.ai)</a> · <a href="https://aitoolbox.in">AiToolBox.in</a></p>
+## 👨‍💻 Creator & Maintainer
+
+Created and maintained by **Aashray Narang**:
+* 🌐 **Website:** [https://clippers.narang.store](https://clippers.narang.store)
+* 🐙 **GitHub:** [@Object2005](https://github.com/Object2005)
+* 📧 **Contact & Support:** [narangaashray98@gmail.com](mailto:narangaashray98@gmail.com)
+
+---
+
+## 📄 License
+
+This project is licensed under the **GNU AGPL-3.0 License**. See [LICENSE](LICENSE) and [NOTICE](NOTICE) for details.
