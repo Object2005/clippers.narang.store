@@ -77,6 +77,36 @@ SETTING_METADATA = {
         "description": "Optional B-roll stock footage provider key.",
         "input_type": "password",
     },
+    "YOUTUBE_OAUTH_CLIENT_ID": {
+        "label": "YouTube OAuth Client ID",
+        "description": "Google Cloud OAuth Client ID for connecting YouTube Shorts accounts.",
+        "input_type": "text",
+    },
+    "YOUTUBE_OAUTH_CLIENT_SECRET": {
+        "label": "YouTube OAuth Client Secret",
+        "description": "Google Cloud OAuth Client Secret for YouTube Shorts publishing.",
+        "input_type": "password",
+    },
+    "INSTAGRAM_APP_ID": {
+        "label": "Instagram App ID",
+        "description": "Meta App ID with Instagram Graph API for publishing Instagram Reels.",
+        "input_type": "text",
+    },
+    "INSTAGRAM_APP_SECRET": {
+        "label": "Instagram App Secret",
+        "description": "Meta App Secret for Instagram Reels publishing.",
+        "input_type": "password",
+    },
+    "TIKTOK_CLIENT_KEY": {
+        "label": "TikTok Client Key",
+        "description": "TikTok for Developers Client Key for TikTok video publishing.",
+        "input_type": "text",
+    },
+    "TIKTOK_CLIENT_SECRET": {
+        "label": "TikTok Client Secret",
+        "description": "TikTok for Developers Client Secret for TikTok publishing.",
+        "input_type": "password",
+    },
 }
 
 
